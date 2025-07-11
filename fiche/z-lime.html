@@ -1,39 +1,164 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Haschich DrySift 120u - Fiche produit</title>
-<link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haschich DrySift 120u - Fiche produit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header img {
+      display: block;
+      margin: 20px auto;
+      width: 100px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bloc-video {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bloc-video video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin: 0 auto 30px auto;
+      display: block;
+    }
+
+    .bloc-description {
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .bloc-tarifs {
+      width: 100%;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .tarifs-box {
+      background-color: rgba(0, 191, 255, 0.15);
+      border: 1px solid #00bfff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    .tarifs-box h3 {
+      color: #00bfff;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .tarifs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    .cell {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      min-width: 120px;
+      min-height: 80px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .cell:hover {
+      transform: scale(1.03);
+    }
+
+    .bloc-retour {
+      width: 100%;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .bloc-retour a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-<header>
-  <img src="../img/logo.png" alt="Cali Dream Logo" />
-</header>
-<main>
-  <h1>Haschich DrySift 120u</h1>
-  <h3>Farm : In The West FARM</h3>
-  <h4>Strain : Z Lime</h4>
-  <video width="100%" controls poster="../img/produits/zlime.png" style="border-radius:12px;">
-    <source src="../vid/zlime.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
-  <section style="margin-top: 20px;">
-    <p>Z Lime 120U Citron vert acidulé et bonbon Zkittlez. Stimulant, frais, parfaitement équilibré.</p>
-  </section>
-  <section style="margin-top: 20px;">
-    <h3>Grille tarifaire</h3>
-    <ul>
-      <li>5g - 70€</li>
-<li>10g - 110€</li>
-<li>25g - 250€</li>
-<li>50g - 400€</li>
-    </ul>
-  </section>
-  <a href="../index.html" style="display: inline-block; margin-top: 20px; color:#00bfff;">← Retour à la vitrine</a>
-</main>
-<footer>
-  <p>Cali Dream Mini App © 2025</p>
-</footer>
+
+  <header>
+    <img src="../img/logo.png" alt="Cali Dream Logo" />
+  </header>
+
+  <main>
+
+    <!-- 🎥 Bloc vidéo -->
+    <div class="bloc-video">
+      <video controls poster="../img/produits/zlime.png">
+        <source src="../vid/zlime.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+
+    <!-- 📝 Bloc description -->
+    <div class="bloc-description">
+      Z Lime 120U : Citron vert acidulé et bonbon Zkittlez. Stimulant, frais, parfaitement équilibré.
+    </div>
+
+    <!-- 💰 Bloc tarifs en grille 2x2 noire -->
+    <div class="bloc-tarifs">
+      <div class="tarifs-box">
+        <h3>Grille tarifaire</h3>
+        <div class="tarifs-grid">
+          <div class="cell">5g<br><strong>70€</strong></div>
+          <div class="cell">10g<br><strong>110€</strong></div>
+          <div class="cell">25g<br><strong>250€</strong></div>
+          <div class="cell">50g<br><strong>400€</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔙 Bloc retour -->
+    <div class="bloc-retour">
+      <a href="../index.html">← Retour à la vitrine</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Cali Dream Mini App © 2025</p>
+  </footer>
+
 </body>
 </html>
