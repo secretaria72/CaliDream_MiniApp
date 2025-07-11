@@ -5,6 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Haschich DrySift 45u - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    .description {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .tarifs {
+      margin-top: 30px;
+      background-color: rgba(0, 191, 255, 0.15);
+      border: 1px solid #00bfff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      display: inline-block;
+    }
+
+    .tarifs h3 {
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .tarifs ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .retour {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .retour a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,33 +76,31 @@
   <main>
 
     <!-- Vidéo centrée -->
-    <video width="100%" controls poster="../img/produits/zkittlez.png" style="border-radius:12px; max-width: 600px; display: block; margin: 0 auto 30px;">
+    <video controls poster="../img/produits/zkittlez.png">
       <source src="../vid/zkittlez.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo.
     </video>
 
     <!-- Description -->
-    <section style="margin-top: 20px;">
-      <p style="text-align: center; font-size: 16px; line-height: 1.5;">
-        Zkittlez Dry Sift 45U : explosion de bonbons fruités, effet doux et relaxant.<br>
-        Une pureté qui fond, un plaisir qui dure.
-      </p>
-    </section>
+    <div class="description">
+      Zkittlez Dry Sift 45U : explosion de bonbons fruités, effet doux et relaxant.<br>
+      Une pureté qui fond, un plaisir qui dure.
+    </div>
 
     <!-- Grille tarifaire -->
-    <section style="margin-top: 30px;">
-      <h3 style="color: #00bfff;">Grille tarifaire</h3>
-      <ul style="list-style: none; padding: 0; font-weight: bold;">
+    <div class="tarifs">
+      <h3>Grille tarifaire</h3>
+      <ul>
         <li>5g - 40€</li>
         <li>10g - 70€</li>
         <li>25g - 160€</li>
         <li>50g - 300€</li>
       </ul>
-    </section>
+    </div>
 
-    <!-- Retour à la vitrine -->
-    <div style="margin-top: 40px; text-align: left;">
-      <a href="../index.html" style="color:#00bfff;">← Retour à la vitrine</a>
+    <!-- Bouton retour -->
+    <div class="retour">
+      <a href="../index.html">← Retour à la vitrine</a>
     </div>
 
   </main>
