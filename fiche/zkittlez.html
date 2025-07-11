@@ -6,55 +6,90 @@
   <title>Haschich DrySift 45u - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header img {
+      display: block;
+      margin: 20px auto;
+      width: 100px;
+    }
+
     main {
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    video {
+    /* Bloc vidéo */
+    .bloc-video {
       width: 100%;
-      max-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bloc-video video {
+      width: 100%;
+      max-width: 600px;
       border-radius: 12px;
-      margin-bottom: 30px;
+      margin: 0 auto 30px auto;
       display: block;
     }
 
-    .description {
-      margin-top: 20px;
+    /* Bloc description */
+    .bloc-description {
+      width: 100%;
+      text-align: center;
       font-size: 16px;
       line-height: 1.5;
-      text-align: center;
+      margin-top: 10px;
     }
 
-    .tarifs {
+    /* Bloc tarifs */
+    .bloc-tarifs {
+      width: 100%;
       margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .tarifs-box {
       background-color: rgba(0, 191, 255, 0.15);
       border: 1px solid #00bfff;
       border-radius: 10px;
       padding: 15px 20px;
-      display: inline-block;
+      text-align: center;
     }
 
-    .tarifs h3 {
+    .tarifs-box h3 {
       color: #00bfff;
       margin-bottom: 10px;
     }
 
-    .tarifs ul {
+    .tarifs-box ul {
       list-style: none;
       padding: 0;
       margin: 0;
       font-weight: bold;
     }
 
-    .retour {
+    .tarifs-box li {
+      margin: 6px 0;
+    }
+
+    /* Bloc retour */
+    .bloc-retour {
+      width: 100%;
       margin-top: 40px;
       text-align: center;
     }
 
-    .retour a {
+    .bloc-retour a {
       color: #00bfff;
       text-decoration: none;
       font-weight: bold;
@@ -69,44 +104,53 @@
   </style>
 </head>
 <body>
+
+  <!-- Logo -->
   <header>
     <img src="../img/logo.png" alt="Cali Dream Logo" />
   </header>
 
+  <!-- Contenu principal -->
   <main>
 
-    <!-- Vidéo centrée -->
-    <video controls poster="../img/produits/zkittlez.png">
-      <source src="../vid/zkittlez.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo.
-    </video>
+    <!-- 🎥 Bloc vidéo -->
+    <div class="bloc-video">
+      <video controls poster="../img/produits/zkittlez.png">
+        <source src="../vid/zkittlez.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
 
-    <!-- Description -->
-    <div class="description">
+    <!-- 📝 Bloc description -->
+    <div class="bloc-description">
       Zkittlez Dry Sift 45U : explosion de bonbons fruités, effet doux et relaxant.<br>
       Une pureté qui fond, un plaisir qui dure.
     </div>
 
-    <!-- Grille tarifaire -->
-    <div class="tarifs">
-      <h3>Grille tarifaire</h3>
-      <ul>
-        <li>5g - 40€</li>
-        <li>10g - 70€</li>
-        <li>25g - 160€</li>
-        <li>50g - 300€</li>
-      </ul>
+    <!-- 💰 Bloc tarifs -->
+    <div class="bloc-tarifs">
+      <div class="tarifs-box">
+        <h3>Grille tarifaire</h3>
+        <ul>
+          <li>5g - 40€</li>
+          <li>10g - 70€</li>
+          <li>25g - 160€</li>
+          <li>50g - 300€</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Bouton retour -->
-    <div class="retour">
+    <!-- 🔙 Bloc retour -->
+    <div class="bloc-retour">
       <a href="../index.html">← Retour à la vitrine</a>
     </div>
 
   </main>
 
+  <!-- Pied de page -->
   <footer>
     <p>Cali Dream Mini App © 2025</p>
   </footer>
+
 </body>
 </html>
