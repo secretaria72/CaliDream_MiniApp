@@ -76,13 +76,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      width: 100%;
-      max-width: 100%;
-      padding: 0 10px;
+      padding: 10px;
     }
 
     .cell {
-      padding: 20px 10px;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      min-width: 120px;
+      min-height: 80px;
       border-radius: 12px;
       text-align: center;
       font-weight: bold;
@@ -93,26 +95,6 @@
 
     .cell:hover {
       transform: scale(1.03);
-    }
-
-    .cell-blue {
-      background-color: #00bfff;
-      color: #000;
-    }
-
-    .cell-red {
-      background-color: #ff0033;
-      color: #000;
-    }
-
-    .cell-white {
-      background-color: #ffffff;
-      color: #000;
-    }
-
-    .cell-black {
-      background-color: #000000;
-      color: #ffffff;
     }
 
     /* Bloc retour */
@@ -160,15 +142,15 @@
       Une pureté qui fond, un plaisir qui dure.
     </div>
 
-    <!-- 💰 Bloc tarifs en grille 2x2 avec espacement et couleurs -->
+    <!-- 💰 Bloc tarifs en grille 2x2 noire -->
     <div class="bloc-tarifs">
       <div class="tarifs-box">
         <h3>Grille tarifaire</h3>
         <div class="tarifs-grid">
-          <div class="cell cell-blue">5g<br><strong>40€</strong></div>
-          <div class="cell cell-red">10g<br><strong>70€</strong></div>
-          <div class="cell cell-white">25g<br><strong>160€</strong></div>
-          <div class="cell cell-black">50g<br><strong>300€</strong></div>
+          <div class="cell">5g<br><strong>40€</strong></div>
+          <div class="cell">10g<br><strong>70€</strong></div>
+          <div class="cell">25g<br><strong>160€</strong></div>
+          <div class="cell">50g<br><strong>300€</strong></div>
         </div>
       </div>
     </div>
