@@ -68,18 +68,51 @@
 
     .tarifs-box h3 {
       color: #00bfff;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      font-size: 18px;
     }
 
-    .tarifs-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .tarifs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    .cell {
+      padding: 20px 10px;
+      border-radius: 12px;
+      text-align: center;
       font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
     }
 
-    .tarifs-box li {
-      margin: 6px 0;
+    .cell:hover {
+      transform: scale(1.03);
+    }
+
+    .cell-blue {
+      background-color: #00bfff;
+      color: #000;
+    }
+
+    .cell-red {
+      background-color: #ff0033;
+      color: #000;
+    }
+
+    .cell-white {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    .cell-black {
+      background-color: #000000;
+      color: #ffffff;
     }
 
     /* Bloc retour */
@@ -128,17 +161,17 @@
     </div>
 
     <!-- 💰 Bloc tarifs en grille 2x2 avec espacement et couleurs -->
-<div class="bloc-tarifs">
-  <div class="tarifs-box">
-    <h3>Grille tarifaire</h3>
-    <div class="tarifs-grid">
-      <div class="cell cell-blue">5g<br><strong>40€</strong></div>
-      <div class="cell cell-red">10g<br><strong>70€</strong></div>
-      <div class="cell cell-white">25g<br><strong>160€</strong></div>
-      <div class="cell cell-black">50g<br><strong>300€</strong></div>
+    <div class="bloc-tarifs">
+      <div class="tarifs-box">
+        <h3>Grille tarifaire</h3>
+        <div class="tarifs-grid">
+          <div class="cell cell-blue">5g<br><strong>40€</strong></div>
+          <div class="cell cell-red">10g<br><strong>70€</strong></div>
+          <div class="cell cell-white">25g<br><strong>160€</strong></div>
+          <div class="cell cell-black">50g<br><strong>300€</strong></div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <!-- 🔙 Bloc retour -->
     <div class="bloc-retour">
