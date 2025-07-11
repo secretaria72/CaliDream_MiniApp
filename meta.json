@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "filename": "zkittlez.html",
+      "name": "Haschich DrySift 45u",
+      "in_stock": true
+    },
+    {
+      "filename": "papaya-cookies.html",
+      "name": "Haschich DrySift 120u",
+      "in_stock": true
+    },
+    {
+      "filename": "z-lime.html",
+      "name": "Haschich DrySift 120u",
+      "in_stock": true
+    },
+    {
+      "filename": "forbidden-fruit.html",
+      "name": "Haschich DrySift 120u",
+      "in_stock": true
+    },
+    {
+      "filename": "wedding-cake.html",
+      "name": "Haschich DrySift 120u",
+      "in_stock": true
+    },
+    {
+      "filename": "tropicana-cherry.html",
+      "name": "Haschich DrySift 120u",
+      "in_stock": true
+    },
+    {
+      "filename": "papaya-runtz.html",
+      "name": "Haschich DrySift 120u",
+      "in_stock": true
+    },
+    {
+      "filename": "plasma-static.html",
+      "name": "Haschich Plasma Static",
+      "in_stock": true
+    },
+    {
+      "filename": "cherry-diesel.html",
+      "name": "Weed californienne",
+      "in_stock": true
+    },
+    {
+      "filename": "oreo.html",
+      "name": "Weed californienne",
+      "in_stock": true
+    },
+    {
+      "filename": "strawberry-haze.html",
+      "name": "Weed hollandaise",
+      "in_stock": true
+    },
+    {
+      "filename": "blueberry-haze.html",
+      "name": "Weed Hollandaise",
+      "in_stock": true
+    },
+    {
+      "filename": "royal-og-kush.html",
+      "name": "Weed hollandaise",
+      "in_stock": true
+    }
+  ]
+}

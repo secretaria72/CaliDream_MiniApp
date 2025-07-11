@@ -1,0 +1,85 @@
+
+@font-face {
+  font-family: 'CalidreamFont';
+  src: url('../fonts/calidream.woff2') format('woff2');
+}
+body {
+  margin: 0; padding: 0;
+  font-family: 'CalidreamFont', Arial, sans-serif;
+  background: url('../img/fond.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #a0cfff;
+}
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+header img {
+  height: 80px;
+  filter: drop-shadow(0 0 6px #00bfff);
+  transform: translateY(-10px);
+}
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+  pointer-events: none;
+}
+main {
+  margin-top: 140px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(45%,1fr));
+  grid-gap: 20px;
+}
+.product-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 10px #00bfff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff;
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.product-info {
+  font-size: 14px;
+  color: #cde9ff;
+}
+.product-info strong {
+  color: #00bfff;
+}
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: repeat(auto-fill,minmax(90%,1fr));
+  }
+}
