@@ -7,9 +7,7 @@ body {
   margin: 0; padding: 0;
   font-family: 'CalidreamFont', Arial, sans-serif;
   background: url('../img/fond.jpg') no-repeat center center fixed;
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center top;
+background-size: cover;
   color: #a0cfff;
 }
 header {
