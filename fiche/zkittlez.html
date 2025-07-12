@@ -66,10 +66,10 @@
     }
 
     .tarifs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 15px;
-      justify-items: center;
+      justify-content: center;
     }
 
     .cell {
@@ -79,9 +79,9 @@
       padding: 15px 20px;
       border-radius: 12px;
       font-weight: bold;
+      min-width: 120px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-      font-size: 16px;
     }
 
     .bloc-retour {
@@ -127,10 +127,10 @@
       <div class="tarifs-box">
         <h3>Grille tarifaire</h3>
         <div class="tarifs-grid">
-          <div class="cell">5g<br><strong>40€</strong></div>
-          <div class="cell">10g<br><strong>70€</strong></div>
-          <div class="cell">25g<br><strong>160€</strong></div>
-          <div class="cell">50g<br><strong>300€</strong></div>
+          <div class="cell">5g<br><strong>70€</strong></div>
+          <div class="cell">10g<br><strong>110€</strong></div>
+          <div class="cell">25g<br><strong>250€</strong></div>
+          <div class="cell">50g<br><strong>400€</strong></div>
         </div>
       </div>
     </div>
