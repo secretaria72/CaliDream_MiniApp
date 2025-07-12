@@ -66,10 +66,10 @@
     }
 
     .tarifs-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 15px;
-      justify-content: center;
+      justify-items: center;
     }
 
     .cell {
@@ -79,9 +79,9 @@
       padding: 15px 20px;
       border-radius: 12px;
       font-weight: bold;
-      min-width: 120px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      font-size: 16px;
     }
 
     .bloc-retour {
