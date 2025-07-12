@@ -5,6 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zkittlez DrySift 45u - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header img {
+      display: block;
+      margin: 20px auto 10px auto;
+      width: 100px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bloc-video {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bloc-video video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stock {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .stock.in {
+      color: #00cc66;
+    }
+
+    .stock.out {
+      color: #cc3333;
+    }
+
+    .bloc-description {
+      text-align: center;
+      font-size: 17px;
+      font-weight: bold;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .bloc-tarifs {
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .tarifs-box {
+      text-align: center;
+    }
+
+    .tarifs-box h3 {
+      color: #00bfff;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tarifs-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .cell {
+      background-color: #000;
+      border: 1px solid #00bfff;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      min-width: 120px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .bloc-retour {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .bloc-retour a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 40px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,13 +133,13 @@
       </video>
     </div>
 
+    <!-- Bloc État du Stock -->
+    <div id="stock-status" class="stock"></div>
+
     <div class="bloc-description">
       Zkittlez Dry Sift 45U : explosion de bonbons fruités, effet doux et relaxant.<br>
       Une pureté qui fond, un plaisir qui dure.
     </div>
-
-    <!-- Nouveau bloc stock -->
-    <div id="stock-status" class="stock"></div>
 
     <div class="bloc-tarifs">
       <div class="tarifs-box">
