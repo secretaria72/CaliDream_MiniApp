@@ -4,12 +4,17 @@
   src: url('../fonts/calidream.woff2') format('woff2');
 }
 body {
-  margin: 0; padding: 0;
-  font-family: 'CalidreamFont', Arial, sans-serif;
-  background: url('../img/fond.jpg') no-repeat center center fixed;
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center top;
+  margin: 0;
+  padding: 0;
+  font-family: 'CalidreamFont', Arial, sans-serif;
+  background-image: url('../img/fond.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: 100% auto; /* largeur = 100%, hauteur auto */
+  background-color: #0a0cff; /* en cas d’espace vide autour */
+  color: #a0cfff;
+}
 
 
 
