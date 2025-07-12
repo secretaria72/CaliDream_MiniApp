@@ -99,3 +99,16 @@ footer {
     grid-template-columns: repeat(auto-fill,minmax(90%,1fr));
   }
 }
+/* Bloc état de stock (dynamique) */
+.stock {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px auto;
+}
+.stock.in {
+  color: #00cc66;
+}
+.stock.out {
+  color: #cc3333;
+}
