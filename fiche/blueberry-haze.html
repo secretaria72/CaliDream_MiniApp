@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weed Hollandaise - Fiche produit</title>
+  <title>Blueberry Haze - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     body {
       margin: 0;
       padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
     }
 
     header img {
       display: block;
-      margin: 20px auto;
+      margin: 20px auto 10px auto;
       width: 100px;
     }
 
     main {
       max-width: 600px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 10px 20px 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,69 +37,54 @@
 
     .bloc-video video {
       width: 100%;
-      max-width: 600px;
+      max-width: 100%;
       border-radius: 12px;
-      margin: 0 auto 30px auto;
-      display: block;
+      margin-bottom: 20px;
     }
 
     .bloc-description {
-      width: 100%;
       text-align: center;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: bold;
+      margin: 20px 0;
       line-height: 1.6;
-      margin-top: 10px;
     }
 
     .bloc-tarifs {
       width: 100%;
       margin-top: 30px;
-      display: flex;
-      justify-content: center;
     }
 
     .tarifs-box {
-      background-color: rgba(0, 191, 255, 0.15);
-      border: 1px solid #00bfff;
-      border-radius: 10px;
-      padding: 15px 20px;
       text-align: center;
     }
 
     .tarifs-box h3 {
       color: #00bfff;
+      font-size: 20px;
       margin-bottom: 20px;
-      font-size: 18px;
     }
 
     .tarifs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
     .cell {
       background-color: #000;
+      border: 1px solid #00bfff;
       color: #fff;
-      padding: 20px;
-      min-width: 120px;
-      min-height: 80px;
+      padding: 15px 20px;
       border-radius: 12px;
-      text-align: center;
       font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .cell:hover {
-      transform: scale(1.03);
+      min-width: 120px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
 
     .bloc-retour {
-      width: 100%;
       margin-top: 40px;
       text-align: center;
     }
@@ -109,8 +97,8 @@
 
     footer {
       text-align: center;
-      margin-top: 40px;
       font-size: 12px;
+      margin-top: 40px;
       color: #ccc;
     }
   </style>
@@ -123,7 +111,6 @@
 
   <main>
 
-    <!-- 🎥 Bloc vidéo -->
     <div class="bloc-video">
       <video controls poster="../img/produits/blueberry.png">
         <source src="../vid/blueberry.mp4" type="video/mp4">
@@ -131,12 +118,12 @@
       </video>
     </div>
 
-    <!-- 📝 Bloc description -->
     <div class="bloc-description">
-      Blueberry Haze (NL Growers) : Baies sucrées, touche haze légère. Effet clair et créatif, parfait en journée.
+      Blueberry Haze (NL Growers) :<br>
+      Baies sucrées, touche haze légère.<br>
+      Effet clair et créatif, parfait en journée.
     </div>
 
-    <!-- 💰 Bloc tarifs en grille 2x2 noire -->
     <div class="bloc-tarifs">
       <div class="tarifs-box">
         <h3>Grille tarifaire</h3>
@@ -149,7 +136,6 @@
       </div>
     </div>
 
-    <!-- 🔙 Bloc retour -->
     <div class="bloc-retour">
       <a href="../index.html">← Retour à la vitrine</a>
     </div>
