@@ -6,7 +6,152 @@
   <title>Haschich DrySift 45u - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
+    body {<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zkittlez DrySift 45u - Fiche produit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
     body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header img {
+      display: block;
+      margin: 20px auto;
+      width: 100px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bloc-video {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bloc-video video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin: 0 auto 30px auto;
+      display: block;
+    }
+
+    .bloc-description {
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    /* 💰 Nouvelle grille tarifaire */
+    .bloc-tarifs {
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .tarifs-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tarif-card {
+      min-width: 100px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 0 8px #00bfff;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+
+    .bloc-retour {
+      width: 100%;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .bloc-retour a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="../img/logo.png" alt="Cali Dream Logo" />
+  </header>
+
+  <main>
+
+    <!-- 🎥 Vidéo -->
+    <div class="bloc-video">
+      <video controls poster="../img/produits/zkittlez.png">
+        <source src="../vid/zkittlez.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </div>
+
+    <!-- 📝 Description -->
+    <div class="bloc-description">
+      Zkittlez Dry Sift 45U : explosion de bonbons fruités, effet doux et relaxant.<br>
+      Une pureté qui fond, un plaisir qui dure.
+    </div>
+
+    <!-- 💰 Grille tarifaire scrollable -->
+    <div class="bloc-tarifs">
+      <h3 style="text-align:center; color:#00bfff;">Grille tarifaire</h3>
+      <div class="tarifs-scroll">
+        <div class="tarif-card">5g<br><strong>40€</strong></div>
+        <div class="tarif-card">10g<br><strong>70€</strong></div>
+        <div class="tarif-card">25g<br><strong>160€</strong></div>
+        <div class="tarif-card">50g<br><strong>300€</strong></div>
+      </div>
+    </div>
+
+    <!-- 🔙 Retour -->
+    <div class="bloc-retour">
+      <a href="../index.html">← Retour à la vitrine</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Cali Dream Mini App © 2025</p>
+  </footer>
+
+</body>
+</html>
       margin: 0;
       padding: 0;
     }
