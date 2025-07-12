@@ -10,7 +10,7 @@ fetch('../meta.json')
     if (product && stockDiv) {
       if (product.in_stock) {
         stockDiv.textContent = '🟢 En stock';
-        stockDiv.classList.add(in);
+        stockDiv.classList.add('in');
       } else {
         stockDiv.textContent = '🔴 Reviens bientôt';
         stockDiv.classList.add('out');
