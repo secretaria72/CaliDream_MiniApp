@@ -9,13 +9,12 @@ body {
   font-family: 'CalidreamFont', Arial, sans-serif;
   background-image: url('../img/fond.jpg');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center top;
   background-attachment: fixed;
-  background-size: 100% auto; /* largeur = 100%, hauteur auto */
-  background-color: #0a0cff; /* en cas d’espace vide autour */
+  background-size: cover;
+  background-color: #05080f;
   color: #a0cfff;
 }
-
 
 
   color: #a0cfff;
