@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     const { message, username } = req.body;
 
     const botToken = '7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs';
-    const chatId = '-1002853283373'; // ID de ton canal
+    const chatId = '-1002853283373'; // 👈 ID de ton canal Telegram privé
 
     const text = 📝 Nouvel avis client\n👤 @${username}\n💬 ${message};
 
