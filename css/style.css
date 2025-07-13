@@ -134,9 +134,10 @@ footer {
   padding-bottom: 20px;
 }
 
+/* ✅ FIX POUR GARDER LA GRILLE 2x2 MÊME SUR MOBILE */
 @media (max-width: 600px) {
   main {
-    grid-template-columns: repeat(auto-fill,minmax(45%,1fr)); /* ✅ FIX 2x2 sur mobile */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   #avis-button {
