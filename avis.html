@@ -95,11 +95,17 @@
     }
 
     .avis-message {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 10px 0;
-      font-size: 14px;
-      color: #cde9ff;
-    }
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 0;
+  font-size: 14px;
+  color: #cde9ff;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
 
     .avis-message:last-child {
       border-bottom: none;
