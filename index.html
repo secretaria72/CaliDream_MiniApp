@@ -212,5 +212,31 @@
   <p>Cali Dream Mini App © 2025</p>
 </footer>
 
+<!-- Scripts -->
+<script src="./config/config.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof config !== 'undefined' && config.avis_button) {
+      const header = document.querySelector('header');
+      if (header) {
+        const avisBtn = document.createElement('div');
+        avisBtn.textContent = '💬';
+        avisBtn.style.position = 'absolute';
+        avisBtn.style.right = '25px';
+        avisBtn.style.bottom = '8px';
+        avisBtn.style.fontSize = '28px';
+        avisBtn.style.cursor = 'pointer';
+        avisBtn.style.color = '#a0cfff';
+        avisBtn.style.textShadow = '0 0 5px #003366';
+        avisBtn.title = 'Avis clients';
+        avisBtn.onclick = () => {
+          window.location.href = './avis.html';
+        };
+        header.appendChild(avisBtn);
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
