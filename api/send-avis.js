@@ -1,41 +1,36 @@
-
-// /vercel/api/send-avis.js
-
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Méthode non autorisée' });
-  }
+  if (req.method === 'POST') {
+    const { message, username } = req.body;
 
-  const { message, username } = req.body;
+    const botToken = '7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs';
+    const chatId = '8196735310';
 
-  if (!message || !username) {
-    return res.status(400).json({ error: 'Message ou username manquant' });
-  }
+    const text = 📝 Nouvel avis client\n👤 @${username}\n💬 ${message};
 
-  // Formatage du message
-  const finalMessage = Nouvel avis client :\n@${username}\n\n"${message}";
+    const telegramApiUrl = https://api.telegram.org/bot${botToken}/sendMessage;
 
-  // Envoi vers ton bot Telegram
-  const botToken = 'TON_TOKEN_ICI';
-  const chatId = 'TON_CHAT_ID_ICI'; // Remplace par ton canal ou ID personnel
+    try {
+      const response = await fetch(telegramApiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: text,
+          parse_mode: 'Markdown',
+        }),
+      });
 
-  const url = https://api.telegram.org/bot${botToken}/sendMessage;
+      const data = await response.json();
 
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: finalMessage,
-      }),
-    });
-
-    if (!response.ok) throw new Error('Échec envoi Telegram');
-
-    return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error('Erreur :', error);
-    return res.status(500).json({ error: 'Erreur interne serveur' });
+      if (data.ok) {
+        res.status(200).json({ success: true });
+      } else {
+        res.status(500).json({ success: false, error: data });
+      }
+    } catch (error) {
+      res.status(500).json({ success: false, error: error.message });
+    }
+  } else {
+    res.status(405).json({ error: 'Méthode non autorisée' });
   }
 }
