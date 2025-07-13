@@ -148,12 +148,25 @@
     </div>
 
     <!-- Bloc d’avis -->
-    <div class="avis-list">
+    <div class="avis-list" id="avisList">
       <div class="avis-message">@L***34 : Franchement top qualité 🔥</div>
       <div class="avis-message">@U**z19 : Livraison rapide et discrète 💼</div>
       <div class="avis-message">@J*** : Très satisfait, je recommande 💯</div>
     </div>
   </div>
+
+  <script>
+    document.querySelector('.avis-send-btn').addEventListener('click', function () {
+      const textarea = document.querySelector('.avis-input');
+      const message = textarea.value.trim();
+      if (message.length >= 5) {
+        const pseudo = "@U***ser"; // Placeholder pseudo
+        const avisHTML = `<div class="avis-message">${pseudo} : ${message}</div>`;
+        document.getElementById('avisList').insertAdjacentHTML('afterbegin', avisHTML);
+        textarea.value = '';
+      }
+    });
+  </script>
 
 </body>
 </html>
