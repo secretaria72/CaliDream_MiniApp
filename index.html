@@ -5,91 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cali Dream Vitrine</title>
   <link rel="stylesheet" href="./css/style.css" />
-  <style>
-    main {
-      padding-top: 140px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      padding-left: 20px;
-      padding-right: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .product-card {
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .product-card:hover {
-      transform: scale(1.03);
-    }
-
-    .product-card img {
-      width: 100%;
-      display: block;
-    }
-
-    .product-info {
-      padding: 12px;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      z-index: 998;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: -1;
-    }
-
-    header img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: auto;
-      width: auto;
-      max-height: 80px;
-    }
-  </style>
 </head>
 <body>
 
 <header>
   <img src="./img/logo.png" alt="Cali Dream Logo" />
-  <button id="avis-button" onclick="window.location.href='./avis.html'" title="Avis clients">💬</button>
+
+  <!-- ✅ Bouton Avis stylisé -->
+  <button id="avis-button" title="Avis clients" onclick="window.location.href='./avis.html'">💬</button>
 </header>
 
 <main>
 
+  <!-- Produit 1 -->
   <article class="product-card" onclick="window.location.href='./fiche/zkittlez.html'" role="button" tabindex="0">
     <img src="./img/produits/zkittlez.png" alt="Haschich DrySift 45u photo" />
     <div class="product-info">
@@ -99,6 +27,7 @@
     </div>
   </article>
 
+  <!-- Produit 2 -->
   <article class="product-card" onclick="window.location.href='./fiche/papaya-cookies.html'" role="button" tabindex="0">
     <img src="./img/produits/papayacookies.png" alt="Haschich DrySift 120u photo" />
     <div class="product-info">
@@ -108,6 +37,7 @@
     </div>
   </article>
 
+  <!-- Produit 3 -->
   <article class="product-card" onclick="window.location.href='./fiche/z-lime.html'" role="button" tabindex="0">
     <img src="./img/produits/zlime.png" alt="Haschich DrySift 120u photo" />
     <div class="product-info">
@@ -117,6 +47,7 @@
     </div>
   </article>
 
+  <!-- Produit 4 -->
   <article class="product-card" onclick="window.location.href='./fiche/forbidden-fruit.html'" role="button" tabindex="0">
     <img src="./img/produits/forbiddenfruit.png" alt="Haschich DrySift 120u photo" />
     <div class="product-info">
@@ -126,6 +57,7 @@
     </div>
   </article>
 
+  <!-- Produit 5 -->
   <article class="product-card" onclick="window.location.href='./fiche/wedding-cake.html'" role="button" tabindex="0">
     <img src="./img/produits/weedingcake.png" alt="Haschich DrySift 120u photo" />
     <div class="product-info">
@@ -135,6 +67,7 @@
     </div>
   </article>
 
+  <!-- Produit 6 -->
   <article class="product-card" onclick="window.location.href='./fiche/tropicana-cherry.html'" role="button" tabindex="0">
     <img src="./img/produits/tropicanacherry.png" alt="Haschich DrySift 120u photo" />
     <div class="product-info">
@@ -144,15 +77,17 @@
     </div>
   </article>
 
+  <!-- Produit 7 -->
   <article class="product-card" onclick="window.location.href='./fiche/papaya-runtz.html'" role="button" tabindex="0">
     <img src="./img/produits/papayaruntz.png" alt="Haschich DrySift 120u photo" />
     <div class="product-info">
       <strong>Haschich DrySift 120u</strong><br/>
       Volcano FARM<br/>
-      <em>Papaya Runtz</em>
+      <em>Papaya runtz</em>
     </div>
   </article>
 
+  <!-- Produit 8 -->
   <article class="product-card" onclick="window.location.href='./fiche/plasma-static.html'" role="button" tabindex="0">
     <img src="./img/produits/plasma.png" alt="Haschich Plasma Static photo" />
     <div class="product-info">
@@ -162,6 +97,7 @@
     </div>
   </article>
 
+  <!-- Produit 9 -->
   <article class="product-card" onclick="window.location.href='./fiche/cherry-diesel.html'" role="button" tabindex="0">
     <img src="./img/produits/cherrydiesel.png" alt="Weed californienne photo" />
     <div class="product-info">
@@ -171,6 +107,7 @@
     </div>
   </article>
 
+  <!-- Produit 10 -->
   <article class="product-card" onclick="window.location.href='./fiche/oreo.html'" role="button" tabindex="0">
     <img src="./img/produits/oreo.png" alt="Weed californienne photo" />
     <div class="product-info">
@@ -180,6 +117,7 @@
     </div>
   </article>
 
+  <!-- Produit 11 -->
   <article class="product-card" onclick="window.location.href='./fiche/strawberry-haze.html'" role="button" tabindex="0">
     <img src="./img/produits/strawberry.png" alt="Weed hollandaise photo" />
     <div class="product-info">
@@ -189,6 +127,7 @@
     </div>
   </article>
 
+  <!-- Produit 12 -->
   <article class="product-card" onclick="window.location.href='./fiche/blueberry-haze.html'" role="button" tabindex="0">
     <img src="./img/produits/blueberry.png" alt="Weed Hollandaise photo" />
     <div class="product-info">
@@ -198,6 +137,7 @@
     </div>
   </article>
 
+  <!-- Produit 13 -->
   <article class="product-card" onclick="window.location.href='./fiche/royal-og-kush.html'" role="button" tabindex="0">
     <img src="./img/produits/ogkush.png" alt="Weed hollandaise photo" />
     <div class="product-info">
@@ -213,7 +153,7 @@
   <p>Cali Dream Mini App © 2025</p>
 </footer>
 
-<!-- Configuration (ne touche pas) -->
+<!-- Scripts -->
 <script src="./config/config.js"></script>
 
 </body>
