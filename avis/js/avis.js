@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const username = window.Telegram?.WebApp?.initDataUnsafe?.user?.username
-      ? @${window.Telegram.WebApp.initDataUnsafe.user.username}
-      : '@inconnu';
+      ? "@" + window.Telegram.WebApp.initDataUnsafe.user.username
+      : "@inconnu";
 
     try {
       const response = await fetch("https://cali-dream-mini-app.vercel.app/api/send-avis", {
