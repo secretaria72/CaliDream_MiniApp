@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   }
 
   const BOT_TOKEN = "7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs";
-  const CHAT_ID = "-1002128436010"; // remplace par ton vrai ID canal
+  const CHAT_ID = "-1002128436010"; // ← remplace si besoin
 
   const text = 💬 Nouvel avis de ${username} :\n\n${message};
 
