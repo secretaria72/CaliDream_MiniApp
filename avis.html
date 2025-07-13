@@ -3,165 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avis Clients - Cali Dream</title>
+  <title>Avis clients - Cali Dream</title>
   <link rel="stylesheet" href="./css/style.css" />
   <style>
-    main {
+    body {
+      text-align: center;
+    }
+
+    .avis-container {
       margin-top: 140px;
-      max-width: 720px;
+      padding: 20px;
+      max-width: 480px;
       margin-left: auto;
       margin-right: auto;
-      padding: 20px;
       color: #a0cfff;
     }
 
     .avis-title {
-      font-size: 32px;
-      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
       color: #00bfff;
       text-shadow: 0 0 6px red;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .avis-description {
-      font-size: 16px;
-      text-align: center;
+      font-size: 15px;
       color: #cde9ff;
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
-
-    .avis-rideau {
-      backdrop-filter: blur(10px);
-      background-color: rgba(5, 8, 15, 0.7);
-      border-radius: 12px;
-      padding: 15px;
-      max-height: 320px;
-      overflow-y: auto;
-      box-shadow: 0 0 10px #00bfff;
-    }
-
-    .avis-msg {
-      margin-bottom: 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 10px;
-    }
-
-    .avis-msg .user {
-      font-weight: bold;
-      color: #00bfff;
-    }
-
-    .avis-msg .time {
-      font-size: 12px;
-      color: #aaa;
-      float: right;
-    }
-
-    .avis-msg .content {
-      margin-top: 5px;
-      color: #cde9ff;
+      margin-bottom: 22px;
+      line-height: 1.4;
     }
 
     .avis-input {
-      margin-top: 25px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .avis-input input {
-      flex-grow: 1;
+      width: 100%;
+      height: 80px;
       padding: 10px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-family: 'CalidreamFont', sans-serif;
-      font-size: 14px;
-      background-color: rgba(255,255,255,0.1);
+      font-family: 'CalidreamFont', Arial, sans-serif;
+      font-size: 15px;
+      border: 2px solid #00bfff;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
       color: #a0cfff;
+      resize: none;
+      box-shadow: 0 0 6px rgba(0, 191, 255, 0.3);
+      margin-bottom: 14px;
     }
 
-    .avis-input button {
-      padding: 10px 15px;
-      background-color: #00bfff;
-      border: none;
-      border-radius: 8px;
-      color: #fff;
+    .avis-send-btn {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 15px;
       font-weight: bold;
+      background-color: rgba(0, 191, 255, 0.1);
+      border: 2px solid #00bfff;
+      border-radius: 8px;
+      color: #00bfff;
       cursor: pointer;
       text-shadow: 0 0 4px red;
-      box-shadow: 0 0 6px #00bfff;
-      transition: transform 0.2s ease;
+      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.5));
+      transition: transform 0.2s ease, background-color 0.3s ease;
     }
 
-    .avis-input button:active {
-      transform: scale(0.95);
+    .avis-send-btn:hover {
+      background-color: rgba(0,191,255,0.2);
+      transform: scale(1.05);
     }
 
-    /* Bouton retour */
-    #back-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: transparent;
-      border: 2px solid #00bfff;
-      border-radius: 50%;
+    .avis-list {
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+    }
+
+    .avis-message {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 0;
+      font-size: 14px;
+      color: #cde9ff;
+    }
+
+    .avis-message:last-child {
+      border-bottom: none;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      font-size: 24px;
       color: #00bfff;
-      font-size: 22px;
-      padding: 6px;
+      background: none;
+      border: none;
       cursor: pointer;
-      box-shadow: 0 0 5px #00bfff;
-      transition: transform 0.3s ease;
-      z-index: 1001;
-    }
-
-    #back-button:hover {
-      transform: scale(1.1);
-      background-color: rgba(0,191,255,0.1);
+      z-index: 1002;
+      text-shadow: 0 0 4px red;
     }
   </style>
 </head>
-
 <body>
 
+  <!-- Logo flottant + effet miroir -->
   <header>
-    <img src="./img/logo.png" alt="Cali Dream Logo" />
-    <button id="back-button" onclick="window.location.href='./index.html'" title="Retour">←</button>
+    <img src="./img/logo.png" alt="Logo Cali Dream" />
   </header>
 
-  <main>
-    <h1 class="avis-title">Avis Clients</h1>
-    <p class="avis-description">
-      Merci de laisser un avis pour aider les nouveaux à faire leur choix en toute confiance.
-    </p>
+  <!-- Bouton retour -->
+  <button class="back-button" onclick="window.history.back()">⟵</button>
 
-    <section class="avis-rideau">
+  <!-- Contenu central -->
+  <div class="avis-container">
+    <div class="avis-title">💬 Avis des clients</div>
+    <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
 
-      <div class="avis-msg">
-        <span class="user">@Us**me</span>
-        <span class="time">13/07/2025 14:30</span>
-        <div class="content">Top qualité rien à dire, livraison rapide 🔥</div>
-      </div>
+    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
+    <button class="avis-send-btn">Envoyer</button>
 
-      <div class="avis-msg">
-        <span class="user">@Al**ra</span>
-        <span class="time">12/07/2025 22:14</span>
-        <div class="content">Le hash forbidden fruit est une dinguerie 😍</div>
-      </div>
-
-      <div class="avis-msg">
-        <span class="user">@Lo**rd</span>
-        <span class="time">11/07/2025 18:05</span>
-        <div class="content">Site sérieux, vérif simple, bons contacts derrière.</div>
-      </div>
-
-    </section>
-
-    <div class="avis-input">
-      <input type="text" placeholder="Laisse ton avis ici..." maxlength="150" />
-      <button>Envoyer</button>
+    <div class="avis-list">
+      <div class="avis-message">@L***34 : Franchement top qualité 🔥</div>
+      <div class="avis-message">@U**z19 : Livraison rapide et discrète 💼</div>
+      <div class="avis-message">@J*** : Très satisfait, je recommande 💯</div>
     </div>
-  </main>
+  </div>
 
 </body>
 </html>
