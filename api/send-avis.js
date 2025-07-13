@@ -9,13 +9,13 @@ module.exports = async (req, res) => {
     return res.status(400).json({ success: false, error: "Données manquantes" });
   }
 
-  const BOT_TOKEN = "7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs";
-  const CHAT_ID = "-1002128436010"; // ← remplace si besoin
+  const BOT_TOKEN = "7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs"; // ⚠️ Sécurise ce token plus tard
+  const CHAT_ID = "-1002128436010"; // Remplace par ton vrai canal
 
-  const text = 💬 Nouvel avis de ${username} :\n\n${message};
+  const text = `💬 Nouvel avis de ${username} :\n\n${message}`;
 
   try {
-    const telegramUrl = https://api.telegram.org/bot${BOT_TOKEN}/sendMessage;
+    const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
     const response = await fetch(telegramUrl, {
       method: "POST",
       headers: {
