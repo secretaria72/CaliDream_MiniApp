@@ -1,9 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blueberry Haze - Fiche produit</title>
+  <title>Blueberry Hase - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     body {
@@ -40,6 +42,22 @@
       max-width: 100%;
       border-radius: 12px;
       margin-bottom: 20px;
+    }
+
+    /* 👇 Bloc "En stock / Reviens bientôt" */
+    .stock {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .stock.in {
+      color: #00cc66;
+    }
+
+    .stock.out {
+      color: #cc3333;
     }
 
     .bloc-description {
@@ -119,18 +137,22 @@
     </div>
 
     <div class="bloc-description">
-      Blueberry Haze (NL Growers) :<br>
+Blueberry Haze (NL Growers) :<br>
       Baies sucrées, touche haze légère.<br>
       Effet clair et créatif, parfait en journée.
+
     </div>
+
+    <!-- ✅ Bloc déplacé ici entre description et tarifs -->
+    <div id="stock-status" class="stock"></div>
 
     <div class="bloc-tarifs">
       <div class="tarifs-box">
         <h3>Grille tarifaire</h3>
         <div class="tarifs-grid">
-          <div class="cell">5g<br><strong>60€</strong></div>
-          <div class="cell">10g<br><strong>110€</strong></div>
-          <div class="cell">25g<br><strong>250€</strong></div>
+          <div class="cell">5g<br><strong>50€</strong></div>
+          <div class="cell">10g<br><strong>100€</strong></div>
+          <div class="cell">25g<br><strong>210€</strong></div>
           <div class="cell">50g<br><strong>400€</strong></div>
         </div>
       </div>
@@ -146,5 +168,7 @@
     <p>Cali Dream Mini App © 2025</p>
   </footer>
 
+  <!-- ✅ Script stock -->
+  <script src="../config/stock.js"></script>
 </body>
 </html>
