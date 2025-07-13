@@ -1,1 +1,7 @@
-
+{
+  "avis_module_enabled": true,
+  "admin_mode": true,
+  "admin_username": "@TonUsernameIci",
+  "max_characters": 150,
+  "max_lines": 3
+}
