@@ -161,18 +161,6 @@
     </div>
   </div>
 
-  <script>
-    document.querySelector('.avis-send-btn').addEventListener('click', function () {
-      const textarea = document.querySelector('.avis-input');
-      const message = textarea.value.trim();
-      if (message.length >= 5) {
-        const pseudo = "@U***ser"; // Placeholder pseudo
-        const avisHTML = `<div class="avis-message">${pseudo} : ${message}</div>`;
-        document.getElementById('avisList').insertAdjacentHTML('afterbegin', avisHTML);
-        textarea.value = '';
-      }
-    });
-  </script>
-
+ <script src="./js/avis.js"></script>
 </body>
 </html>
