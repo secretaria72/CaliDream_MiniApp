@@ -28,12 +28,12 @@
     {
       "filename": "tropicana-cherry.html",
       "name": "Haschich DrySift 120u",
-      "in_stock": true
+      "in_stock": false
     },
     {
       "filename": "papaya-runtz.html",
       "name": "Haschich DrySift 120u",
-      "in_stock": true
+      "in_stock": false
     },
     {
       "filename": "plasma-static.html",
@@ -53,7 +53,7 @@
     {
       "filename": "strawberry-haze.html",
       "name": "Weed hollandaise",
-      "in_stock": true
+      "in_stock": false
     },
     {
       "filename": "blueberry-haze.html",
