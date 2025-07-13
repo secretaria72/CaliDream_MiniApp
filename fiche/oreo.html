@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,6 +43,22 @@
       max-width: 100%;
       border-radius: 12px;
       margin-bottom: 20px;
+    }
+
+    /* 👇 Bloc "En stock / Reviens bientôt" */
+    .stock {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .stock.in {
+      color: #00cc66;
+    }
+
+    .stock.out {
+      color: #cc3333;
     }
 
     .bloc-description {
@@ -119,9 +138,13 @@
     </div>
 
     <div class="bloc-description">
-      Oreo : Crémeuse et sucrée, effet lourd et posé.<br>
+Oreo : Crémeuse et sucrée, effet lourd et posé.<br>
       Un dessert californien à fumer.
+
     </div>
+
+    <!-- ✅ Bloc déplacé ici entre description et tarifs -->
+    <div id="stock-status" class="stock"></div>
 
     <div class="bloc-tarifs">
       <div class="tarifs-box">
@@ -129,7 +152,7 @@
         <div class="tarifs-grid">
           <div class="cell">3.5g<br><strong>50€</strong></div>
           <div class="cell">10g<br><strong>130€</strong></div>
-          <div class="cell">20g<br><strong>240€</strong></div>
+          <div class="cell">25g<br><strong>280€</strong></div>
           <div class="cell">50g<br><strong>500€</strong></div>
         </div>
       </div>
@@ -145,5 +168,7 @@
     <p>Cali Dream Mini App © 2025</p>
   </footer>
 
+  <!-- ✅ Script stock -->
+  <script src="../config/stock.js"></script>
 </body>
 </html>
