@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avis clients - Cali Dream</title>
-  <link rel="stylesheet" href="./css/style.css" />
+<!-- ... HEAD identique à avant ... -->
   <style>
     body {
       text-align: center;
@@ -24,18 +18,40 @@
       font-weight: bold;
       color: #00bfff;
       text-shadow: 0 0 6px red;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .avis-list {
+      margin: 20px auto;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      padding: 14px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+      max-width: 95%;
+    }
+
+    .avis-message {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 0;
+      font-size: 14px;
+      color: #cde9ff;
+    }
+
+    .avis-message:last-child {
+      border-bottom: none;
     }
 
     .avis-description {
       font-size: 15px;
       color: #cde9ff;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       line-height: 1.4;
     }
 
     .avis-input {
       width: 100%;
+      max-width: 90vw;
       height: 80px;
       padding: 10px;
       font-family: 'CalidreamFont', Arial, sans-serif;
@@ -62,31 +78,12 @@
       text-shadow: 0 0 4px red;
       filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.5));
       transition: transform 0.2s ease, background-color 0.3s ease;
+      max-width: 90vw;
     }
 
     .avis-send-btn:hover {
       background-color: rgba(0,191,255,0.2);
       transform: scale(1.05);
-    }
-
-    .avis-list {
-      margin-top: 30px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
-    }
-
-    .avis-message {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 10px 0;
-      font-size: 14px;
-      color: #cde9ff;
-    }
-
-    .avis-message:last-child {
-      border-bottom: none;
     }
 
     .back-button {
@@ -100,6 +97,12 @@
       cursor: pointer;
       z-index: 1002;
       text-shadow: 0 0 4px red;
+    }
+
+    @media (max-width: 480px) {
+      .avis-container {
+        padding: 14px;
+      }
     }
   </style>
 </head>
@@ -116,16 +119,20 @@
   <!-- Contenu central -->
   <div class="avis-container">
     <div class="avis-title">💬 Avis des clients</div>
-    <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
 
-    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
-    <button class="avis-send-btn">Envoyer</button>
-
+    <!-- ZONE DES AVIS déplacée ici -->
     <div class="avis-list">
       <div class="avis-message">@L***34 : Franchement top qualité 🔥</div>
       <div class="avis-message">@U**z19 : Livraison rapide et discrète 💼</div>
       <div class="avis-message">@J*** : Très satisfait, je recommande 💯</div>
     </div>
+
+    <!-- Explication texte -->
+    <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
+
+    <!-- Formulaire -->
+    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
+    <button class="avis-send-btn">Envoyer</button>
   </div>
 
 </body>
