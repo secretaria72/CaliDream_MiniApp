@@ -1,45 +1,61 @@
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Méthode non autorisée.' });
-  }
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
+app.use(cors());
+app.use(express.json());
+
+app.post('/api/send-avis', (req, res) => {
   const { username, message, date } = req.body;
 
   if (!username || !message) {
-    return res.status(400).json({ error: 'Données manquantes.' });
+    return res.status(400).json({ error: 'Données manquantes' });
   }
 
-  const token = '7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs'; // Remplace par ton vrai token (format : 123456789:AAxxx...)
-  const chatId = '-1008196735310'; // Remplace par ton chat ID (ex: -1001234567890)
+  const token = '7832206699:AAGYtL1W0D9PBvCfvRKv26AmJ9uajsiwurh8Fs';
+  const chatId = '1008196735310';
+  const text = `🗣 Nouvel avis reçu :\n\n👤 ${username}\n🕒 ${date}\n💬 ${message}`;
 
-  const text = `🗣 <b>Nouvel avis reçu</b>\n\n👤 <b>${username}</b>\n🕒 ${date}\n💬 ${message}`;
+  const https = require('https');
+  const data = JSON.stringify({
+    chat_id: chatId,
+    text,
+    parse_mode: 'HTML'
+  });
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-  const data = {
-    chat_id: chatId,
-    text: text,
-    parse_mode: 'HTML'
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(data)
+    }
   };
 
-  try {
-    const telegramResponse = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
+  const request = https.request(url, options, (response) => {
+    let responseData = '';
+    response.on('data', (chunk) => {
+      responseData += chunk;
     });
+    response.on('end', () => {
+      if (response.statusCode === 200) {
+        res.status(200).json({ success: true });
+      } else {
+        res.status(500).json({ error: 'Erreur Telegram', details: responseData });
+      }
+    });
+  });
 
-    const result = await telegramResponse.json();
+  request.on('error', (error) => {
+    res.status(500).json({ error: 'Erreur de requête', details: error.message });
+  });
 
-    if (!telegramResponse.ok) {
-      throw new Error(result.description || 'Erreur inconnue côté Telegram');
-    }
+  request.write(data);
+  request.end();
+});
 
-    return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error('Erreur lors de l’envoi à Telegram :', error.message);
-    return res.status(500).json({ error: 'Échec de l’envoi du message.' });
-  }
-}
+// Démarrage
+app.listen(3000, () => {
+  console.log('Serveur local démarré sur http://localhost:3000/api/send-avis');
+});
