@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,6 +41,22 @@
       max-width: 100%;
       border-radius: 12px;
       margin-bottom: 20px;
+    }
+
+    /* 👇 Bloc "En stock / Reviens bientôt" */
+    .stock {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .stock.in {
+      color: #00cc66;
+    }
+
+    .stock.out {
+      color: #cc3333;
     }
 
     .bloc-description {
@@ -119,18 +136,21 @@
     </div>
 
     <div class="bloc-description">
-      Plasma Static – Forbidden Garlic : explosion sucrée-épicée, effet massif et envoûtant.<br>
+            Plasma Static – Forbidden X Garlic : explosion sucrée-épicée, effet massif et envoûtant.<br>
       Saveur électrisante, détente abyssale. Pour connaisseurs exigeants.
     </div>
+
+    <!-- ✅ Bloc déplacé ici entre description et tarifs -->
+    <div id="stock-status" class="stock"></div>
 
     <div class="bloc-tarifs">
       <div class="tarifs-box">
         <h3>Grille tarifaire</h3>
         <div class="tarifs-grid">
-          <div class="cell">2.5g<br><strong>50€</strong></div>
-          <div class="cell">5g<br><strong>90€</strong></div>
-          <div class="cell">10g<br><strong>180€</strong></div>
-          <div class="cell">20g<br><strong>320€</strong></div>
+          <div class="cell">5g<br><strong>100€</strong></div>
+          <div class="cell">10g<br><strong>190€</strong></div>
+          <div class="cell">25g<br><strong>"400€</strong></div>
+          <div class="cell">50g<br><strong>790€</strong></div>
         </div>
       </div>
     </div>
@@ -145,5 +165,7 @@
     <p>Cali Dream Mini App © 2025</p>
   </footer>
 
+  <!-- ✅ Script stock -->
+  <script src="../config/stock.js"></script>
 </body>
 </html>
