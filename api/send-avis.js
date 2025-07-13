@@ -1,39 +1,45 @@
-// /api/send-avis.js
-module.exports = async (req, res) => {
-  if (req.method !== "POST") {
-    return res.status(405).json({ success: false, error: "Méthode non autorisée" });
-  }
-  const { message, username } = req.body;
-  if (!message || !username) {
-    return res.status(400).json({ success: false, error: "Données manquantes" });
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Méthode non autorisée.' });
   }
 
-  const BOT_TOKEN = "7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs";
-  const CHAT_ID = "-1002853283373"; // remplace avec l’ID exact du canal
+  const { username, message, date } = req.body;
 
-  const text = 💬 Nouvel avis de ${username} :\n\n${message};
+  if (!username || !message) {
+    return res.status(400).json({ error: 'Données manquantes.' });
+  }
+
+  const token = '7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs'; // Remplace par ton vrai token (format : 123456789:AAxxx...)
+  const chatId = '-1008196735310'; // Remplace par ton chat ID (ex: -1001234567890)
+
+  const text = `🗣 <b>Nouvel avis reçu</b>\n\n👤 <b>${username}</b>\n🕒 ${date}\n💬 ${message}`;
+
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+  const data = {
+    chat_id: chatId,
+    text: text,
+    parse_mode: 'HTML'
+  };
 
   try {
-    const response = await fetch(
-      https://api.telegram.org/bot${BOT_TOKEN}/sendMessage,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text,
-          parse_mode: "HTML"
-        }),
-      }
-    );
-    const data = await response.json();
-    if (data.ok) {
-      return res.status(200).json({ success: true });
-    } else {
-      return res.status(500).json({ success: false, error: data.description });
+    const telegramResponse = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await telegramResponse.json();
+
+    if (!telegramResponse.ok) {
+      throw new Error(result.description || 'Erreur inconnue côté Telegram');
     }
-  } catch (err) {
-    console.error("Erreur Telegram:", err);
-    return res.status(500).json({ success: false, error: "Erreur lors de l'envoi" });
+
+    return res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Erreur lors de l’envoi à Telegram :', error.message);
+    return res.status(500).json({ error: 'Échec de l’envoi du message.' });
   }
-};
+}
