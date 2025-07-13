@@ -8,6 +8,8 @@
   <style>
     body {
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
 
     .avis-container {
@@ -71,8 +73,9 @@
     }
 
     .avis-list {
-      max-height: 240px;
-      overflow-y: auto;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(6px);
       padding: 18px;
@@ -104,31 +107,18 @@
       text-shadow: 0 0 4px red;
     }
 
-    @media (max-width: 600px) {
-      .avis-container {
-        width: 90%;
-        padding: 10px;
-      }
-
-      .avis-title {
-        font-size: 22px;
-      }
-
-      .avis-input {
-        height: 70px;
-        font-size: 14px;
-      }
-
-      .avis-send-btn {
-        font-size: 14px;
-        padding: 8px 24px;
-      }
+    /* Logo */
+    header img {
+      max-width: 120px;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4));
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo flottant + effet miroir -->
+  <!-- Logo flottant -->
   <header>
     <img src="./img/logo.png" alt="Logo Cali Dream" />
   </header>
@@ -136,19 +126,22 @@
   <!-- Bouton retour -->
   <button class="back-button" onclick="window.history.back()">⟵</button>
 
-  <!-- Contenu central -->
+  <!-- Contenu -->
   <div class="avis-container">
     <div class="avis-title">💬 Avis des clients</div>
     <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
 
-    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
-    <button class="avis-send-btn">Envoyer</button>
+    <!-- Champ de saisie + bouton -->
+    <div style="max-width: 420px; margin: 0 auto;">
+      <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
+      <button class="avis-send-btn">Envoyer</button>
+    </div>
 
+    <!-- Bloc d’avis -->
     <div class="avis-list">
       <div class="avis-message">@L***34 : Franchement top qualité 🔥</div>
       <div class="avis-message">@U**z19 : Livraison rapide et discrète 💼</div>
       <div class="avis-message">@J*** : Très satisfait, je recommande 💯</div>
-      <!-- ... autres avis ajoutés automatiquement plus tard ... -->
     </div>
   </div>
 
