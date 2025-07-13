@@ -3,7 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const input = document.querySelector(".avis-input");
   const avisList = document.getElementById("avisList");
 
-  // Fonction pour masquer le @username partiellement
+  // Affiche le username récupéré (test debug)
+  const debug = document.createElement("div");
+  debug.style.position = "fixed";
+  debug.style.top = "10px";
+  debug.style.left = "10px";
+  debug.style.backgroundColor = "#2ecc71";
+  debug.style.color = "#fff";
+  debug.style.padding = "8px";
+  debug.style.borderRadius = "4px";
+  debug.style.zIndex = "9999";
+  debug.style.fontSize = "14px";
+
+  const username = window.Telegram?.WebApp?.initDataUnsafe?.user?.username;
+  debug.textContent = username ? @${username} : "❌ username non reçu";
+
+  document.body.appendChild(debug);
+
   function maskUsername(username) {
     if (!username  !username.startsWith('@')  username.length < 5) {
       return '@inconnu';
@@ -23,9 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const username = window.Telegram?.WebApp?.initDataUnsafe?.user?.username
-      ? "@" + window.Telegram.WebApp.initDataUnsafe.user.username
-      : "@inconnu";
+    const fullUsername = username ? @${username} : '@inconnu';
 
     try {
       const response = await fetch("https://cali-dream-mini-app.vercel.app/api/send-avis", {
@@ -33,14 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message, username }),
+        body: JSON.stringify({ message, username: fullUsername }),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        // Affichage immédiat (non permanent)
-        const masked = maskUsername(username);
+        const masked = maskUsername(fullUsername);
         const now = new Date();
         const dateStr = now.toLocaleString("fr-FR", {
           day: '2-digit', month: '2-digit', year: 'numeric',
