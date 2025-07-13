@@ -8,14 +8,11 @@
   <style>
     body {
       text-align: center;
-      margin: 0;
-      padding: 0;
     }
 
     .avis-container {
       margin-top: 140px;
       padding: 20px;
-      width: 100%;
       max-width: 480px;
       margin-left: auto;
       margin-right: auto;
@@ -74,7 +71,8 @@
     }
 
     .avis-list {
-      margin-bottom: 30px;
+      max-height: 240px;
+      overflow-y: auto;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(6px);
       padding: 18px;
@@ -106,20 +104,24 @@
       text-shadow: 0 0 4px red;
     }
 
-    /* ✅ Responsive */
     @media (max-width: 600px) {
       .avis-container {
-        padding: 15px;
-        margin-top: 120px;
+        width: 90%;
+        padding: 10px;
+      }
+
+      .avis-title {
+        font-size: 22px;
       }
 
       .avis-input {
         height: 70px;
+        font-size: 14px;
       }
 
       .avis-send-btn {
-        padding: 10px 25px;
         font-size: 14px;
+        padding: 8px 24px;
       }
     }
   </style>
@@ -137,19 +139,17 @@
   <!-- Contenu central -->
   <div class="avis-container">
     <div class="avis-title">💬 Avis des clients</div>
+    <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
+
+    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
+    <button class="avis-send-btn">Envoyer</button>
 
     <div class="avis-list">
       <div class="avis-message">@L***34 : Franchement top qualité 🔥</div>
       <div class="avis-message">@U**z19 : Livraison rapide et discrète 💼</div>
       <div class="avis-message">@J*** : Très satisfait, je recommande 💯</div>
+      <!-- ... autres avis ajoutés automatiquement plus tard ... -->
     </div>
-
-    <div class="avis-description">
-      Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.
-    </div>
-
-    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
-    <button class="avis-send-btn">Envoyer</button>
   </div>
 
 </body>
