@@ -1,8 +1,8 @@
-
 @font-face {
   font-family: 'CalidreamFont';
   src: url('../fonts/calidream.woff2') format('woff2');
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +12,7 @@ body {
   position: relative;
   z-index: 0;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -23,6 +24,7 @@ body::before {
   background-size: cover;
   z-index: -1;
 }
+
 header {
   position: fixed;
   top: 0;
@@ -36,11 +38,32 @@ header {
   align-items: center;
   z-index: 1000;
 }
+
 header img {
   height: 80px;
   filter: drop-shadow(0 0 6px #00bfff);
   transform: translateY(-10px);
 }
+
+/* ✅ Bouton 💬 à droite du logo flottant */
+#avis-button {
+  position: absolute;
+  bottom: 10px;
+  right: 12vw;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #a0cfff;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(0, 191, 255, 0.7));
+  transition: transform 0.2s ease;
+  z-index: 1001;
+}
+
+#avis-button:hover {
+  transform: scale(1.15);
+}
+
 header::after {
   content: '';
   position: absolute;
@@ -51,6 +74,7 @@ header::after {
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
   pointer-events: none;
 }
+
 main {
   margin-top: 140px;
   max-width: 960px;
@@ -61,6 +85,7 @@ main {
   grid-template-columns: repeat(auto-fill,minmax(45%,1fr));
   grid-gap: 20px;
 }
+
 .product-card {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
@@ -69,10 +94,12 @@ main {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #00ffff;
 }
+
 .product-card img {
   width: 100%;
   height: 180px;
@@ -80,13 +107,16 @@ main {
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
 .product-info {
   font-size: 14px;
   color: #cde9ff;
 }
+
 .product-info strong {
   color: #00bfff;
 }
+
 footer {
   margin-top: 40px;
   text-align: center;
@@ -94,11 +124,18 @@ footer {
   font-size: 12px;
   padding-bottom: 20px;
 }
+
 @media (max-width: 600px) {
   main {
     grid-template-columns: repeat(auto-fill,minmax(90%,1fr));
   }
+
+  #avis-button {
+    right: 8vw;
+    bottom: 8px;
+  }
 }
+
 /* Bloc état de stock (dynamique) */
 .stock {
   text-align: center;
@@ -106,9 +143,11 @@ footer {
   font-weight: bold;
   margin: 20px auto;
 }
+
 .stock.in {
   color: #00cc66;
 }
+
 .stock.out {
   color: #cc3333;
 }
