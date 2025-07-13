@@ -19,6 +19,9 @@
       margin-left: auto;
       margin-right: auto;
       color: #a0cfff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .avis-title {
@@ -34,6 +37,16 @@
       color: #cde9ff;
       margin-bottom: 22px;
       line-height: 1.4;
+      max-width: 420px;
+    }
+
+    .avis-input-wrapper {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .avis-input {
@@ -64,7 +77,6 @@
       text-shadow: 0 0 4px red;
       filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.5));
       transition: transform 0.2s ease, background-color 0.3s ease;
-      margin-bottom: 20px;
     }
 
     .avis-send-btn:hover {
@@ -75,7 +87,6 @@
     .avis-list {
       width: 100%;
       max-width: 420px;
-      margin: 0 auto;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(6px);
       padding: 18px;
@@ -107,7 +118,6 @@
       text-shadow: 0 0 4px red;
     }
 
-    /* Logo */
     header img {
       max-width: 120px;
       margin: 0 auto;
@@ -131,9 +141,9 @@
     <div class="avis-title">💬 Avis des clients</div>
     <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
 
-    <!-- Champ de saisie + bouton -->
-    <div style="max-width: 420px; margin: 0 auto;">
-      <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
+    <!-- Zone saisie -->
+    <div class="avis-input-wrapper">
+      <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea>
       <button class="avis-send-btn">Envoyer</button>
     </div>
 
