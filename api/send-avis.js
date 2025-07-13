@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const https = require('https');
 
 app.use(cors());
 app.use(express.json());
@@ -8,7 +9,7 @@ app.use(express.json());
 app.post('/api/send-avis', (req, res) => {
   const { username, message, date } = req.body;
 
-  if (!username || !message) {
+  if (!username || !message || !date) {
     return res.status(400).json({ error: 'Données manquantes' });
   }
 
@@ -16,7 +17,6 @@ app.post('/api/send-avis', (req, res) => {
   const chatId = '1008196735310';
   const text = `🗣 Nouvel avis reçu :\n\n👤 ${username}\n🕒 ${date}\n💬 ${message}`;
 
-  const https = require('https');
   const data = JSON.stringify({
     chat_id: chatId,
     text,
@@ -55,7 +55,7 @@ app.post('/api/send-avis', (req, res) => {
   request.end();
 });
 
-// Démarrage
+// Lancement du serveur
 app.listen(3000, () => {
-  console.log('Serveur local démarré sur http://localhost:3000/api/send-avis');
+  console.log('✅ Serveur local démarré sur http://localhost:3000/api/send-avis');
 });
