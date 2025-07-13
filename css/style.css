@@ -61,13 +61,13 @@ header::after {
   position: absolute;
   bottom: 10px;
   right: 12vw;
-  font-size: 24px;
+  font-size: 22px;
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid #00bfff;
   border-radius: 50%;
   color: #00bfff;
   text-shadow: 0 0 4px red;
-  padding: 8px;
+  padding: 6px;
   cursor: pointer;
   filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -77,6 +77,11 @@ header::after {
 #avis-button:hover {
   transform: scale(1.15);
   background-color: rgba(0, 191, 255, 0.1);
+}
+
+#avis-button:active {
+  transform: scale(0.95);
+  background-color: rgba(0, 191, 255, 0.25);
 }
 
 main {
