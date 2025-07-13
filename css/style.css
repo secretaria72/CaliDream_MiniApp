@@ -31,7 +31,7 @@ header {
   left: 0;
   right: 0;
   height: 120px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
@@ -61,13 +61,13 @@ header::after {
   position: absolute;
   bottom: 10px;
   right: 12vw;
-  font-size: 22px;
+  font-size: 20px;
   background-color: transparent;
   border: 2px solid #00bfff;
   border-radius: 50%;
   color: #00bfff;
   text-shadow: 0 0 4px red;
-  padding: 6px;
+  padding: 5px;
   cursor: pointer;
   filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -75,8 +75,8 @@ header::after {
 }
 
 #avis-button:hover {
-  transform: scale(1.15);
-  background-color: rgba(0, 191, 255, 0.1);
+  transform: scale(1.1);
+  background-color: rgba(0, 191, 255, 0.08);
 }
 
 #avis-button:active {
@@ -91,7 +91,7 @@ main {
   margin-right: auto;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(45%,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
   grid-gap: 20px;
 }
 
@@ -134,15 +134,21 @@ footer {
   padding-bottom: 20px;
 }
 
-/* ✅ FIX POUR GARDER LA GRILLE 2x2 MÊME SUR MOBILE */
+/* ✅ Responsive pour mobile */
 @media (max-width: 600px) {
   main {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Force 2 colonnes */
+    grid-gap: 14px;
+    padding: 8px;
   }
 
   #avis-button {
     right: 8vw;
     bottom: 8px;
+  }
+
+  .product-card img {
+    height: 160px;
   }
 }
 
