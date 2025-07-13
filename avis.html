@@ -7,15 +7,49 @@
   <link rel="stylesheet" href="./css/style.css" />
   <style>
     body {
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-family: 'CalidreamFont', Arial, sans-serif;
+      background: url('./img/fond_static.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      margin-top: 20px;
+    }
+
+    header img {
+      max-width: 220px;
+      height: auto;
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+    }
+
+    .back-button {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      font-size: 24px;
+      color: #00bfff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1002;
+      text-shadow: 0 0 4px red;
     }
 
     .avis-container {
-      margin-top: 140px;
-      padding: 20px;
+      width: 90%;
       max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.1);
+      text-align: center;
       color: #a0cfff;
     }
 
@@ -34,11 +68,29 @@
       line-height: 1.4;
     }
 
+    .avis-list {
+      margin-bottom: 22px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 14px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
+    }
+
+    .avis-message {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 0;
+      font-size: 14px;
+      color: #cde9ff;
+    }
+
+    .avis-message:last-child {
+      border-bottom: none;
+    }
+
     .avis-input {
       width: 100%;
       height: 80px;
       padding: 10px;
-      font-family: 'CalidreamFont', Arial, sans-serif;
       font-size: 15px;
       border: 2px solid #00bfff;
       border-radius: 10px;
@@ -69,63 +121,56 @@
       transform: scale(1.05);
     }
 
-    .avis-list {
-      margin-top: 30px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
-    }
+    @media screen and (max-width: 480px) {
+      .avis-container {
+        padding: 16px;
+      }
 
-    .avis-message {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 10px 0;
-      font-size: 14px;
-      color: #cde9ff;
-    }
+      .avis-title {
+        font-size: 22px;
+      }
 
-    .avis-message:last-child {
-      border-bottom: none;
-    }
+      .avis-description {
+        font-size: 14px;
+      }
 
-    .back-button {
-      position: fixed;
-      top: 14px;
-      left: 14px;
-      font-size: 24px;
-      color: #00bfff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1002;
-      text-shadow: 0 0 4px red;
+      .avis-input {
+        font-size: 14px;
+      }
+
+      .avis-send-btn {
+        font-size: 14px;
+        padding: 8px 24px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo flottant + effet miroir -->
+  <!-- Bouton retour -->
+  <button class="back-button" onclick="window.history.back()">⟵</button>
+
+  <!-- Logo -->
   <header>
     <img src="./img/logo.png" alt="Logo Cali Dream" />
   </header>
 
-  <!-- Bouton retour -->
-  <button class="back-button" onclick="window.history.back()">⟵</button>
-
   <!-- Contenu central -->
   <div class="avis-container">
     <div class="avis-title">💬 Avis des clients</div>
-    <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
-
-    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
-    <button class="avis-send-btn">Envoyer</button>
 
     <div class="avis-list">
       <div class="avis-message">@L***34 : Franchement top qualité 🔥</div>
       <div class="avis-message">@U**z19 : Livraison rapide et discrète 💼</div>
       <div class="avis-message">@J*** : Très satisfait, je recommande 💯</div>
     </div>
+
+    <div class="avis-description">
+      Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.
+    </div>
+
+    <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea><br>
+    <button class="avis-send-btn">Envoyer</button>
   </div>
 
 </body>
