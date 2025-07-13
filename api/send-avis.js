@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     const { message, username } = req.body;
 
     const botToken = '7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs';
-    const chatId = '8196735310';
+    const channelId = '-1002853283373'; // ✅ Ton canal privé
 
     const text = 📝 Nouvel avis client\n👤 @${username}\n💬 ${message};
 
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: chatId,
+          chat_id: channelId,
           text: text,
           parse_mode: 'Markdown',
         }),
@@ -25,9 +25,11 @@ export default async function handler(req, res) {
       if (data.ok) {
         res.status(200).json({ success: true });
       } else {
+        console.error('Erreur Telegram:', data);
         res.status(500).json({ success: false, error: data });
       }
     } catch (error) {
+      console.error('Erreur serveur:', error);
       res.status(500).json({ success: false, error: error.message });
     }
   } else {
