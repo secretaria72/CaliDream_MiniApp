@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wedding Cake DrySift 120u - Fiche produit</title>
+  <title>Weeding Cake DrySift 120u - Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     body {
@@ -40,6 +40,22 @@
       max-width: 100%;
       border-radius: 12px;
       margin-bottom: 20px;
+    }
+
+    /* 👇 Bloc "En stock / Reviens bientôt" */
+    .stock {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px auto;
+    }
+
+    .stock.in {
+      color: #00cc66;
+    }
+
+    .stock.out {
+      color: #cc3333;
     }
 
     .bloc-description {
@@ -119,15 +135,18 @@
     </div>
 
     <div class="bloc-description">
-      Wedding Cake 120U : Gâteau vanillé, touche sucrée.<br>
+            Wedding Cake 120U : Gâteau vanillé, touche sucrée.<br>
       Effet rond, euphorie douce, confort absolu.
     </div>
+
+    <!-- ✅ Bloc déplacé ici entre description et tarifs -->
+    <div id="stock-status" class="stock"></div>
 
     <div class="bloc-tarifs">
       <div class="tarifs-box">
         <h3>Grille tarifaire</h3>
         <div class="tarifs-grid">
-          <div class="cell">5g<br><strong>70€</strong></div>
+          <div class="cell">5g<br><strong>60€</strong></div>
           <div class="cell">10g<br><strong>110€</strong></div>
           <div class="cell">25g<br><strong>250€</strong></div>
           <div class="cell">50g<br><strong>400€</strong></div>
@@ -145,5 +164,7 @@
     <p>Cali Dream Mini App © 2025</p>
   </footer>
 
+  <!-- ✅ Script stock -->
+  <script src="../config/stock.js"></script>
 </body>
 </html>
