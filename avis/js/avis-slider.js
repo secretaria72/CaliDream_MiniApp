@@ -1,22 +1,21 @@
-const images = [];
-let index = 0;
+const imageFolder = 'img/';
+let currentIndex = 1;
+const totalImages = 20; // tu peux augmenter ce nombre selon les fichiers présents
 
-// Charger automatiquement les images depuis le dossier img/
-for (let i = 1; i <= 20; i++) {
-  const imgPath = img/${i}.jpg;
-  images.push(imgPath);
-}
-
-const slider = document.getElementById("sliderImage");
+const sliderImage = document.getElementById('sliderImage');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
 function updateImage() {
-  slider.src = images[index];
+  sliderImage.src = ${imageFolder}${currentIndex}.jpg;
 }
 
-function changeImage(direction) {
-  index = (index + direction + images.length) % images.length;
+prevBtn.addEventListener('click', () => {
+  currentIndex = currentIndex <= 1 ? totalImages : currentIndex - 1;
   updateImage();
-}
+});
 
-document.getElementById("prevBtn").addEventListener("click", () => changeImage(-1));
-document.getElementById("nextBtn").addEventListener("click", () => changeImage(1));
+nextBtn.addEventListener('click', () => {
+  currentIndex = currentIndex >= totalImages ? 1 : currentIndex + 1;
+  updateImage();
+});
