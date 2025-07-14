@@ -168,3 +168,92 @@ footer {
 .stock.out {
   color: #cc3333;
 }
+
+
+/* ✅ Bouton retour premium (comme dans vitrine) */
+.back-button-premium {
+  position: absolute;
+  left: 12px;
+  top: 20px;
+  font-size: 26px;
+  color: #00bfff;
+  text-shadow: 0 0 4px red;
+  background: transparent;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  padding: 4px 12px;
+  text-decoration: none;
+  z-index: 1001;
+  filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.back-button-premium:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 191, 255, 0.08);
+}
+
+/* ✅ Slider avis */
+.avis-slider {
+  margin-top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 20px;
+  text-align: center;
+}
+
+#viewer {
+  max-width: 90vw;
+  max-height: 60vh;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  box-shadow: 0 0 15px #00bfff;
+}
+
+#viewer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.arrow {
+  font-size: 40px;
+  color: #00bfff;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+}
+
+.page-text {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #a0cfff;
+  line-height: 1.4;
+}
+
+/* ✅ Responsive flèches et layout */
+@media (max-width: 600px) {
+  .arrow {
+    font-size: 36px;
+  }
+
+  #viewer {
+    max-width: 100%;
+  }
+
+  .page-text {
+    font-size: 14px;
+    margin: 10px auto 0;
+    padding: 0 10px;
+  }
+}
+
