@@ -2,160 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Avis clients - Cali Dream</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: url('../img/fond.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: Arial, sans-serif;
-      color: #a0cfff;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    header img {
-      height: 60px;
-      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.5));
-    }
-
-    .back-button {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      font-size: 24px;
-      color: #00bfff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
-      text-shadow: 0 0 4px red;
-    }
-
-    .avis-text {
-      position: absolute;
-      top: 110px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 14px;
-      color: #cde9ff;
-      padding: 0 20px;
-      text-shadow: 0 0 4px rgba(0,0,0,0.4);
-    }
-
-    main {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    #viewer {
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 2px solid #00bfff;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    #viewer img {
-      max-width: 100%;
-      max-height: 100%;
-      border-radius: 8px;
-    }
-
-    .arrow {
-      position: absolute;
-      font-size: 36px;
-      color: #00bfff;
-      cursor: pointer;
-      z-index: 5;
-      user-select: none;
-      background: rgba(0,0,0,0.3);
-      padding: 10px 15px;
-      border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    #prevBtn {
-      left: calc(50% - 190px);
-    }
-
-    #nextBtn {
-      right: calc(50% - 190px);
-    }
-
-    @media screen and (max-width: 600px) {
-      header img {
-        height: 50px;
-      }
-
-      .arrow {
-        font-size: 28px;
-        padding: 8px 12px;
-      }
-
-      #viewer {
-        width: 280px;
-        height: 280px;
-      }
-
-      #prevBtn {
-        left: 10px;
-      }
-
-      #nextBtn {
-        right: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./css/avis-style.css" />
 </head>
 <body>
 
-  <header>
-    <button class="back-button" onclick="window.location.href='../index.html'">⟵</button>
-    <img src="../img/logo.png" alt="Logo Cali Dream" />
-  </header>
+<header class="floating-header">
+  <a href="../index.html" class="back-button">←</a>
+  <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
+</header>
 
-  <div class="avis-text">
-    Dans cette page, vous trouverez quelques retours clients. N’hésitez pas à nous envoyer le vôtre : cela aidera les nouveaux arrivants à mieux comprendre notre univers.
-  </div>
+<main>
+  <p class="intro-text">
+    Vous trouverez ici quelques retours clients. N’hésitez pas à nous envoyer le vôtre — cela aide les nouveaux à mieux s’intégrer dans l’univers Cali Dream.
+  </p>
 
-  <main>
-    <div id="viewer">
-      <img src="img/1.jpg" id="sliderImage" alt="Avis client">
-    </div>
+  <div class="photo-wrapper">
     <span class="arrow" id="prevBtn">&#10094;</span>
+    <div id="viewer">
+      <img src="./img/1.jpg" id="sliderImage" alt="Avis client" />
+    </div>
     <span class="arrow" id="nextBtn">&#10095;</span>
-  </main>
+  </div>
+</main>
 
-  <script src="js/avis-slider.js"></script>
+<script src="./js/avis-slider.js"></script>
 </body>
 </html>
