@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avis - Cali Dream</title>
+  <title>Avis clients – Cali Dream</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-  <header class="floating-header">
-    <button class="back-button" onclick="window.location.href='../index.html'">←</button>
-    <img src="../img/logo.png" alt="Logo Cali Dream" class="logo" />
-    <div class="intro">
-      <p>
-        Dans cette page, vous trouverez des retours clients ; n'hésitez pas à nous envoyer un retour, cela facilitera l’approche des nouveaux arrivants. 🌟
-      </p>
-    </div>
+  <header>
+    <a href="../index.html" class="back-button">←</a>
+    <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
-  <main class="avis-main">
+  <div class="page-text">
+    Vous trouverez ici les retours clients. N’hésitez pas à nous laisser le vôtre ; cela aidera les nouveaux arrivants.
+  </div>
+
+  <main>
     <div id="viewer">
-      <img id="avisImage" src="./img/1.jpg" alt="Avis client" />
-      <button id="prev" class="nav-arrow">‹</button>
-      <button id="next" class="nav-arrow">›</button>
+      <img src="img/1.jpg" id="sliderImage" alt="Avis client" />
     </div>
+    <span class="arrow" id="prevBtn">&#10094;</span>
+    <span class="arrow" id="nextBtn">&#10095;</span>
   </main>
 
-  <script src="./js/avis-slider.js"></script>
+  <script src="js/avis-slider.js"></script>
 </body>
 </html>
