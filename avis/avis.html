@@ -2,101 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device‑width, initial‑scale=1" />
-  <title>Avis clients – Cali Dream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avis - Cali Dream</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: url('../img/fond.jpg') no‑repeat center center fixed;
-      background-size: cover;
-    }
-    header {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: 120px;
-      backdrop-filter: blur(10px);
-      background-color: rgba(0,0,0,0.4);
-      display: flex; justify-content: center; align-items: center;
-      z-index: 1000;
-    }
-    header img {
-      max-height: 80px;
-      filter: drop-shadow(0 0 6px rgba(0,191,255,0.4));
-    }
-    .back-button {
-      position: fixed; top: 15px; left: 15px;
-      font-size: 24px; color: #00bfff;
-      background: rgba(0,0,0,0.3);
-      padding: 5px 10px; border: none; border-radius: 8px;
-      cursor: pointer; z-index: 1001;
-    }
-    main {
-      height: 100vh;
-      display: flex; justify-content: center; align-items: center;
-      position: relative;
-    }
-    #viewer {
-      width: 80vmin; height: 80vmin;
-      max-width: 400px; max-height: 400px;
-      background: rgba(255,255,255,0.08);
-      border: 2px solid #00bfff;
-      border-radius: 12px;
-      backdrop-filter: blur(6px);
-      display: flex; justify-content: center; align-items: center;
-      overflow: hidden;
-    }
-    #viewer img {
-      max-width: 100%; max-height: 100%;
-      border-radius: 8px;
-    }
-    .arrow {
-      position: absolute;
-      font-size: 36px; color: #00bfff;
-      cursor: pointer;
-      user-select: none;
-      background: rgba(0,0,0,0.3);
-      padding: 8px 12px;
-      border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1002;
-    }
-    #prevBtn { left: calc(50% - 40vmin); } 
-    #nextBtn { right: calc(50% - 40vmin); }
-    @media(max-width:600px){
-      .arrow { font-size:28px; padding:6px 10px; }
-      #viewer { width:90vmin; height:90vmin; }
-    }
-    .intro-text {
-      position: absolute;
-      top: 140px;
-      width: 90%;
-      max-width: 420px;
-      text-align: center;
-      color: #a0cfff;
-      font-size: 15px;
-      line-height:1.4;
-      z-index: 1001;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <img src="../img/logo.png" alt="Cali Dream Logo" />
-    <button class="back-button" onclick="window.history.back()">←</button>
+  <header class="floating-header">
+    <button class="back-button" onclick="window.location.href='../index.html'">←</button>
+    <img src="../img/logo.png" alt="Logo Cali Dream" class="logo" />
+    <div class="intro">
+      <p>
+        Dans cette page, vous trouverez des retours clients ; n'hésitez pas à nous envoyer un retour, cela facilitera l’approche des nouveaux arrivants. 🌟
+      </p>
+    </div>
   </header>
 
-  <div class="intro-text">
-    Dans cette page, vous trouverez des retours clients ; n’hésitez pas à nous en envoyer un, cela facilitera l’approche des nouveaux arrivants. 🌟
-  </div>
-
-  <main>
-    <div id="viewer"><img src="img/1.jpg" id="sliderImage" alt="Avis client" /></div>
-    <span class="arrow" id="prevBtn">&#10094;</span>
-    <span class="arrow" id="nextBtn">&#10095;</span>
+  <main class="avis-main">
+    <div id="viewer">
+      <img id="avisImage" src="./img/1.jpg" alt="Avis client" />
+      <button id="prev" class="nav-arrow">‹</button>
+      <button id="next" class="nav-arrow">›</button>
+    </div>
   </main>
 
-  <script src="js/avis-slider.js"></script>
+  <script src="./js/avis-slider.js"></script>
 </body>
 </html>
