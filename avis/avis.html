@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Avis clients - Cali Dream</title>
-  <link rel="stylesheet" href="../css/avis-style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="avis-style.css" />
 </head>
 <body>
 
@@ -16,14 +17,14 @@
   <!-- Bouton retour -->
   <button class="back-button" onclick="window.history.back()">⟵</button>
 
-  <!-- Cadre photo centré -->
-  <div class="photo-frame">
-    <img id="photoAvis" src="img/avis1.jpg" alt="Avis client" />
+  <!-- Conteneur central de la photo -->
+  <div class="avis-slider-container">
+    <button class="arrow-button left" onclick="changeImage(-1)">❮</button>
+    <div class="avis-glass-frame">
+      <img id="sliderImage" src="img/1.jpg" alt="Avis client" />
+    </div>
+    <button class="arrow-button right" onclick="changeImage(1)">❯</button>
   </div>
-
-  <!-- Flèches de navigation -->
-  <button class="arrow left" onclick="changerImage(-1)">‹</button>
-  <button class="arrow right" onclick="changerImage(1)">›</button>
 
   <script src="js/avis-slider.js"></script>
 </body>
