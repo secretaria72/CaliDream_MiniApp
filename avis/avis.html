@@ -9,7 +9,8 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      background: url('../img/fond.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #a0cfff;
       font-family: 'Arial', sans-serif;
     }
@@ -32,99 +33,6 @@
     header img {
       max-height: 80px;
       filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4));
-    }
-
-    .avis-container {
-      margin-top: 140px;
-      padding: 20px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .avis-title {
-      font-size: 26px;
-      font-weight: bold;
-      color: #00bfff;
-      text-shadow: 0 0 6px red;
-      margin-bottom: 8px;
-    }
-
-    .avis-description {
-      font-size: 15px;
-      color: #cde9ff;
-      margin-bottom: 22px;
-      line-height: 1.4;
-      text-align: center;
-      max-width: 420px;
-    }
-
-    .avis-input-wrapper {
-      width: 100%;
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .avis-input {
-      width: 100%;
-      height: 80px;
-      padding: 10px;
-      font-size: 15px;
-      border: 2px solid #00bfff;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #a0cfff;
-      resize: none;
-      box-shadow: 0 0 6px rgba(0, 191, 255, 0.3);
-      margin-bottom: 14px;
-    }
-
-    .avis-send-btn {
-      display: inline-block;
-      padding: 10px 30px;
-      font-size: 15px;
-      font-weight: bold;
-      background-color: rgba(0, 191, 255, 0.1);
-      border: 2px solid #00bfff;
-      border-radius: 8px;
-      color: #00bfff;
-      cursor: pointer;
-      text-shadow: 0 0 4px red;
-      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.5));
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
-
-    .avis-send-btn:hover {
-      background-color: rgba(0,191,255,0.2);
-      transform: scale(1.05);
-    }
-
-    .avis-list {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
-    }
-
-    .avis-message {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 10px 0;
-      font-size: 14px;
-      color: #cde9ff;
-      word-break: break-word;
-    }
-
-    .avis-message:last-child {
-      border-bottom: none;
     }
 
     .back-button {
@@ -151,23 +59,5 @@
   <!-- Bouton retour -->
   <button class="back-button" onclick="window.history.back()">⟵</button>
 
-  <!-- Contenu principal -->
-  <div class="avis-container">
-    <div class="avis-title">💬 Avis des clients</div>
-    <div class="avis-description">Merci de laisser un avis pour faciliter la tâche aux nouveaux arrivants.</div>
-
-    <!-- Zone saisie -->
-    <div class="avis-input-wrapper">
-      <textarea class="avis-input" maxlength="150" placeholder="Écris ton avis ici..."></textarea>
-      <button class="avis-send-btn">Envoyer</button>
-    </div>
-
-    <!-- Bloc d’avis -->
-    <div class="avis-list" id="avisList">
-      <!-- Les avis s’afficheront ici -->
-    </div>
-  </div>
-
-  <script src="js/avis.js"></script>
 </body>
 </html>
