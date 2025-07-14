@@ -16,11 +16,16 @@
 
     header {
       position: fixed;
-      top: 10px;
+      top: 0;
       left: 0;
       right: 0;
-      text-align: center;
-      z-index: 10;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 100;
     }
 
     .floating-logo {
@@ -29,26 +34,28 @@
     }
 
     .back-button {
-      position: fixed;
-      top: 15px;
-      left: 15px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
       font-size: 24px;
       color: white;
       text-decoration: none;
       background: rgba(0,0,0,0.3);
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 8px;
-      z-index: 11;
+      z-index: 110;
     }
 
-    .avis-intro {
-      margin-top: 90px;
+    .info-text {
+      position: absolute;
+      top: 110px;
+      left: 0;
+      right: 0;
       text-align: center;
       color: white;
       font-size: 15px;
       padding: 0 20px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.8);
-      font-weight: 400;
+      z-index: 1;
     }
 
     main {
@@ -57,6 +64,8 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      padding-top: 40px;
+      box-sizing: border-box;
     }
 
     #viewer {
@@ -71,6 +80,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      z-index: 1;
     }
 
     #viewer img {
@@ -84,19 +94,21 @@
       font-size: 36px;
       color: #00bfff;
       cursor: pointer;
-      z-index: 5;
+      z-index: 2;
       user-select: none;
       background: rgba(0,0,0,0.3);
       padding: 10px 15px;
       border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     #prevBtn {
-      left: 20px;
+      left: calc(50% - 180px); /* légèrement en dehors du cadre */
     }
 
     #nextBtn {
-      right: 20px;
+      right: calc(50% - 180px);
     }
 
     @media screen and (max-width: 600px) {
@@ -109,14 +121,21 @@
         height: 50px;
       }
 
-      .avis-intro {
-        font-size: 13px;
-        margin-top: 80px;
+      #viewer {
+        width: 260px;
+        height: 260px;
       }
 
-      #viewer {
-        width: 280px;
-        height: 280px;
+      #prevBtn {
+        left: calc(50% - 160px);
+      }
+
+      #nextBtn {
+        right: calc(50% - 160px);
+      }
+
+      .info-text {
+        font-size: 13px;
       }
     }
   </style>
@@ -127,10 +146,10 @@
     <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
-  <p class="avis-intro">
-    Vous trouverez ici divers retours de nos clients.  
+  <div class="info-text">
+    Vous trouverez ici divers retours de nos clients.<br>
     N'hésitez pas à nous envoyer le vôtre, cela aidera les nouveaux arrivants à se faire une idée plus claire de notre univers.
-  </p>
+  </div>
 
   <main>
     <div id="viewer">
