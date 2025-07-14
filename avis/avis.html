@@ -12,6 +12,7 @@
       background: url('../img/fond.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
+      color: #cde9ff;
     }
 
     header {
@@ -20,43 +21,46 @@
       left: 0;
       right: 0;
       height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 10px;
-      backdrop-filter: blur(10px);
       background: rgba(0, 0, 0, 0.4);
-      z-index: 100;
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .floating-logo {
-      height: 55px;
-      filter: drop-shadow(0 0 6px #000);
+      height: 60px;
+      filter: drop-shadow(0 0 6px rgba(0,191,255,0.4));
     }
 
     .back-button {
-      position: absolute;
-      top: 18px;
-      left: 18px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
       font-size: 24px;
-      color: white;
-      text-decoration: none;
-      background: rgba(0,0,0,0.3);
+      color: #00bfff;
+      background: rgba(0, 0, 0, 0.5);
       padding: 6px 12px;
       border-radius: 8px;
-      z-index: 110;
+      z-index: 11;
+      text-decoration: none;
+      text-shadow: 0 0 4px red;
     }
 
-    .info-text {
+    .avis-description {
       position: absolute;
       top: 110px;
       left: 0;
       right: 0;
       text-align: center;
-      color: white;
-      font-size: 15px;
+      font-size: 14px;
+      color: #cde9ff;
       padding: 0 20px;
-      z-index: 1;
+      max-width: 460px;
+      margin: 0 auto;
+      text-shadow: 0 0 4px black;
     }
 
     main {
@@ -65,7 +69,6 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      box-sizing: border-box;
     }
 
     #viewer {
@@ -80,7 +83,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      z-index: 1;
+      position: relative;
     }
 
     #viewer img {
@@ -94,7 +97,7 @@
       font-size: 36px;
       color: #00bfff;
       cursor: pointer;
-      z-index: 2;
+      z-index: 5;
       user-select: none;
       background: rgba(0,0,0,0.3);
       padding: 10px 15px;
@@ -104,11 +107,11 @@
     }
 
     #prevBtn {
-      left: calc(50% - 180px);
+      left: calc(50% - 190px);
     }
 
     #nextBtn {
-      right: calc(50% - 180px);
+      right: calc(50% - 190px);
     }
 
     @media screen and (max-width: 600px) {
@@ -118,7 +121,7 @@
       }
 
       .floating-logo {
-        height: 45px;
+        height: 50px;
       }
 
       #viewer {
@@ -127,33 +130,36 @@
       }
 
       #prevBtn {
-        left: calc(50% - 160px);
+        left: calc(50% - 170px);
       }
 
       #nextBtn {
-        right: calc(50% - 160px);
+        right: calc(50% - 170px);
       }
 
-      .info-text {
+      .avis-description {
+        top: 105px;
         font-size: 13px;
+        padding: 0 12px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Barre flottante identique à la vitrine -->
+  <!-- Barre flottante -->
   <header>
-    <a href="../index.html" class="back-button">←</a>
     <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
+  <!-- Bouton retour -->
+  <a href="../index.html" class="back-button">←</a>
+
   <!-- Texte explicatif -->
-  <div class="info-text">
-    Vous trouverez ici divers retours de nos clients.<br>
-    N'hésitez pas à nous envoyer le vôtre, cela aidera les nouveaux arrivants à se faire une idée plus claire de notre univers.
+  <div class="avis-description">
+    Dans cette page, vous trouverez divers retours clients. N’hésitez pas à nous envoyer le vôtre : cela aide les nouveaux arrivants à se faire une idée.
   </div>
 
-  <!-- Affichage photo + flèches -->
+  <!-- Affichage des avis en image -->
   <main>
     <div id="viewer">
       <img src="img/1.jpg" id="sliderImage" alt="Avis client">
