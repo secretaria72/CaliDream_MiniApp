@@ -1,7 +1,7 @@
 const imageList = [];
 let currentImage = 0;
 
-// Auto-chargement de toutes les images dans /avis/img/ nommées 1.jpg, 2.jpg, etc.
+// Charge automatiquement les images numérotées dans avis/img/
 for (let i = 1; i <= 20; i++) {
   imageList.push(`img/${i}.jpg`);
 }
