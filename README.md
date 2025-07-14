@@ -1,2 +1,0 @@
-# CaliDream_MiniApp
-
