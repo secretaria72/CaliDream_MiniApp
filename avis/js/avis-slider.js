@@ -1,21 +1,28 @@
-const imageFolder = 'img/';
-let currentIndex = 1;
-const totalImages = 20; // tu peux augmenter ce nombre selon les fichiers présents
+const slider = document.getElementById("sliderImage");
+const folder = "img/";
+let index = 1;
+let max = 1;
 
-const sliderImage = document.getElementById('sliderImage');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-function updateImage() {
-  sliderImage.src = ${imageFolder}${currentIndex}.jpg;
+// Détecte combien d'images il y a dans le dossier (jusqu'à 99 max)
+for (let i = 1; i <= 99; i++) {
+  const img = new Image();
+  img.src = ${folder}${i}.jpg;
+  img.onload = () => {
+    if (i > max) max = i;
+  };
+  img.onerror = () => {};
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = currentIndex <= 1 ? totalImages : currentIndex - 1;
-  updateImage();
-});
+function updateImage() {
+  slider.src = ${folder}${index}.jpg;
+}
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = currentIndex >= totalImages ? 1 : currentIndex + 1;
+document.getElementById("prevBtn").onclick = () => {
+  index = index <= 1 ? max : index - 1;
   updateImage();
-});
+};
+
+document.getElementById("nextBtn").onclick = () => {
+  index = index >= max ? 1 : index + 1;
+  updateImage();
+};
