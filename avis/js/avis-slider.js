@@ -1,26 +1,15 @@
 const images = [
-  './img/1.jpg',
-  './img/2.jpg',
-  './img/3.jpg',
-  './img/4.jpg',
-  './img/5.jpg'
+  'img/1.jpg',
+  'img/2.jpg',
+  'img/3.jpg'
 ];
-
-let currentIndex = 0;
-const sliderImage = document.getElementById('sliderImage');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-function updateImage() {
-  sliderImage.src = images[currentIndex];
-}
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateImage();
-});
-
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateImage();
-});
+let idx = 0;
+const imgElem = document.getElementById('sliderImage');
+document.getElementById('prevBtn').onclick = () => {
+  idx = (idx - 1 + images.length) % images.length;
+  imgElem.src = images[idx];
+};
+document.getElementById('nextBtn').onclick = () => {
+  idx = (idx + 1) % images.length;
+  imgElem.src = images[idx];
+};
