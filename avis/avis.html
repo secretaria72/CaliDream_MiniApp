@@ -3,51 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avis clients - Cali Dream</title>
+  <title>Avis - Cali Dream</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('../img/fond.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #a0cfff;
-      font-family: 'Arial', sans-serif;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.4);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    header img {
-      max-height: 80px;
-      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4));
-    }
-
-    .back-button {
-      position: fixed;
-      top: 14px;
-      left: 14px;
-      font-size: 24px;
-      color: #00bfff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
-      text-shadow: 0 0 4px red;
-    }
-  </style>
+  <link rel="stylesheet" href="css/avis-style.css" />
 </head>
 <body>
 
@@ -59,5 +17,15 @@
   <!-- Bouton retour -->
   <button class="back-button" onclick="window.history.back()">⟵</button>
 
+  <!-- Galerie photo -->
+  <div class="gallery-wrapper">
+    <button class="nav-button left" onclick="prevImage()">❮</button>
+    <div class="glass-frame">
+      <img id="slider-img" src="img/avis1.jpg" alt="Avis client" />
+    </div>
+    <button class="nav-button right" onclick="nextImage()">❯</button>
+  </div>
+
+  <script src="js/avis-slider.js"></script>
 </body>
 </html>
