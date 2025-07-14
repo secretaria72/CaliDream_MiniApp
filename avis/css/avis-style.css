@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url('../img/fond.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  max-height: 80px;
+  filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4));
+}
+
+.back-button {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  font-size: 24px;
+  color: #00bfff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  text-shadow: 0 0 4px red;
+}
+
+.gallery-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.glass-frame {
+  width: 320px;
+  height: 320px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 3px solid #00bfff;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-button {
+  font-size: 36px;
+  color: #00bfff;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0,191,255,0.5);
+  transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: scale(1.15);
+  background: rgba(0, 0, 0, 0.5);
+}
