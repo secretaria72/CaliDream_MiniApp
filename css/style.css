@@ -167,3 +167,81 @@ footer {
 .stock.out {
   color: #cc3333;
 }
+/* === AVIS CLIENT (structure harmonisée à la vitrine) === */
+
+.page-text {
+  max-width: 800px;
+  margin: 130px auto 20px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #cde9ff;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.avis-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+  flex-direction: column;
+}
+
+#viewer {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 10px #00bfff;
+  max-width: 80vw;
+  max-height: 65vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#viewer img {
+  max-width: 100%;
+  max-height: 60vh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 36px;
+  color: #00bfff;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 6px black;
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+#prevBtn {
+  left: 10px;
+}
+#nextBtn {
+  right: 10px;
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  .arrow {
+    font-size: 28px;
+    top: 54%;
+  }
+
+  #viewer {
+    max-width: 90vw;
+    padding: 10px;
+  }
+
+  #viewer img {
+    max-height: 50vh;
+  }
+}
+
