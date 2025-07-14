@@ -22,21 +22,22 @@
       height: 100px;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
+      padding-bottom: 10px;
       backdrop-filter: blur(10px);
       background: rgba(0, 0, 0, 0.4);
       z-index: 100;
     }
 
     .floating-logo {
-      height: 60px;
+      height: 55px;
       filter: drop-shadow(0 0 6px #000);
     }
 
     .back-button {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 18px;
+      left: 18px;
       font-size: 24px;
       color: white;
       text-decoration: none;
@@ -64,7 +65,6 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      padding-top: 40px;
       box-sizing: border-box;
     }
 
@@ -104,7 +104,7 @@
     }
 
     #prevBtn {
-      left: calc(50% - 180px); /* légèrement en dehors du cadre */
+      left: calc(50% - 180px);
     }
 
     #nextBtn {
@@ -118,7 +118,7 @@
       }
 
       .floating-logo {
-        height: 50px;
+        height: 45px;
       }
 
       #viewer {
@@ -141,16 +141,19 @@
   </style>
 </head>
 <body>
+  <!-- Barre flottante identique à la vitrine -->
   <header>
     <a href="../index.html" class="back-button">←</a>
     <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
+  <!-- Texte explicatif -->
   <div class="info-text">
     Vous trouverez ici divers retours de nos clients.<br>
     N'hésitez pas à nous envoyer le vôtre, cela aidera les nouveaux arrivants à se faire une idée plus claire de notre univers.
   </div>
 
+  <!-- Affichage photo + flèches -->
   <main>
     <div id="viewer">
       <img src="img/1.jpg" id="sliderImage" alt="Avis client">
