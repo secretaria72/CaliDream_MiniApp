@@ -1,28 +1,24 @@
-const slider = document.getElementById("sliderImage");
-const folder = "img/";
-let index = 1;
-let max = 1;
+const images = [];
+let index = 0;
 
-// Détecte combien d'images il y a dans le dossier (jusqu'à 99 max)
-for (let i = 1; i <= 99; i++) {
-  const img = new Image();
-  img.src = ${folder}${i}.jpg;
-  img.onload = () => {
-    if (i > max) max = i;
-  };
-  img.onerror = () => {};
+for (let i = 1; i <= 20; i++) {
+  images.push(`img/${i}.jpg`);
 }
+
+const imgElement = document.getElementById('sliderImage');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
 function updateImage() {
-  slider.src = ${folder}${index}.jpg;
+  imgElement.src = images[index];
 }
 
-document.getElementById("prevBtn").onclick = () => {
-  index = index <= 1 ? max : index - 1;
+prevBtn.addEventListener('click', () => {
+  index = (index - 1 + images.length) % images.length;
   updateImage();
-};
+});
 
-document.getElementById("nextBtn").onclick = () => {
-  index = index >= max ? 1 : index + 1;
+nextBtn.addEventListener('click', () => {
+  index = (index + 1) % images.length;
   updateImage();
-};
+});
