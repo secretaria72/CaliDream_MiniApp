@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avis clients - Cali Dream</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   <style>
     body {
       margin: 0;
+      padding: 0;
       overflow: hidden;
       background: url('../img/fond.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -22,42 +23,42 @@
       right: 0;
       height: 100px;
       background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       display: flex;
-      align-items: center;
       justify-content: center;
-      z-index: 10;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .floating-logo {
+    header img {
       height: 60px;
-      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4));
+      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.5));
     }
 
     .back-button {
       position: absolute;
-      left: 16px;
-      top: 32px;
+      top: 14px;
+      left: 14px;
       font-size: 24px;
-      color: #a0cfff;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 6px 12px;
-      border-radius: 8px;
-      text-decoration: none;
+      color: #00bfff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
       text-shadow: 0 0 4px red;
     }
 
-    .description {
+    .avis-text {
       position: absolute;
       top: 110px;
       left: 0;
       right: 0;
       text-align: center;
-      padding: 0 20px;
       font-size: 14px;
       color: #cde9ff;
-      text-shadow: 0 0 3px rgba(0, 191, 255, 0.4);
+      padding: 0 20px;
+      text-shadow: 0 0 4px rgba(0,0,0,0.4);
     }
 
     main {
@@ -66,7 +67,6 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      flex-direction: column;
     }
 
     #viewer {
@@ -81,7 +81,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      margin-top: 70px;
+      position: relative;
     }
 
     #viewer img {
@@ -100,7 +100,7 @@
       background: rgba(0,0,0,0.3);
       padding: 10px 15px;
       border-radius: 50%;
-      top: calc(50% + 50px);
+      top: 50%;
       transform: translateY(-50%);
     }
 
@@ -113,14 +113,13 @@
     }
 
     @media screen and (max-width: 600px) {
+      header img {
+        height: 50px;
+      }
+
       .arrow {
         font-size: 28px;
         padding: 8px 12px;
-        top: calc(50% + 60px);
-      }
-
-      .floating-logo {
-        height: 50px;
       }
 
       #viewer {
@@ -129,28 +128,24 @@
       }
 
       #prevBtn {
-        left: calc(50% - 170px);
+        left: 10px;
       }
 
       #nextBtn {
-        right: calc(50% - 170px);
-      }
-
-      .description {
-        font-size: 13px;
-        padding: 0 12px;
+        right: 10px;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <a href="../index.html" class="back-button">←</a>
-    <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
+    <button class="back-button" onclick="window.location.href='../index.html'">⟵</button>
+    <img src="../img/logo.png" alt="Logo Cali Dream" />
   </header>
 
-  <div class="description">
-    Retrouvez ici quelques retours clients. N’hésitez pas à nous envoyer le vôtre : cela facilitera l’accueil des nouveaux arrivants dans le board.
+  <div class="avis-text">
+    Dans cette page, vous trouverez quelques retours clients. N’hésitez pas à nous envoyer le vôtre : cela aidera les nouveaux arrivants à mieux comprendre notre univers.
   </div>
 
   <main>
