@@ -12,7 +12,7 @@
       background: url('../img/fond.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
-      color: #cde9ff;
+      color: #a0cfff;
     }
 
     header {
@@ -27,40 +27,37 @@
       align-items: center;
       justify-content: center;
       z-index: 10;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .floating-logo {
       height: 60px;
-      filter: drop-shadow(0 0 6px rgba(0,191,255,0.4));
+      filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.4));
     }
 
     .back-button {
-      position: fixed;
-      top: 20px;
-      left: 20px;
+      position: absolute;
+      left: 16px;
+      top: 32px;
       font-size: 24px;
-      color: #00bfff;
-      background: rgba(0, 0, 0, 0.5);
+      color: #a0cfff;
+      background: rgba(0, 0, 0, 0.3);
       padding: 6px 12px;
       border-radius: 8px;
-      z-index: 11;
       text-decoration: none;
       text-shadow: 0 0 4px red;
     }
 
-    .avis-description {
+    .description {
       position: absolute;
       top: 110px;
       left: 0;
       right: 0;
       text-align: center;
+      padding: 0 20px;
       font-size: 14px;
       color: #cde9ff;
-      padding: 0 20px;
-      max-width: 460px;
-      margin: 0 auto;
-      text-shadow: 0 0 4px black;
+      text-shadow: 0 0 3px rgba(0, 191, 255, 0.4);
     }
 
     main {
@@ -69,6 +66,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      flex-direction: column;
     }
 
     #viewer {
@@ -83,7 +81,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      position: relative;
+      margin-top: 70px;
     }
 
     #viewer img {
@@ -102,7 +100,7 @@
       background: rgba(0,0,0,0.3);
       padding: 10px 15px;
       border-radius: 50%;
-      top: 50%;
+      top: calc(50% + 50px);
       transform: translateY(-50%);
     }
 
@@ -118,6 +116,7 @@
       .arrow {
         font-size: 28px;
         padding: 8px 12px;
+        top: calc(50% + 60px);
       }
 
       .floating-logo {
@@ -125,8 +124,8 @@
       }
 
       #viewer {
-        width: 260px;
-        height: 260px;
+        width: 280px;
+        height: 280px;
       }
 
       #prevBtn {
@@ -137,8 +136,7 @@
         right: calc(50% - 170px);
       }
 
-      .avis-description {
-        top: 105px;
+      .description {
         font-size: 13px;
         padding: 0 12px;
       }
@@ -146,20 +144,15 @@
   </style>
 </head>
 <body>
-  <!-- Barre flottante -->
   <header>
+    <a href="../index.html" class="back-button">←</a>
     <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
-  <!-- Bouton retour -->
-  <a href="../index.html" class="back-button">←</a>
-
-  <!-- Texte explicatif -->
-  <div class="avis-description">
-    Dans cette page, vous trouverez divers retours clients. N’hésitez pas à nous envoyer le vôtre : cela aide les nouveaux arrivants à se faire une idée.
+  <div class="description">
+    Retrouvez ici quelques retours clients. N’hésitez pas à nous envoyer le vôtre : cela facilitera l’accueil des nouveaux arrivants dans le board.
   </div>
 
-  <!-- Affichage des avis en image -->
   <main>
     <div id="viewer">
       <img src="img/1.jpg" id="sliderImage" alt="Avis client">
