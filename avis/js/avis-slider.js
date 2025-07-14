@@ -1,14 +1,22 @@
-const imageList = [];
-let currentImage = 0;
+const images = [];
+let index = 0;
 
-// Charge automatiquement les images numérotées dans avis/img/
+// Charger automatiquement les images depuis le dossier img/
 for (let i = 1; i <= 20; i++) {
-  imageList.push(`img/${i}.jpg`);
+  const imgPath = img/${i}.jpg;
+  images.push(imgPath);
 }
 
-const imageEl = document.getElementById("sliderImage");
+const slider = document.getElementById("sliderImage");
+
+function updateImage() {
+  slider.src = images[index];
+}
 
 function changeImage(direction) {
-  currentImage = (currentImage + direction + imageList.length) % imageList.length;
-  imageEl.src = imageList[currentImage];
+  index = (index + direction + images.length) % images.length;
+  updateImage();
 }
+
+document.getElementById("prevBtn").addEventListener("click", () => changeImage(-1));
+document.getElementById("nextBtn").addEventListener("click", () => changeImage(1));
