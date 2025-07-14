@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avis clients - Cali Dream</title>
+  <meta charset="UTF‑8" />
+  <meta name="viewport" content="width=device‑width, initial‑scale=1" />
+  <title>Avis clients – Cali Dream</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
+    /* (Adaptation locale : même header et fond que index) */
+
     body {
-      margin:0;
-      overflow:hidden;
-      background: url('../img/fond.jpg') center/cover fixed;
-      font-family: Arial, sans-serif;
-      color:#fff;
+      margin: 0;
+      padding: 0;
+      background: url('../img/fond.jpg') no‑repeat center center fixed;
+      background‑size: cover;
+      overflow: hidden; /* Fixé sans scroll */
     }
     header {
       position: fixed;
-      top:0; left:0; right:0;
-      height:100px;
-      display:flex; justify-content:center; align-items:center;
+      top: 0; left: 0; right: 0;
+      height: 120px;
+      background-color: rgba(0,0,0,0.4);
       backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.4);
-      z-index:100;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
     }
     header img {
-      max-height:80px;
+      height: 80px;
       filter: drop-shadow(0 0 6px rgba(0,191,255,0.4));
     }
     .back-button {
-      position:absolute;
-      left:15px; top:calc(50% - 12px);
-      font-size:24px;
-      color:#00bfff;
-      background:rgba(0,0,0,0.3);
-      border:none;
-      padding:5px 10px;
-      border-radius:8px;
-      z-index:101;
-      cursor:pointer;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 11;
     }
-    .intro-text {
-      position: fixed;
-      top:110px;
-      width:100%;
-      text-align:center;
-      font-size:16px;
-      color:#cde9ff;
-      padding:0 20px;
-      line-height:1.4;
-      z-index:90;
-    }
+
     main {
-      position:relative;
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      height: calc(100vh - 120px);
+      margin-top: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
+
+    .notice {
+      color: #a0cfff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      max-width: 480px;
+      line-height: 1.4;
+    }
+
     #viewer {
-      width:320px; height:320px;
+      width: 300px;
+      height: 300px;
       background: rgba(255,255,255,0.08);
-      border:2px solid #00bfff;
-      border-radius:12px;
-      box-shadow:0 0 15px rgba(0,0,0,0.5);
-      backdrop-filter:blur(6px);
-      overflow:hidden;
+      border: 2px solid #00bfff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
     #viewer img {
-      width:100%; height:100%; object-fit:cover;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
     }
+
     .arrow {
-      position:absolute;
-      font-size:36px;
-      color:#00bfff;
-      cursor:pointer;
-      z-index:99;
-      padding:5px;
-      user-select:none;
+      position: absolute;
+      font-size: 36px;
+      color: #00bfff;
+      background: rgba(0,0,0,0.3);
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 5;
+      user-select: none;
     }
-    #prevBtn { left: calc(50% - 180px); }
-    #nextBtn { right: calc(50% - 180px); }
-    @media(max-width:600px) {
-      #viewer { width:260px; height:260px; }
-      .arrow { font-size:28px; }
-      header { height:80px; }
+    #prevBtn { left: calc(50% - 180px); top: calc(50% + 0px); }
+    #nextBtn { right: calc(50% - 180px); top: calc(50% + 0px); }
+
+    @media (max-width: 600px) {
+      .arrow { font-size: 28px; padding: 8px 12px; }
+      header img { height: 60px; }
+      #viewer { width: 260px; height: 260px; }
+      #prevBtn { left: calc(50% - 150px); }
+      #nextBtn { right: calc(50% - 150px); }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="../img/logo.png" alt="Logo Cali Dream" />
     <button class="back-button" onclick="window.history.back()">←</button>
+    <img src="../img/logo.png" alt="Cali Dream Logo" />
   </header>
 
-  <div class="intro-text">
-    Dans cette page vous trouverez divers retours clients. N’hésitez pas à nous envoyer le vôtre pour aider les nouveaux arrivants à se sentir à l’aise.
-  </div>
-
   <main>
+    <div class="notice">
+      Dans cette page, vous trouverez divers retours clients. N’hésitez pas à nous envoyer le vôtre, cela facilitera l’approche des nouveaux arrivants dans le bord.
+    </div>
+
     <div id="viewer">
       <img src="img/1.jpg" id="sliderImage" alt="Avis client">
     </div>
+
     <span class="arrow" id="prevBtn">&#10094;</span>
     <span class="arrow" id="nextBtn">&#10095;</span>
   </main>
