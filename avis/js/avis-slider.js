@@ -1,11 +1,26 @@
-const images = ['1.jpg','2.jpg','3.jpg']; // adapter avec ton dossier /avis/img/
-let current = 0;
+const images = [];
+const folder = 'img/';
+let idx = 0;
+
+// Liste dynamique des fichiers (manuellement si pas possible)
+images.push('1.jpg', '2.jpg', '3.jpg');
+
 const slider = document.getElementById('sliderImage');
-document.getElementById('prevBtn').onclick = () => {
-  current = (current + images.length - 1) % images.length;
-  slider.src = img/${images[current]};
-};
-document.getElementById('nextBtn').onclick = () => {
-  current = (current + 1) % images.length;
-  slider.src = img/${images[current]};
-};
+const prev = document.getElementById('prevBtn');
+const next = document.getElementById('nextBtn');
+
+function show(i){
+  idx = (i + images.length) % images.length;
+  slider.src = folder + images[idx];
+}
+
+prev.addEventListener('click', ()=> show(idx - 1));
+next.addEventListener('click', ()=> show(idx + 1));
+
+// tactile pour mobile
+slider.parentElement.addEventListener('click', (e)=> {
+  const w = slider.parentElement.clientWidth;
+  show(e.offsetX < w/2 ? idx - 1 : idx + 1);
+});
+
+show(0);
