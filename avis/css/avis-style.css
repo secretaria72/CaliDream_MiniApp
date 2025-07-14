@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('../img/fond.jpg') no-repeat center center fixed;
+  background: url('../../img/fond.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
   font-family: 'Arial', sans-serif;
