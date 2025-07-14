@@ -1,24 +1,26 @@
-const images = [];
-let index = 0;
+const images = [
+  './img/1.jpg',
+  './img/2.jpg',
+  './img/3.jpg',
+  './img/4.jpg',
+  './img/5.jpg'
+];
 
-for (let i = 1; i <= 20; i++) {
-  images.push(`img/${i}.jpg`);
-}
-
-const imgElement = document.getElementById('sliderImage');
+let currentIndex = 0;
+const sliderImage = document.getElementById('sliderImage');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 function updateImage() {
-  imgElement.src = images[index];
+  sliderImage.src = images[currentIndex];
 }
 
 prevBtn.addEventListener('click', () => {
-  index = (index - 1 + images.length) % images.length;
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateImage();
 });
 
 nextBtn.addEventListener('click', () => {
-  index = (index + 1) % images.length;
+  currentIndex = (currentIndex + 1) % images.length;
   updateImage();
 });
