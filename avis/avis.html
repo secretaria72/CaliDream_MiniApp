@@ -2,35 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Avis Clients - Cali Dream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avis clients – Cali Dream</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <a id="retour" href="../index.html">←</a>
-      <img src="../img/logo.png" alt="Cali Dream" class="logo"/>
-    </div>
-  </header>
+<!-- ✅ Header avec logo parfaitement centré et bouton retour stylisé -->
+<header>
+  <a href="../index.html" class="back-button">←</a>
+  <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
+</header>
 
-  <div class="description-avis">
-    Vous trouverez ici les retours clients. N’hésitez pas à nous laisser le vôtre : cela aide les nouveaux arrivants à mieux se repérer.
+<!-- ✅ Texte explicatif centré -->
+<div class="page-text">
+  Vous trouverez ici les retours clients. N’hésitez pas à nous laisser le vôtre ; cela aide les nouveaux arrivants à mieux se repérer.
+</div>
+
+<!-- ✅ Slider d’image avec flèches parallèles -->
+<main class="avis-slider">
+  <span class="arrow" id="prevBtn">&#10094;</span>
+  <div id="viewer">
+    <img src="img/1.jpg" id="sliderImage" alt="Avis client" />
   </div>
+  <span class="arrow" id="nextBtn">&#10095;</span>
+</main>
 
-  <div class="slider-container">
-    <button class="prev" onclick="changeSlide(-1)">❮</button>
-    <div class="slider" id="slider">
-      <img src="data/avis1.jpg" alt="Avis client 1">
-    </div>
-    <button class="next" onclick="changeSlide(1)">❯</button>
-  </div>
+<!-- ✅ Footer harmonisé -->
+<footer>
+  <p>Cali Dream Mini App © 2025</p>
+</footer>
 
-  <footer>
-    Cali Dream Mini App © 2025
-  </footer>
-
-  <script src="js/avis-slider.js"></script>
+<!-- ✅ Script JS du slider -->
+<script src="js/avis-slider.js"></script>
 </body>
 </html>
