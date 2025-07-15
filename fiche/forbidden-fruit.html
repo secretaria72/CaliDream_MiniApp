@@ -1,12 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forbidden Fruit DrySift 120u - Fiche produit</title>
+  <title>Forbidden Fruit DrySift 120u – Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <style>
+    /* —— Header partagé —— */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 120px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .floating-logo {
+      height: 80px;
+      filter: drop-shadow(0 0 6px #00bfff);
+      transform: translateY(-10px);
+    }
+    .back-button-premium {
+      position: absolute;
+      top: 20px;
+      left: 12vw; /* miroir de ton bouton “Avis” */
+      font-size: 20px;
+      color: #00bfff;
+      background: transparent;
+      border: 2px solid #00bfff;
+      border-radius: 50%;
+      padding: 5px;
+      text-decoration: none;
+      text-shadow: 0 0 4px red;
+      filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
+      transition: transform .3s, background-color .3s;
+      z-index: 1001;
+    }
+    .back-button-premium:hover {
+      transform: scale(1.1);
+      background-color: rgba(0,191,255,0.08);
+    }
+    .back-button-premium:active {
+      transform: scale(0.95);
+      background-color: rgba(0,191,255,0.25);
+    }
+
+    /* —— Contenu de la fiche —— */
     body {
       margin: 0;
       padding: 0;
@@ -14,81 +56,57 @@
       color: #fff;
       font-family: Arial, sans-serif;
     }
-
-    header img {
-      display: block;
-      margin: 20px auto 10px auto;
-      width: 100px;
-    }
-
     main {
+      /* on décale sous le header */
+      padding: 150px 20px 40px;
       max-width: 600px;
       margin: 0 auto;
-      padding: 10px 20px 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
     .bloc-video {
       width: 100%;
       display: flex;
       justify-content: center;
+      margin-bottom: 20px;
     }
-
     .bloc-video video {
       width: 100%;
       max-width: 100%;
       border-radius: 12px;
-      margin-bottom: 20px;
     }
-
-    /* 👇 Bloc "En stock / Reviens bientôt" */
+    .bloc-description {
+      text-align: center;
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
     .stock {
       text-align: center;
       font-size: 18px;
       font-weight: bold;
       margin: 10px auto;
     }
-
-    .stock.in {
-      color: #00cc66;
-    }
-
-    .stock.out {
-      color: #cc3333;
-    }
-
-    .bloc-description {
-      text-align: center;
-      font-size: 17px;
-      font-weight: bold;
-      margin: 20px 0;
-      line-height: 1.6;
-    }
-
+    .stock.in { color: #00cc66; }
+    .stock.out { color: #cc3333; }
     .bloc-tarifs {
       width: 100%;
       margin-top: 30px;
     }
-
-    .tarifs-box {
-      text-align: center;
-    }
-
-    .tarifs-box h3 {
+    .bloc-tarifs h3 {
       color: #00bfff;
       font-size: 20px;
+      text-align: center;
       margin-bottom: 20px;
     }
-
     .tarifs-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       justify-content: center;
     }
-
     .cell {
       background-color: #000;
       border: 1px solid #00bfff;
@@ -98,20 +116,8 @@
       font-weight: bold;
       min-width: 120px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
-
-    .bloc-retour {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .bloc-retour a {
-      color: #00bfff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
     footer {
       text-align: center;
       font-size: 12px;
@@ -121,52 +127,47 @@
   </style>
 </head>
 <body>
-
+  <!-- Header IDENTIQUE à la vitrine -->
   <header>
-    <img src="../img/logo.png" alt="Cali Dream Logo" />
+    <a href="../index.html" class="back-button-premium">←</a>
+    <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
   <main>
-
+    <!-- Vidéo du produit -->
     <div class="bloc-video">
       <video controls poster="../img/produits/forbiddenfruit.png">
-        <source src="../vid/forbiddenfruit.mp4" type="video/mp4">
+        <source src="../vid/forbbidenfruit.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la vidéo.
       </video>
     </div>
 
+    <!-- Description -->
     <div class="bloc-description">
-Forbidden Fruit 120U : Explosion fruitée exotique.<br>
+     Forbidden Fruit 120U : Explosion fruitée exotique.<br>
       Relaxation totale, ambiance chill. Fond comme un rêve.
-
     </div>
 
-    <!-- ✅ Bloc déplacé ici entre description et tarifs -->
+    <!-- État de stock (dynamique) -->
     <div id="stock-status" class="stock"></div>
 
+    <!-- Grille tarifaire -->
     <div class="bloc-tarifs">
-      <div class="tarifs-box">
-        <h3>Grille tarifaire</h3>
-        <div class="tarifs-grid">
-          <div class="cell">5g<br><strong>60€</strong></div>
-          <div class="cell">10g<br><strong>110€</strong></div>
-          <div class="cell">25g<br><strong>250€</strong></div>
-          <div class="cell">50g<br><strong>400€</strong></div>
-        </div>
+      <h3>Grille tarifaire</h3>
+      <div class="tarifs-grid">
+        <div class="cell">5 g<br/><strong>60 €</strong></div>
+        <div class="cell">10 g<br/><strong>110 €</strong></div>
+        <div class="cell">25 g<br/><strong>250 €</strong></div>
+        <div class="cell">50 g<br/><strong>400 €</strong></div>
       </div>
     </div>
-
-    <div class="bloc-retour">
-      <a href="../index.html">← Retour à la vitrine</a>
-    </div>
-
   </main>
 
   <footer>
     <p>Cali Dream Mini App © 2025</p>
   </footer>
 
-  <!-- ✅ Script stock -->
+  <!-- Script de gestion du stock -->
   <script src="../config/stock.js"></script>
 </body>
 </html>
