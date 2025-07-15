@@ -8,8 +8,8 @@ function sendReport() {
 
   const fullMessage = 🚨 SIGNALEMENT\n👤 @${username} (ID: ${userId})\n📝 ${msg};
 
-  const token = "TON_BOT_TOKEN_ICI";     // à remplacer
-  const chatId = "TON_ID_TELEGRAM_ICI"; // à remplacer
+  const token = "7832206699:AAGYLTLWD9QPBYfkV26AmJ9uajsiwurh8Fs";     // à remplacer
+  const chatId = " 8196735310"; // à remplacer
 
   fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: "POST",
