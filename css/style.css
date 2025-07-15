@@ -262,4 +262,10 @@ footer {
     font-size: 14px;
     margin-top: 120px;
   }
+/* === Override bouton retour sur avis.html === */
+.avis-page .back-button-premium {
+  font-size: 20px;
+  padding:    4px 8px;
+  left:       12px;
+  top:        18px;
 }
