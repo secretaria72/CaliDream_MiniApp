@@ -171,28 +171,33 @@ footer {
 
 /* —— Styles pour la page “Avis” —— */
 
-/* Bouton retour premium (identique au style du bouton Avis) */
+/* ✅ Bouton retour premium harmonisé */
 .back-button-premium {
   position: absolute;
-  left: 12px;
-  top: 20px;
-  font-size: 26px;
+  top: 10px;
+  left: 12vw; /* miroir symétrique du bouton 💬 */
+  font-size: 20px;
   color: #00bfff;
   text-shadow: 0 0 4px red;
   background: transparent;
   border: 2px solid #00bfff;
   border-radius: 50%;
-  padding: 4px 12px;
+  padding: 5px;
   text-decoration: none;
   z-index: 1001;
   filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 .back-button-premium:hover {
   transform: scale(1.1);
   background-color: rgba(0, 191, 255, 0.08);
 }
 
+.back-button-premium:active {
+  transform: scale(0.95);
+  background-color: rgba(0, 191, 255, 0.25);
+}
 /* Texte explicatif sous le header */
 .page-text {
   margin-top: 140px;
