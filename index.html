@@ -169,6 +169,27 @@
 <!-- Scripts -->
 <script src="./config/config.js"></script>
 
+  <script>
+  fetch('./meta.json')
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll('.stock-badge').forEach(badge => {
+        const filename = badge.dataset.filename;
+        const product = data.products.find(p => p.filename === filename);
+
+        if (product) {
+          if (product.in_stock) {
+            badge.textContent = 'En stock';
+            badge.classList.remove('out');
+          } else {
+            badge.textContent = 'Bientôt';
+            badge.classList.add('out');
+          }
+        }
+      });
+    });
+</script>
+
 
 </body>
 </html>
