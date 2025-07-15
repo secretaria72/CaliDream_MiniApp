@@ -11,6 +11,19 @@
 <header>
   <img src="./img/logo.png" alt="Cali Dream Logo" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<!-- Bouton ⚠️ Signaler -->
+<button id="report-button" onclick="document.getElementById('reportModal').style.display = 'block';" title="Signaler un souci">
+=======
+<!-- Bouton Signaler ⚠️ au-dessus du 💬 -->
+<button id="report-button" title="Signaler un souci" onclick="document.getElementById('reportModal').style.display = 'block';">
+>>>>>>> parent of 3036ded (Update index.html)
+=======
+<!-- Bouton ⚠️ Signaler -->
+<button id="report-button" onclick="document.getElementById('reportModal').style.display = 'block';" title="Signaler un souci">
+>>>>>>> parent of 9618048 (Update index.html)
+  ⚠️
   <!-- ✅ Bouton Avis stylisé -->
   <button id="avis-button" title="Avis clients" onclick="window.location.href='./avis/avis.html'">💬</button>
 </header>
@@ -155,6 +168,16 @@
 
 <!-- Scripts -->
 <script src="./config/config.js"></script>
+
+  <!-- Popup signalement -->
+<div id="reportModal" style="display: none;">
+  <h3>Signaler un souci</h3>
+  <textarea id="reportMessage" placeholder="Exprime-toi ici..."></textarea>
+  <button onclick="sendReport()">Envoyer</button>
+</div>
+  
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="js/report.js"></script>
 
 </body>
 </html>
