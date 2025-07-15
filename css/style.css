@@ -1,5 +1,5 @@
 /* ===========================================
-   FONTS & GLOBAL LAYOUT
+   FONTS & GLOBAL BACKGROUND
    ============================================ */
 @font-face {
   font-family: 'CalidreamFont';
@@ -7,23 +7,18 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   font-family: 'CalidreamFont', Arial, sans-serif;
   color: #a0cfff;
   background-color: #05080f;
-  position: relative;
-  z-index: 0;
+  position: relative; z-index: 0;
 }
 
-/* background listing pages (et aussi avis-page désormais) */
+/* fond fixe partout (vitrine, listing, avis) */
 body::before {
   content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position: fixed; top:0; left:0;
+  width:100vw; height:100vh;
   background: url('../img/fond.jpg') no-repeat center center;
   background-size: cover;
   z-index: -1;
@@ -54,8 +49,7 @@ header img,
 header::after {
   content: '';
   position: absolute;
-  bottom: -60px;
-  left: 0; right: 0;
+  bottom: -60px; left: 0; right: 0;
   height: 60px;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
   pointer-events: none;
@@ -64,56 +58,51 @@ header::after {
 /* ===========================================
    BOUTONS FLOTANTS
    ============================================ */
-/* ← Retour à la vitrine */
+/* ← Retour */
 .back-button-premium {
   position: absolute;
-  top: 18px;
-  left: 12px;
-  font-size: 20px;
-  padding: 4px 8px;
+  top: 18px; left: 12px;
+  font-size: 20px; padding: 4px 8px;
   color: #00bfff;
-  background: transparent;
   border: 2px solid #00bfff;
   border-radius: 50%;
+  background: transparent;
   text-decoration: none;
   text-shadow: 0 0 4px red;
+  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
+  transition: transform .3s, background-color .3s;
   z-index: 1001;
-  filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
-  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .back-button-premium:hover {
   transform: scale(1.1);
-  background-color: rgba(0, 191, 255, 0.08);
+  background-color: rgba(0,191,255,0.08);
 }
 .back-button-premium:active {
   transform: scale(0.95);
-  background-color: rgba(0, 191, 255, 0.25);
+  background-color: rgba(0,191,255,0.25);
 }
 
 /* Bouton “Avis” */
 #avis-button {
   position: absolute;
-  bottom: 10px;
-  right: 12vw;
-  font-size: 20px;
-  background-color: transparent;
+  bottom: 10px; right: 12vw;
+  font-size: 20px; padding: 5px;
+  color: #00bfff;
   border: 2px solid #00bfff;
   border-radius: 50%;
-  color: #00bfff;
+  background: transparent;
   text-shadow: 0 0 4px red;
-  padding: 5px;
-  cursor: pointer;
-  filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
+  transition: transform .3s, background-color .3s;
   z-index: 1001;
 }
 #avis-button:hover {
   transform: scale(1.1);
-  background-color: rgba(0, 191, 255, 0.08);
+  background-color: rgba(0,191,255,0.08);
 }
 #avis-button:active {
   transform: scale(0.95);
-  background-color: rgba(0, 191, 255, 0.25);
+  background-color: rgba(0,191,255,0.25);
 }
 
 /* ===========================================
@@ -121,131 +110,122 @@ header::after {
    ============================================ */
 main {
   margin-top: 140px;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 960px; margin: 0 auto;
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(45%,1fr));
   grid-gap: 20px;
 }
 
 .product-card {
   position: relative;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 0 10px #00bfff;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform .3s;
 }
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #00ffff;
 }
 .product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%; height: 180px;
+  object-fit: cover; border-radius: 8px;
   margin-bottom: 10px;
 }
 .product-info {
-  font-size: 14px;
-  color: #cde9ff;
+  font-size: 14px; color: #cde9ff;
 }
 .product-info strong {
   color: #00bfff;
 }
 
-/* Badge stock (listing) */
+/* Badge stock listing */
 .stock-badge {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 8px; right: 8px;
   padding: 5px 10px;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 12px; font-weight: bold;
   border-radius: 8px;
   color: #fff;
   z-index: 2;
 }
-.stock-badge.in {
-  background-color: #00cc66;
-}
-.stock-badge.out {
-  background-color: #cc3333 !important;
-  color: #fff !important;
-}
+.stock-badge.in  { background-color: #00cc66; }
+.stock-badge.out { background-color: #cc3333 !important; }
 
 /* ===========================================
-   DETAIL PAGES (fiche produit)
+   PAGE “AVIS CLIENTS”
    ============================================ */
-/* reprend la structure qu’on avait en inline */
-body.avis-page main {
-  padding: 150px 20px 40px;
-  max-width: 600px;
-  margin: 0 auto;
+/* Texte sous le header */
+body.avis-page .page-text {
+  margin-top: 140px;
+  font-size: 15px;
+  color: #a0cfff;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Slider central (main.avis-slider) */
+body.avis-page main.avis-slider {
+  margin: 20px auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.bloc-video {
-  width: 100%;
-  display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  gap: 20px;
+  padding-bottom: 40px;
 }
-.bloc-video video {
-  width: 100%;
-  max-width: 100%;
+
+/* “Cadre verre” */
+#viewer {
+  width: 300px; height: 300px;
+  max-width: 90vw; max-height: 60vh;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #00bfff;
   border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,191,255,0.2);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#viewer img {
+  max-width: 100%; max-height: 100%;
+  border-radius: 8px;
 }
 
-.bloc-description {
-  text-align: center;
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 1.6;
-  margin: 20px 0;
-}
-
-.bloc-tarifs {
-  width: 100%;
-  margin-top: 30px;
-}
-.bloc-tarifs h3 {
+/* Flèches navigation */
+.arrow {
+  font-size: 40px;
   color: #00bfff;
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 20px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0,0,0,0.3);
+  padding: 8px 12px;
+  border-radius: 50%;
+  transition: transform .2s;
 }
-.tarifs-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-.cell {
-  background-color: #000;
-  border: 1px solid #00bfff;
-  color: #fff;
-  padding: 15px 20px;
-  border-radius: 12px;
-  font-weight: bold;
-  min-width: 120px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-/* override couleur footer pour fiche produit */
-body.avis-page footer {
-  color: #ccc;
+.arrow:hover {
+  transform: scale(1.2);
 }
 
 /* ===========================================
-   STOCK (commun listing + detail)
+   FOOTER
+   ============================================ */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  padding-bottom: 20px;
+  position: relative; /* au-dessus du fond */
+  z-index: 1;
+}
+
+/* ===========================================
+   STOCK (commun listing + detail + avis)
    ============================================ */
 .stock {
   text-align: center;
@@ -257,94 +237,33 @@ body.avis-page footer {
 .stock.out { color: #cc3333; }
 
 /* ===========================================
-   AUTRES COMPOSANTS / ACCESSIBILITÉ
-   ============================================ */
-.page-text {
-  margin-top: 140px;
-  font-size: 15px;
-  color: #a0cfff;
-  line-height: 1.4;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.avis-slider {
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-#viewer {
-  max-width: 90vw;
-  max-height: 60vh;
-  width: 300px;
-  height: 300px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid #00bfff;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#viewer img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 8px;
-}
-
-.arrow {
-  font-size: 40px;
-  color: #00bfff;
-  cursor: pointer;
-  user-select: none;
-  background: rgba(0,0,0,0.3);
-  padding: 8px 12px;
-  border-radius: 50%;
-  transition: transform 0.2s ease;
-}
-.arrow:hover {
-  transform: scale(1.2);
-}
-
-/* ===========================================
-   FOOTER (listing pages)
-   ============================================ */
-footer {
-  margin-top: 40px;
-  text-align: center;
-  color: #666;
-  font-size: 12px;
-  padding-bottom: 20px;
-}
-
-/* ===========================================
-   RÉPONSIVE
+   RÉPONSIVE GÉNÉRAL
    ============================================ */
 @media (max-width: 600px) {
-  /* listing grid */
+  /* Listing */
   main {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     grid-gap: 14px;
     padding: 8px;
   }
-  /* bouton avis */
+  /* Avis button */
   #avis-button {
     right: 8vw;
     bottom: 8px;
   }
-  /* carte produit */
+  /* Listing images */
   .product-card img {
     height: 160px;
   }
-  .page-text {
-    font-size: 14px;
+  /* Texte avis mobile */
+  body.avis-page .page-text {
     margin-top: 120px;
+    font-size: 14px;
   }
-  /* arrows/detail viewer */
+  /* Slider mobile */
+  body.avis-page main.avis-slider {
+    gap: 14px;
+  }
   .arrow {
     font-size: 32px;
     padding: 6px 10px;
