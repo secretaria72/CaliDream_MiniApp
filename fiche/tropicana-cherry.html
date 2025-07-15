@@ -5,119 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tropicana Cherry DrySift 120u – Fiche produit</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 120px;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .floating-logo {
-      height: 80px;
-      filter: drop-shadow(0 0 6px #00bfff);
-      transform: translateY(-10px);
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-
-    main {
-      padding: 150px 20px 40px;
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .bloc-video {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .bloc-video video {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 12px;
-    }
-
-    .bloc-description {
-      text-align: center;
-      font-size: 17px;
-      font-weight: bold;
-      line-height: 1.6;
-      margin: 20px 0;
-    }
-
-    .stock {
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px auto;
-    }
-
-    .stock.in { color: #00cc66; }
-    .stock.out { color: #cc3333; }
-
-    .bloc-tarifs {
-      width: 100%;
-      margin-top: 30px;
-    }
-
-    .bloc-tarifs h3 {
-      color: #00bfff;
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .tarifs-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .cell {
-      background-color: #000;
-      border: 1px solid #00bfff;
-      color: #fff;
-      padding: 15px 20px;
-      border-radius: 12px;
-      font-weight: bold;
-      min-width: 120px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      margin-top: 40px;
-      color: #ccc;
-    }
-  </style>
 </head>
-<body>
+<body class="avis-page">
+
   <header>
     <a href="../index.html" class="back-button-premium">←</a>
     <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
   </header>
 
   <main>
+    <!-- Vidéo du produit -->
     <div class="bloc-video">
       <video controls poster="../img/produits/tropicanacherry.png">
         <source src="../vid/tropicanacherry.mp4" type="video/mp4" />
@@ -125,13 +22,16 @@
       </video>
     </div>
 
+    <!-- Description -->
     <div class="bloc-description">
-      Tropicana Cherry 120U : Cerise vive, agrume frais.<br>
+      Tropicana Cherry 120U : Cerise vive, agrume frais.<br />
       Effet cérébral vif puis relax. Très expressif.
     </div>
 
+    <!-- État de stock (dynamique) -->
     <div id="stock-status" class="stock"></div>
 
+    <!-- Grille tarifaire -->
     <div class="bloc-tarifs">
       <h3>Grille tarifaire</h3>
       <div class="tarifs-grid">
