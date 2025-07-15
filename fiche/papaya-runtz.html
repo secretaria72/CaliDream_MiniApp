@@ -18,34 +18,11 @@
       align-items: center;
       z-index: 1000;
     }
+
     .floating-logo {
       height: 80px;
       filter: drop-shadow(0 0 6px #00bfff);
       transform: translateY(-10px);
-    }
-    .back-button-premium {
-      position: absolute;
-      top: 20px;
-      left: 12vw; /* miroir de ton bouton “Avis” */
-      font-size: 20px;
-      color: #00bfff;
-      background: transparent;
-      border: 2px solid #00bfff;
-      border-radius: 50%;
-      padding: 5px;
-      text-decoration: none;
-      text-shadow: 0 0 4px red;
-      filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
-      transition: transform .3s, background-color .3s;
-      z-index: 1001;
-    }
-    .back-button-premium:hover {
-      transform: scale(1.1);
-      background-color: rgba(0,191,255,0.08);
-    }
-    .back-button-premium:active {
-      transform: scale(0.95);
-      background-color: rgba(0,191,255,0.25);
     }
 
     /* —— Contenu de la fiche —— */
@@ -56,8 +33,8 @@
       color: #fff;
       font-family: Arial, sans-serif;
     }
+
     main {
-      /* on décale sous le header */
       padding: 150px 20px 40px;
       max-width: 600px;
       margin: 0 auto;
@@ -65,17 +42,20 @@
       flex-direction: column;
       align-items: center;
     }
+
     .bloc-video {
       width: 100%;
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
     }
+
     .bloc-video video {
       width: 100%;
       max-width: 100%;
       border-radius: 12px;
     }
+
     .bloc-description {
       text-align: center;
       font-size: 17px;
@@ -83,30 +63,36 @@
       line-height: 1.6;
       margin: 20px 0;
     }
+
     .stock {
       text-align: center;
       font-size: 18px;
       font-weight: bold;
       margin: 10px auto;
     }
+
     .stock.in { color: #00cc66; }
     .stock.out { color: #cc3333; }
+
     .bloc-tarifs {
       width: 100%;
       margin-top: 30px;
     }
+
     .bloc-tarifs h3 {
       color: #00bfff;
       font-size: 20px;
       text-align: center;
       margin-bottom: 20px;
     }
+
     .tarifs-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       justify-content: center;
     }
+
     .cell {
       background-color: #000;
       border: 1px solid #00bfff;
@@ -118,6 +104,7 @@
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
+
     footer {
       text-align: center;
       font-size: 12px;
@@ -127,7 +114,7 @@
   </style>
 </head>
 <body>
-  <!-- Header IDENTIQUE à la vitrine -->
+  <!-- Header flottant -->
   <header>
     <a href="../index.html" class="back-button-premium">←</a>
     <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
@@ -144,11 +131,11 @@
 
     <!-- Description -->
     <div class="bloc-description">
-    Papaya Runtz 120U : Tropical, juteux, sucré. High joyeux, esprit léger.<br>
+      Papaya Runtz 120U : Tropical, juteux, sucré. High joyeux, esprit léger.<br>
       Un concentré ensoleillé.
     </div>
 
-    <!-- État de stock (dynamique) -->
+    <!-- État de stock -->
     <div id="stock-status" class="stock"></div>
 
     <!-- Grille tarifaire -->
@@ -167,7 +154,7 @@
     <p>Cali Dream Mini App © 2025</p>
   </footer>
 
-  <!-- Script de gestion du stock -->
+  <!-- Script dynamique -->
   <script src="../config/stock.js"></script>
 </body>
 </html>
