@@ -269,19 +269,20 @@ footer {
   left:       12px;
   top:        18px;
 }
+/* ✅ BOUTON ⚠️ REPORT ALIGNÉ AVIS */
 #report-button {
   position: absolute;
-  bottom: 58px; /* Aligné au-dessus du 💬 */
+  bottom: 58px; /* Même position horizontale, au-dessus de 💬 */
   right: 12vw;
   font-size: 20px;
   background-color: transparent;
-  border: 2px solid #ff4d4d;
+  border: 2px solid #00bfff;
   border-radius: 50%;
-  color: white;
+  color: #00bfff;
   text-shadow: 0 0 4px red;
   padding: 5px;
   cursor: pointer;
-  filter: drop-shadow(0 0 6px rgba(255, 80, 80, 0.5));
+  filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
   transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 1002;
   pointer-events: auto;
@@ -289,10 +290,10 @@ footer {
 
 #report-button:hover {
   transform: scale(1.1);
-  background-color: rgba(255, 80, 80, 0.1);
+  background-color: rgba(0, 191, 255, 0.08);
 }
 
 #report-button:active {
   transform: scale(0.95);
-  background-color: rgba(255, 80, 80, 0.25);
+  background-color: rgba(0, 191, 255, 0.25);
 }
