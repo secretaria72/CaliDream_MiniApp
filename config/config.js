@@ -19,7 +19,7 @@ fetch('./meta.json')
         badge.textContent = 'En stock';
       } else {
         badge.classList.add('out');
-        badge.textContent = 'Revient bientôt';
+        badge.textContent = 'Bientôt';
       }
 
       // 👉 Insérer après l’image
