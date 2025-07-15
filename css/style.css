@@ -1,3 +1,6 @@
+/* ===========================================
+   FONTS & GLOBAL LAYOUT
+   =========================================== */
 @font-face {
   font-family: 'CalidreamFont';
   src: url('../fonts/calidream.woff2') format('woff2');
@@ -13,6 +16,7 @@ body {
   z-index: 0;
 }
 
+/* background listing pages */
 body::before {
   content: "";
   position: fixed;
@@ -25,11 +29,22 @@ body::before {
   z-index: -1;
 }
 
+/* DETAIL PAGES OVERRIDES */
+body.avis-page {
+  /* fiche produit = fond noir uni */
+  background-color: #000;
+}
+body.avis-page::before {
+  /* désactive le fond listing */
+  display: none;
+}
+
+/* ===========================================
+   HEADER & LOGO
+   =========================================== */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 120px;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
@@ -38,25 +53,28 @@ header {
   align-items: center;
   z-index: 1000;
 }
-
-header img {
+/* logo flottant (vitrine & fiches) */
+header img,
+.floating-logo {
   height: 80px;
   filter: drop-shadow(0 0 6px #00bfff);
   transform: translateY(-10px);
 }
-
+/* fondu sous le header */
 header::after {
   content: '';
   position: absolute;
   bottom: -60px;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   height: 60px;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
   pointer-events: none;
 }
 
-/* ✅ Bouton retour PREMIUM — mobile & desktop */
+/* ===========================================
+   BOUTONS FLOTANTS
+   =========================================== */
+/* ← Retour à la vitrine */
 .back-button-premium {
   position: absolute;
   top: 18px;
@@ -73,18 +91,16 @@ header::after {
   filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 .back-button-premium:hover {
   transform: scale(1.1);
   background-color: rgba(0, 191, 255, 0.08);
 }
-
 .back-button-premium:active {
   transform: scale(0.95);
   background-color: rgba(0, 191, 255, 0.25);
 }
 
-/* ✅ BOUTON 💬 DESIGN PREMIUM */
+/* Bouton “Avis” */
 #avis-button {
   position: absolute;
   bottom: 10px;
@@ -101,17 +117,18 @@ header::after {
   transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 1001;
 }
-
 #avis-button:hover {
   transform: scale(1.1);
   background-color: rgba(0, 191, 255, 0.08);
 }
-
 #avis-button:active {
   transform: scale(0.95);
   background-color: rgba(0, 191, 255, 0.25);
 }
 
+/* ===========================================
+   LISTING PAGE (mini-app)
+   =========================================== */
 main {
   margin-top: 140px;
   max-width: 960px;
@@ -124,6 +141,7 @@ main {
 }
 
 .product-card {
+  position: relative;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   padding: 15px;
@@ -131,12 +149,10 @@ main {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #00ffff;
 }
-
 .product-card img {
   width: 100%;
   height: 180px;
@@ -144,64 +160,115 @@ main {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-
 .product-info {
   font-size: 14px;
   color: #cde9ff;
 }
-
 .product-info strong {
   color: #00bfff;
 }
 
-footer {
-  margin-top: 40px;
-  text-align: center;
-  color: #666;
+/* Badge stock (listing) */
+.stock-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 5px 10px;
   font-size: 12px;
-  padding-bottom: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  color: #fff;
+  z-index: 2;
+}
+.stock-badge.in {
+  background-color: #00cc66;
+}
+.stock-badge.out {
+  background-color: #cc3333 !important;
+  color: #fff !important;
 }
 
-/* ✅ Responsive pour mobile */
-@media (max-width: 600px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 14px;
-    padding: 8px;
-  }
-
-  #avis-button {
-    right: 8vw;
-    bottom: 8px;
-  }
-
-  .product-card img {
-    height: 160px;
-  }
-
-  .page-text {
-    font-size: 14px;
-    margin-top: 120px;
-  }
+/* ===========================================
+   DETAIL PAGES (fiche produit)
+   =========================================== */
+/* reprend la structure qu’on avait en inline */
+body.avis-page main {
+  padding: 150px 20px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Bloc état de stock (dynamique) */
+.bloc-video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.bloc-video video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.bloc-description {
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.bloc-tarifs {
+  width: 100%;
+  margin-top: 30px;
+}
+.bloc-tarifs h3 {
+  color: #00bfff;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tarifs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.cell {
+  background-color: #000;
+  border: 1px solid #00bfff;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* override couleur footer pour fiche produit */
+body.avis-page footer {
+  color: #ccc;
+}
+
+/* ===========================================
+   STOCK (commun listing + detail)
+   =========================================== */
 .stock {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   margin: 20px auto;
 }
+.stock.in  { color: #00cc66; }
+.stock.out { color: #cc3333; }
 
-.stock.in {
-  color: #00cc66;
-}
-
-.stock.out {
-  color: #cc3333;
-}
-
-/* Texte explicatif sous le header */
+/* ===========================================
+   AUTRES COMPOSANTS / ACCESSIBILITÉ
+   =========================================== */
 .page-text {
   margin-top: 140px;
   font-size: 15px;
@@ -211,7 +278,6 @@ footer {
   padding: 0 20px;
 }
 
-/* Conteneur slider d’avis */
 .avis-slider {
   margin: 20px auto;
   display: flex;
@@ -220,7 +286,6 @@ footer {
   gap: 20px;
 }
 
-/* Cadre “verre” pour l’image */
 #viewer {
   max-width: 90vw;
   max-height: 60vh;
@@ -235,14 +300,12 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
 #viewer img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 8px;
 }
 
-/* Flèches de navigation */
 .arrow {
   font-size: 40px;
   color: #00bfff;
@@ -253,46 +316,51 @@ footer {
   border-radius: 50%;
   transition: transform 0.2s ease;
 }
-
 .arrow:hover {
   transform: scale(1.2);
 }
 
-/* Responsive flèches et viewer */
+/* ===========================================
+   FOOTER (listing pages)
+   =========================================== */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+/* ===========================================
+   RÉPONSIVE
+   =========================================== */
 @media (max-width: 600px) {
+  /* listing grid */
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 14px;
+    padding: 8px;
+  }
+  /* bouton avis */
+  #avis-button {
+    right: 8vw;
+    bottom: 8px;
+  }
+  /* carte produit */
+  .product-card img {
+    height: 160px;
+  }
+  .page-text {
+    font-size: 14px;
+    margin-top: 120px;
+  }
+  /* arrows/detail viewer */
   .arrow {
     font-size: 32px;
     padding: 6px 10px;
   }
-
   #viewer {
     width: 80vw;
     height: 80vw;
   }
-}
-
-/* Badge stock */
-.product-card {
-  position: relative;
-}
-
-.stock-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 5px 10px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 8px;
-  color: #fff;
-  z-index: 2;
-}
-
-.stock-badge.in {
-  background-color: #00cc66;
-}
-
-.stock-badge.out {
-  background-color: #cc3333 !important;
-  color: #fff !important;
 }
