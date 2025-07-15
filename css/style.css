@@ -44,6 +44,7 @@ header img {
   height: 80px;
   filter: drop-shadow(0 0 6px #00bfff);
   transform: translateY(-10px);
+  margin-left: 20px;   /* pour equilibre tout ca
 }
 
 header::after {
@@ -200,10 +201,10 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   flex-direction: row;
   padding: 20px;
-  text-align: center;
+  min-height: 320px;  /*cajuster selon photo
 }
 
 #viewer {
