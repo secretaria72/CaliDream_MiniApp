@@ -12,7 +12,7 @@ fetch('../meta.json')
         stockDiv.textContent = '🟢 En stock';
         stockDiv.classList.add(true);
       } else {
-        stockDiv.textContent = '🔴 Revient bientôt';
+        stockDiv.textContent = '🔴 Bientôt';
         stockDiv.classList.add(false);
       }
     }
