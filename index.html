@@ -168,8 +168,7 @@
 
 <!-- Scripts -->
 <script src="./config/config.js"></script>
-
-  <script>
+<script>
   fetch('./meta.json')
     .then(res => res.json())
     .then(data => {
@@ -187,9 +186,10 @@
           }
         }
       });
+    })
+    .catch(error => {
+      console.error('Erreur lors du chargement de meta.json :', error);
     });
 </script>
-
-
 </body>
 </html>
