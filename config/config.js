@@ -14,15 +14,15 @@ fetch('./meta.json')
 
       const badge = document.createElement('div');
       badge.classList.add('stock-badge');
+      
       if (product.in_stock) {
         badge.classList.add('in');
         badge.textContent = 'En stock';
       } else {
         badge.classList.add('out');
-        badge.textContent = 'Bientôt';
+        badge.textContent = 'Revient bientôt';
       }
 
-      // 👉 Insérer après l’image
       const img = card.querySelector('img');
       img.insertAdjacentElement('afterend', badge);
     });
