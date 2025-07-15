@@ -276,23 +276,27 @@ footer {
 }
   .product-card {
   position: relative;
-  /* tu as probablement déjà ces styles */
 }
 
 .stock-badge {
   position: absolute;
   top: 8px;
   right: 8px;
-  background-color: #00cc66; /* vert = en stock */
-  color: #fff;
   padding: 5px 10px;
   font-size: 12px;
   font-weight: bold;
   border-radius: 8px;
+  color: #fff;
   z-index: 2;
 }
 
+/* Vert pour "En stock" */
+.stock-badge.in {
+  background-color: #00cc66;
+}
+
+/* Rouge pour "Revient bientôt" */
 .stock-badge.out {
-  background-color: #cc3333 !important; /* rouge vif */
-  color: #fff !important;               /* texte blanc */
+  background-color: #cc3333 !important;
+  color: #fff !important;
 }
