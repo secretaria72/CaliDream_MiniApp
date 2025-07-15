@@ -9,13 +9,11 @@
 <body>
 
 <header>
-  <img src="./img/logo.png" alt="Cali Dream Logo" />
+  <img id="logo" src="img/logo.png" alt="Cali Dream Logo">
 
-<!-- Bouton ⚠️ Signaler -->
-<button id="report-button" onclick="document.getElementById('reportModal').style.display = 'block';" title="Signaler un souci">
-  ⚠️
-  <!-- ✅ Bouton Avis stylisé -->
-  <button id="avis-button" title="Avis clients" onclick="window.location.href='./avis/avis.html'">💬</button>
+  <button id="report-button" onclick="document.getElementById('reportModal').style.display = 'block';" title="Signaler un souci">⚠️</button>
+
+  <button id="avis-button" onclick="location.href='avis/avis.html'" title="Avis client">💬</button>
 </header>
 
 <main>
