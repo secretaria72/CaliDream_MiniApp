@@ -269,20 +269,30 @@ footer {
   left:       12px;
   top:        18px;
 }
-  #report-button {
+  /* ✅ BOUTON ⚠️ DESIGN PREMIUM */
+#report-button {
   position: absolute;
-  top: 8px;
-  right: 58px; /* juste au-dessus du bouton 💬 */
-  font-size: 1.3em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 9999;
+  bottom: 58px; /* ~50px au-dessus du 💬 */
+  right: 12vw;  /* même alignement horizontal */
+  font-size: 20px;
+  background-color: transparent;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
   color: #ffffff;
-  text-shadow: 1px 1px 2px red, 0 0 5px #00bfff;
-  transition: transform 0.2s ease;
-  pointer-events: auto;
+  text-shadow: 0 0 4px red;
+  padding: 5px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(255, 80, 80, 0.5));
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1002;
 }
+
 #report-button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  background-color: rgba(255, 80, 80, 0.1);
+}
+
+#report-button:active {
+  transform: scale(0.95);
+  background-color: rgba(255, 80, 80, 0.25);
 }
