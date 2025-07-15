@@ -11,7 +11,10 @@
 <header>
   <img src="./img/logo.png" alt="Cali Dream Logo" />
 
-<button id="report-button" onclick="alert('Clique OK')" title="Signaler un souci">⚠️</button>
+<!-- Bouton ⚠️ Signaler -->
+<button id="report-button" onclick="document.getElementById('reportModal').style.display = 'block';" title="Signaler un souci">
+  ⚠️
+</button>
   <!-- ✅ Bouton Avis stylisé -->
   <button id="avis-button" title="Avis clients" onclick="window.location.href='./avis/avis.html'">💬</button>
 </header>
