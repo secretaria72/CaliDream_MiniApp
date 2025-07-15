@@ -1,6 +1,6 @@
 /* ===========================================
    FONTS & GLOBAL LAYOUT
-   =========================================== */
+   ============================================ */
 @font-face {
   font-family: 'CalidreamFont';
   src: url('../fonts/calidream.woff2') format('woff2');
@@ -16,7 +16,7 @@ body {
   z-index: 0;
 }
 
-/* background listing pages */
+/* background listing pages (et aussi avis-page désormais) */
 body::before {
   content: "";
   position: fixed;
@@ -29,19 +29,9 @@ body::before {
   z-index: -1;
 }
 
-/* DETAIL PAGES OVERRIDES */
-body.avis-page {
-  /* fiche produit = fond noir uni */
-  background-color: #000;
-}
-body.avis-page::before {
-  /* désactive le fond listing */
-  display: none;
-}
-
 /* ===========================================
    HEADER & LOGO
-   =========================================== */
+   ============================================ */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -53,14 +43,14 @@ header {
   align-items: center;
   z-index: 1000;
 }
-/* logo flottant (vitrine & fiches) */
+
 header img,
 .floating-logo {
   height: 80px;
   filter: drop-shadow(0 0 6px #00bfff);
   transform: translateY(-10px);
 }
-/* fondu sous le header */
+
 header::after {
   content: '';
   position: absolute;
@@ -73,7 +63,7 @@ header::after {
 
 /* ===========================================
    BOUTONS FLOTANTS
-   =========================================== */
+   ============================================ */
 /* ← Retour à la vitrine */
 .back-button-premium {
   position: absolute;
@@ -128,7 +118,7 @@ header::after {
 
 /* ===========================================
    LISTING PAGE (mini-app)
-   =========================================== */
+   ============================================ */
 main {
   margin-top: 140px;
   max-width: 960px;
@@ -190,7 +180,7 @@ main {
 
 /* ===========================================
    DETAIL PAGES (fiche produit)
-   =========================================== */
+   ============================================ */
 /* reprend la structure qu’on avait en inline */
 body.avis-page main {
   padding: 150px 20px 40px;
@@ -256,7 +246,7 @@ body.avis-page footer {
 
 /* ===========================================
    STOCK (commun listing + detail)
-   =========================================== */
+   ============================================ */
 .stock {
   text-align: center;
   font-size: 18px;
@@ -268,7 +258,7 @@ body.avis-page footer {
 
 /* ===========================================
    AUTRES COMPOSANTS / ACCESSIBILITÉ
-   =========================================== */
+   ============================================ */
 .page-text {
   margin-top: 140px;
   font-size: 15px;
@@ -322,7 +312,7 @@ body.avis-page footer {
 
 /* ===========================================
    FOOTER (listing pages)
-   =========================================== */
+   ============================================ */
 footer {
   margin-top: 40px;
   text-align: center;
@@ -333,7 +323,7 @@ footer {
 
 /* ===========================================
    RÉPONSIVE
-   =========================================== */
+   ============================================ */
 @media (max-width: 600px) {
   /* listing grid */
   main {
