@@ -10,7 +10,12 @@ body {
   font-family: 'CalidreamFont', Arial, sans-serif;
   color: #a0cfff;
   background-color: #05080f;
-  position: relative; z-index: 0;
+  position: relative;
+  z-index: 0;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 body::before {
   content: "";
@@ -50,7 +55,9 @@ header::after {
    3) BOUTONS FLOTANTS
    ============================================ */
 .back-button-premium,
-.arrow {
+.arrow,
+#avis-button,
+#verif-button {
   width: 32px;
   height: 32px;
   font-size: 20px;
@@ -68,29 +75,6 @@ header::after {
   cursor: pointer;
   z-index: 1001;
   box-sizing: border-box;
-}
-
-#avis-button {
-  width: 32px;
-  height: 32px;
-  font-size: 20px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #00bfff;
-  border: 2px solid #00bfff;
-  border-radius: 50%;
-  background: transparent;
-  text-shadow: 0 0 4px red;
-  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
-  transition: transform .3s, background-color .3s;
-  cursor: pointer;
-  z-index: 1001;
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 10px;
-  right: 12vw;
 }
 
 .back-button-premium {
@@ -100,15 +84,29 @@ header::after {
   text-decoration: none;
 }
 
+#avis-button {
+  position: absolute;
+  bottom: 10px;
+  right: 12vw;
+}
+
+#verif-button {
+  position: absolute;
+  bottom: 50px;
+  right: 12vw;
+}
+
 .back-button-premium:hover,
 #avis-button:hover,
-.arrow:hover {
+.arrow:hover,
+#verif-button:hover {
   transform: scale(1.1);
   background-color: rgba(0,191,255,0.08);
 }
 .back-button-premium:active,
 #avis-button:active,
-.arrow:active {
+.arrow:active,
+#verif-button:active {
   transform: scale(0.95);
   background-color: rgba(0,191,255,0.25);
 }
@@ -118,7 +116,6 @@ header::after {
    ============================================ */
 body:not(.avis-page) main {
   margin-top: 160px;
-  margin-top: calc(135px + env(safe-area-inset-top, 0px));
   z-index: 1;
   max-width: 960px; margin-left: auto; margin-right: auto;
   padding-left: 10px; padding-right: 10px;
@@ -271,6 +268,9 @@ footer {
   #avis-button {
     right: 8vw; bottom: 8px;
   }
+  #verif-button {
+    right: 8vw; bottom: 48px;
+  }
   .product-card img {
     height: 160px;
   }
@@ -280,29 +280,4 @@ footer {
   body.avis-page main.avis-slider {
     gap: 14px;
   }
-
-  /* Harmonisation visuelle parfaite des boutons */
-  .arrow,
-  .back-button-premium,
-  #avis-button {
-    width: 32px;
-    height: 32px;
-    font-size: 20px;
-    padding: 5px;
-  }
-}
-
-/* ===========================================
-   10) MASQUER LA SCROLLBAR (toutes pages)
-   =========================================== */
-html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-body.avis-page #avis-button {
-  display: none !important;
 }
