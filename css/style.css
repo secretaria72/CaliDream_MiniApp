@@ -186,11 +186,18 @@ body.avis-page .page-text {
   line-height: 1.4; text-align: center; padding: 0 20px;
 }
 #viewer {
-  width: 300px; height: 300px; max-width: 90vw; max-height: 60vh;
-  background: rgba(0,0,0,0.6); border: 2px solid #00bfff;
-  border-radius: 12px; box-shadow: 0 0 15px rgba(0,191,255,0.2);
+  width: 340px;
+  height: 460px;
+  max-width: 94vw;
+  max-height: 70vh;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,191,255,0.2);
   backdrop-filter: blur(6px);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #viewer img {
   max-width: 100%; max-height: 100%; border-radius: 8px;
@@ -250,6 +257,7 @@ footer {
     font-size: 32px; padding: 6px 10px;
   }
   #viewer {
-    width: 80vw; height: 80vw;
+    width: 88vw;
+    height: 88vw;
   }
 }
