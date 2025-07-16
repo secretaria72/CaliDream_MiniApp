@@ -280,8 +280,4 @@ footer {
   body.avis-page main.avis-slider {
     gap: 14px;
   }
-  #viewer {
-    width: 88vw;
-    height: 88vw;
-  }
 }
