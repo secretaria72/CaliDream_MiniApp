@@ -95,8 +95,7 @@ header::after {
    ============================================ */
 /* S’applique uniquement quand body n’a PAS la classe avis-page */
 body:not(.avis-page) main {
-  /* header(120) + dégradé(60) + safe‐area */
-  margin-top: calc(120px + 60px + env(safe-area-inset-top, 0px)) !important;
+  margin-top: 140px;     /* <-- valeur initiale qui fonctionnait */
   z-index: 1;
   max-width: 960px; margin: 0 auto;
   padding: 10px;
@@ -149,75 +148,98 @@ body.avis-page main:not(.avis-slider) {
   max-width: 600px; margin: 0 auto;
   display: flex; flex-direction: column; align-items: center;
 }
-.bloc-video { width:100%; display:flex; justify-content:center; margin-bottom:20px; }
-.bloc-video video { width:100%; max-width:100%; border-radius:12px; }
+
+.bloc-video {
+  width: 100%; display: flex; justify-content: center;
+  margin-bottom: 20px;
+}
+.bloc-video video {
+  width: 100%; max-width: 100%; border-radius: 12px;
+}
+
 .bloc-description {
-  text-align:center; font-size:17px; font-weight:bold;
-  line-height:1.6; margin:20px 0;
+  text-align: center; font-size: 17px; font-weight: bold;
+  line-height: 1.6; margin: 20px 0;
 }
-.bloc-tarifs { width:100%; margin-top:30px; }
+
+.bloc-tarifs {
+  width: 100%; margin-top: 30px;
+}
 .bloc-tarifs h3 {
-  color:#00bfff; font-size:20px; text-align:center; margin-bottom:20px;
+  color: #00bfff; font-size: 20px; text-align: center;
+  margin-bottom: 20px;
 }
-.tarifs-grid { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+.tarifs-grid {
+  display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;
+}
 .cell {
-  background-color:#000; border:1px solid #00bfff;
-  color:#fff; padding:15px 20px; border-radius:12px;
-  font-weight:bold; min-width:120px; text-align:center;
-  box-shadow:0 2px 8px rgba(0,0,0,0.4);
+  background-color: #000;
+  border: 1px solid #00bfff;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 /* ===========================================
    6) PAGE “AVIS CLIENTS”
    ============================================ */
 body.avis-page main.avis-slider {
-  margin:20px auto; z-index:1;
-  display:flex; align-items:center; justify-content:center;
-  gap:20px; padding-bottom:40px;
+  margin: 20px auto; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  gap: 20px; padding-bottom: 40px;
 }
 body.avis-page .page-text {
-  margin-top:140px; font-size:15px; color:#a0cfff;
-  line-height:1.4; text-align:center; padding:0 20px;
+  margin-top: 140px; font-size: 15px; color: #a0cfff;
+  line-height: 1.4; text-align: center; padding: 0 20px;
 }
 #viewer {
-  width:300px; height:300px; max-width:90vw; max-height:60vh;
-  background:rgba(0,0,0,0.6); border:2px solid #00bfff;
-  border-radius:12px; box-shadow:0 0 15px rgba(0,191,255,0.2);
-  backdrop-filter:blur(6px);
-  display:flex; align-items:center; justify-content:center;
+  width: 300px; height: 300px; max-width: 90vw; max-height: 60vh;
+  background: rgba(0,0,0,0.6); border: 2px solid #00bfff;
+  border-radius: 12px; box-shadow: 0 0 15px rgba(0,191,255,0.2);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
 }
-#viewer img { max-width:100%; max-height:100%; border-radius:8px; }
+#viewer img {
+  max-width: 100%; max-height: 100%; border-radius: 8px;
+}
 .arrow {
-  font-size:40px; color:#00bfff; cursor:pointer; user-select:none;
-  background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:50%;
-  transition:transform .2s;
+  font-size: 40px; color: #00bfff; cursor: pointer; user-select: none;
+  background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 50%;
+  transition: transform .2s;
 }
-.arrow:hover { transform:scale(1.2); }
+.arrow:hover {
+  transform: scale(1.2);
+}
 
 /* ===========================================
    7) STOCK (commun)
    ============================================ */
 .stock {
-  text-align:center; font-size:18px; font-weight:bold;
-  margin:20px auto;
+  text-align: center; font-size: 18px; font-weight: bold;
+  margin: 20px auto;
 }
-.stock.in  { color:#00cc66; }
-.stock.out { color:#cc3333; }
+.stock.in  { color: #00cc66; }
+.stock.out { color: #cc3333; }
 
 /* ===========================================
    8) FOOTER
    ============================================ */
 footer {
-  margin-top:40px; text-align:center; color:#666; font-size:12px;
-  padding-bottom:20px; position:relative; z-index:1;
+  margin-top: 40px; text-align: center; color: #666; font-size: 12px;
+  padding-bottom: 20px; position: relative; z-index: 1;
 }
 
 /* ===========================================
    9) RÉPONSIVE GÉNÉRAL
    ============================================ */
 @media (max-width: 600px) {
-  /* on ne change plus margin-top ici : on hérite du calc du bloc 4 */
   body:not(.avis-page) main {
+    /* on utilise la même marge-top de 140px que sur desktop */
+    margin-top: 140px;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 14px; padding: 8px;
   }
