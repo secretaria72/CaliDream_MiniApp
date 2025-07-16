@@ -7,20 +7,25 @@ const images = [
   'img/6.jpg',
   'img/7.jpg',
 ];
+
 let idx = 0;
+const viewer = document.querySelector('#viewer img');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
-const slider = document.getElementById('sliderImage');
-const prev = document.getElementById('prevBtn');
-const next = document.getElementById('nextBtn');
-
-function update() {
-  slider.src = images[idx];
+function updateViewer() {
+  viewer.src = images[idx];
 }
-prev.addEventListener('click', () => {
+
+prevBtn.addEventListener('click', () => {
   idx = (idx - 1 + images.length) % images.length;
-  update();
+  updateViewer();
 });
-next.addEventListener('click', () => {
+
+nextBtn.addEventListener('click', () => {
   idx = (idx + 1) % images.length;
-  update();
+  updateViewer();
 });
+
+// Affichage initial
+updateViewer();
