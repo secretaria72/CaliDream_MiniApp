@@ -289,9 +289,7 @@ footer {
   width: 24px;
   height: 24px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transform: translateY(2px); /* ✅ décalage vers le bas sans effet de taille */
+  margin: auto;
   filter: drop-shadow(0 0 3px rgba(0,191,255,0.5));
   object-fit: contain;
 }
