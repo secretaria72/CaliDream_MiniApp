@@ -226,6 +226,7 @@ footer {
   margin-top: 40px; text-align: center; color: #666; font-size: 12px;
   padding-bottom: 20px; position: relative; z-index: 1;
 }
+/* force redeploy */
 
 /* ===========================================
    9) RÉPONSIVE GÉNÉRAL
