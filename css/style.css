@@ -179,7 +179,7 @@ body.avis-page main:not(.avis-slider) {
 body.avis-page main.avis-slider {
   margin: 20px auto; z-index: 1;
   display: flex; align-items: center; justify-content: center;
-  gap: 20px; padding-bottom: 40px;
+  gap: 6vw; padding-bottom: 40px;
 }
 body.avis-page .page-text {
   margin-top: 140px; font-size: 15px; color: #a0cfff;
