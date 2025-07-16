@@ -50,7 +50,6 @@ header::after {
    3) BOUTONS FLOTANTS
    ============================================ */
 .back-button-premium,
-#avis-button,
 .arrow {
   width: 32px;
   height: 32px;
@@ -68,6 +67,30 @@ header::after {
   transition: transform .3s, background-color .3s;
   cursor: pointer;
   z-index: 1001;
+  box-sizing: border-box;
+}
+
+#avis-button {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  background: transparent;
+  text-shadow: 0 0 4px red;
+  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
+  transition: transform .3s, background-color .3s;
+  cursor: pointer;
+  z-index: 1001;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10px;
+  right: 12vw;
 }
 
 .back-button-premium {
@@ -77,19 +100,12 @@ header::after {
   text-decoration: none;
 }
 
-#avis-button {
-  position: absolute;
-  bottom: 10px;
-  right: 12vw;
-}
-
 .back-button-premium:hover,
 #avis-button:hover,
 .arrow:hover {
   transform: scale(1.1);
   background-color: rgba(0,191,255,0.08);
 }
-
 .back-button-premium:active,
 #avis-button:active,
 .arrow:active {
@@ -264,9 +280,13 @@ footer {
   body.avis-page main.avis-slider {
     gap: 14px;
   }
-   /* Harmonisation visuelle des boutons avec le bouton #avis-button */
-.arrow,
-.back-button-premium {
-  transform: scale(0.85);
-}
+
+  /* Harmonisation visuelle boutons mobiles */
+  .arrow,
+  .back-button-premium {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    padding: 4px;
+  }
 }
