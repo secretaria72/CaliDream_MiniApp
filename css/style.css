@@ -52,8 +52,13 @@ header::after {
 .back-button-premium,
 #avis-button,
 .arrow {
+  width: 32px;
+  height: 32px;
   font-size: 20px;
   padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #00bfff;
   border: 2px solid #00bfff;
   border-radius: 50%;
@@ -61,28 +66,35 @@ header::after {
   text-shadow: 0 0 4px red;
   filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
   transition: transform .3s, background-color .3s;
+  cursor: pointer;
   z-index: 1001;
 }
 
 .back-button-premium {
-  position: absolute; top: 18px; left: 12px;
+  position: absolute;
+  top: 18px;
+  left: 12px;
   text-decoration: none;
 }
+
+#avis-button {
+  position: absolute;
+  bottom: 10px;
+  right: 12vw;
+}
+
 .back-button-premium:hover,
 #avis-button:hover,
 .arrow:hover {
   transform: scale(1.1);
   background-color: rgba(0,191,255,0.08);
 }
+
 .back-button-premium:active,
 #avis-button:active,
 .arrow:active {
   transform: scale(0.95);
   background-color: rgba(0,191,255,0.25);
-}
-
-#avis-button {
-  position: absolute; bottom: 10px; right: 12vw;
 }
 
 /* ===========================================
@@ -98,7 +110,6 @@ body:not(.avis-page) main {
   grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
   grid-gap: 20px;
 }
-
 .product-card {
   position: relative;
   background: rgba(0,0,0,0.6);
@@ -183,7 +194,6 @@ body.avis-page main.avis-slider {
   gap: 28px;
   padding-bottom: 40px;
 }
-
 body.avis-page .page-text {
   margin-top: 140px;
   font-size: 15px;
@@ -192,7 +202,6 @@ body.avis-page .page-text {
   text-align: center;
   padding: 0 20px;
 }
-
 #viewer {
   width: 280px;
   height: 480px;
@@ -207,41 +216,11 @@ body.avis-page .page-text {
   align-items: center;
   justify-content: center;
 }
-
 #viewer img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 8px;
 }
-
-.arrow {
-  font-size: 20px;
-  padding: 5px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #00bfff;
-  border: 2px solid #00bfff;
-  border-radius: 50%;
-  background: transparent;
-  text-shadow: 0 0 4px red;
-  filter: drop-shadow(0 0 6px rgba(0, 191, 255, 0.6));
-  transition: transform .3s, background-color .3s;
-  cursor: pointer;
-}
-
-.arrow:hover {
-  transform: scale(1.1);
-  background-color: rgba(0, 191, 255, 0.08);
-}
-
-.arrow:active {
-  transform: scale(0.95);
-  background-color: rgba(0, 191, 255, 0.25);
-}
-
 
 /* ===========================================
    7) STOCK (commun)
