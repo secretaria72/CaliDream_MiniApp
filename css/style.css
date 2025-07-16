@@ -281,12 +281,13 @@ footer {
     gap: 14px;
   }
 
-  /* Harmonisation visuelle boutons mobiles */
+ /* Harmonisation visuelle parfaite des boutons */
   .arrow,
-  .back-button-premium {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    padding: 4px;
+  .back-button-premium,
+  #avis-button {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    padding: 5px;
   }
 }
