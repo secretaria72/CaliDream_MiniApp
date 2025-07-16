@@ -50,8 +50,7 @@ header::after {
    3) BOUTONS FLOTANTS
    ============================================ */
 .back-button-premium,
-.arrow,
-#avis-button {
+.arrow {
   width: 32px;
   height: 32px;
   font-size: 20px;
@@ -70,17 +69,37 @@ header::after {
   z-index: 1001;
   box-sizing: border-box;
 }
+
 #avis-button {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  background: transparent;
+  text-shadow: 0 0 4px red;
+  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
+  transition: transform .3s, background-color .3s;
+  cursor: pointer;
+  z-index: 1001;
+  box-sizing: border-box;
   position: absolute;
   bottom: 10px;
   right: 12vw;
 }
+
 .back-button-premium {
   position: absolute;
   top: 18px;
   left: 12px;
   text-decoration: none;
 }
+
 .back-button-premium:hover,
 #avis-button:hover,
 .arrow:hover {
@@ -202,8 +221,6 @@ body.avis-page .page-text {
 #viewer {
   width: 280px;
   height: 480px;
-  min-width: 220px;
-  min-height: 300px;
   max-width: 90vw;
   max-height: 70vh;
   background: rgba(0, 0, 0, 0.6);
@@ -261,18 +278,15 @@ footer {
     margin-top: 120px; font-size: 14px;
   }
   body.avis-page main.avis-slider {
-    flex-direction: row;
-    gap: 12px;
-    padding: 0 10px;
-    margin-top: 20px;
+    gap: 14px;
   }
-  .arrow {
-    position: relative;
-    top: 0;
-    flex-shrink: 0;
-  }
-  #viewer {
-    width: 250px;
-    height: 420px;
+
+  /* Harmonisation visuelle boutons mobiles */
+  .arrow,
+  .back-button-premium {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    padding: 5px;
   }
 }
