@@ -209,11 +209,14 @@ body.avis-page main.avis-slider {
 }
 body.avis-page .page-text {
   margin-top: 140px;
-  font-size: 15px;
-  color: #a0cfff;
-  line-height: 1.4;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.5;
   text-align: center;
   padding: 0 20px;
+  font-weight: bold;
+  font-family: 'CaliDream', sans-serif;
+  text-shadow: 0 0 3px rgba(0, 191, 255, 0.4);
 }
 #viewer {
   width: 280px;
