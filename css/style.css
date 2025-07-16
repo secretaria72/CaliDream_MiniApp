@@ -95,7 +95,7 @@ header::after {
    ============================================ */
 /* S’applique uniquement quand body n’a PAS la classe avis-page */
 body:not(.avis-page) main {
-  margin-top: 140px;     /* évite le header */
+  margin-top: 180px;     /* 120px header + 60px dégradé */
   z-index: 1;            /* au-dessus du fond */
   max-width: 960px; margin: 0 auto;
   padding: 10px;
