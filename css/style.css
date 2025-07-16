@@ -226,7 +226,6 @@ footer {
   margin-top: 40px; text-align: center; color: #666; font-size: 12px;
   padding-bottom: 20px; position: relative; z-index: 1;
 }
-/* force redeploy */
 
 /* ===========================================
    9) RÉPONSIVE GÉNÉRAL
@@ -246,6 +245,7 @@ footer {
   body.avis-page .page-text {
     margin-top: 120px; font-size: 14px;
   }
+   /* force redeploy: correction margin-top 120px */
   body.avis-page main.avis-slider {
     gap: 14px;
   }
