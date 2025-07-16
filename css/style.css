@@ -303,3 +303,6 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+body.avis-page #avis-button {
+  display: none !important;
+}
