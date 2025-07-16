@@ -49,42 +49,40 @@ header::after {
 /* ===========================================
    3) BOUTONS FLOTANTS
    ============================================ */
-.back-button-premium {
-  position: absolute; top: 18px; left: 12px;
-  font-size: 20px; padding: 4px 8px;
-  color: #00bfff; border: 2px solid #00bfff;
-  border-radius: 50%; background: transparent;
-  text-decoration: none; text-shadow: 0 0 4px red;
+.back-button-premium,
+#avis-button,
+.arrow {
+  font-size: 20px;
+  padding: 5px;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  background: transparent;
+  text-shadow: 0 0 4px red;
   filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
   transition: transform .3s, background-color .3s;
   z-index: 1001;
 }
-.back-button-premium:hover {
+
+.back-button-premium {
+  position: absolute; top: 18px; left: 12px;
+  text-decoration: none;
+}
+.back-button-premium:hover,
+#avis-button:hover,
+.arrow:hover {
   transform: scale(1.1);
   background-color: rgba(0,191,255,0.08);
 }
-.back-button-premium:active {
+.back-button-premium:active,
+#avis-button:active,
+.arrow:active {
   transform: scale(0.95);
   background-color: rgba(0,191,255,0.25);
 }
 
 #avis-button {
   position: absolute; bottom: 10px; right: 12vw;
-  font-size: 20px; padding: 5px;
-  color: #00bfff; border: 2px solid #00bfff;
-  border-radius: 50%; background: transparent;
-  text-shadow: 0 0 4px red;
-  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
-  transition: transform .3s, background-color .3s;
-  z-index: 1001;
-}
-#avis-button:hover {
-  transform: scale(1.1);
-  background-color: rgba(0,191,255,0.08);
-}
-#avis-button:active {
-  transform: scale(0.95);
-  background-color: rgba(0,191,255,0.25);
 }
 
 /* ===========================================
@@ -177,10 +175,9 @@ body.avis-page main:not(.avis-slider) {
    6) PAGE “AVIS CLIENTS”
    ============================================ */
 body.avis-page main.avis-slider {
-  margin: 20px auto;
+  margin: 20px auto; z-index: 1;
   display: flex; align-items: center; justify-content: center;
-  gap: 20px;
-  padding-bottom: 40px;
+  gap: 20px; padding-bottom: 40px;
 }
 body.avis-page .page-text {
   margin-top: 140px; font-size: 15px; color: #a0cfff;
@@ -204,12 +201,7 @@ body.avis-page .page-text {
   max-width: 100%; max-height: 100%; border-radius: 8px;
 }
 .arrow {
-  font-size: 40px; color: #00bfff; cursor: pointer; user-select: none;
-  background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 50%;
-  transition: transform .2s;
-}
-.arrow:hover {
-  transform: scale(1.2);
+  position: relative;
 }
 
 /* ===========================================
@@ -253,9 +245,6 @@ footer {
   }
   body.avis-page main.avis-slider {
     gap: 14px;
-  }
-  .arrow {
-    font-size: 32px; padding: 6px 10px;
   }
   #viewer {
     width: 88vw;
