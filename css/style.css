@@ -281,7 +281,7 @@ footer {
     gap: 14px;
   }
 
- /* Harmonisation visuelle parfaite des boutons */
+  /* Harmonisation visuelle parfaite des boutons */
   .arrow,
   .back-button-premium,
   #avis-button {
@@ -290,7 +290,9 @@ footer {
     font-size: 20px;
     padding: 5px;
   }
-   /* ===========================================
+}
+
+/* ===========================================
    10) MASQUER LA SCROLLBAR (toutes pages)
    =========================================== */
 html, body {
@@ -300,5 +302,4 @@ html, body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
-}
 }
