@@ -95,8 +95,8 @@ header::after {
    ============================================ */
 /* S’applique uniquement quand body n’a PAS la classe avis-page */
 body:not(.avis-page) main {
-  margin-top: 180px !important; /* header (120px) + gradient (60px) */
-  z-index: 1;                    /* au-dessus du fond */
+  margin-top: calc(120px + 60px + env(safe-area-inset-top, 0px)) !important;
+  z-index: 1;
   max-width: 960px; margin: 0 auto;
   padding: 10px;
   display: grid;
@@ -129,6 +129,7 @@ body:not(.avis-page) main {
 .product-info strong {
   color: #00bfff;
 }
+/* badge stock listing */
 .stock-badge {
   position: absolute; top: 8px; right: 8px;
   padding: 5px 10px; font-size: 12px; font-weight: bold;
@@ -140,6 +141,7 @@ body:not(.avis-page) main {
 /* ===========================================
    5) FICHES PRODUIT
    ============================================ */
+/* body.avis-page + main SANS .avis-slider (fiche produit) */
 body.avis-page main:not(.avis-slider) {
   margin-top: 140px;
   z-index: 1;
@@ -188,18 +190,22 @@ body.avis-page main:not(.avis-slider) {
 /* ===========================================
    6) PAGE “AVIS CLIENTS”
    ============================================ */
+/* body.avis-page + main.avis-slider */
 body.avis-page main.avis-slider {
   margin: 20px auto;
   z-index: 1;
   display: flex; align-items: center; justify-content: center;
   gap: 20px; padding-bottom: 40px;
 }
+/* texte explicatif */
 body.avis-page .page-text {
   margin-top: 140px;
   font-size: 15px; color: #a0cfff;
   line-height: 1.4; text-align: center;
   padding: 0 20px;
 }
+
+/* cadre “verre” */
 #viewer {
   width: 300px; height: 300px;
   max-width: 90vw; max-height: 60vh;
@@ -253,22 +259,12 @@ footer {
     grid-template-columns: repeat(2,1fr);
     grid-gap: 14px; padding: 8px;
   }
-  #avis-button {
-    right: 8vw; bottom: 8px;
-  }
-  .product-card img {
-    height: 160px;
-  }
+  #avis-button { right: 8vw; bottom: 8px; }
+  .product-card img { height: 160px; }
   body.avis-page .page-text {
     margin-top: 120px; font-size: 14px;
   }
-  body.avis-page main.avis-slider {
-    gap: 14px;
-  }
-  .arrow {
-    font-size: 32px; padding: 6px 10px;
-  }
-  #viewer {
-    width: 80vw; height: 80vw;
-  }
+  body.avis-page main.avis-slider { gap: 14px; }
+  .arrow { font-size: 32px; padding: 6px 10px; }
+  #viewer { width: 80vw; height: 80vw; }
 }
