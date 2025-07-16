@@ -179,14 +179,14 @@ body.avis-page main:not(.avis-slider) {
 body.avis-page main.avis-slider {
   margin: 20px auto; z-index: 1;
   display: flex; align-items: center; justify-content: center;
-  gap: 6vw; padding-bottom: 40px;
+  gap: 20px; padding-bottom: 40px;
 }
 body.avis-page .page-text {
   margin-top: 140px; font-size: 15px; color: #a0cfff;
   line-height: 1.4; text-align: center; padding: 0 20px;
 }
 #viewer {
-  width: 300px;
+  width: 340px;
   height: 460px;
   max-width: 94vw;
   max-height: 70vh;
@@ -251,7 +251,7 @@ footer {
     margin-top: 120px; font-size: 14px;
   }
   body.avis-page main.avis-slider {
-    gap: 10vw;
+    gap: 14px;
   }
   .arrow {
     font-size: 32px; padding: 6px 10px;
