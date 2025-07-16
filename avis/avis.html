@@ -1,33 +1,278 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avis clients – Cali Dream</title>
-  <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body class="avis-page">
+/* ===========================================
+   1) FONTS & GLOBAL BACKGROUND 
+   ============================================ */
+@font-face {
+  font-family: 'CalidreamFont';
+  src: url('../fonts/calidream.woff2') format('woff2');
+}
+body {
+  margin: 0; padding: 0;
+  font-family: 'CalidreamFont', Arial, sans-serif;
+  color: #a0cfff;
+  background-color: #05080f;
+  position: relative; z-index: 0;
+}
+body::before {
+  content: "";
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: url('../img/fond.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
 
-  <!-- Header identique à la vitrine + bouton retour premium -->
-  <header>
-    <a href="../index.html" class="back-button-premium">←</a>
-    <img src="../img/logo.png" alt="Cali Dream Logo" class="floating-logo" />
-  </header>
+/* ===========================================
+   2) HEADER & LOGO
+   ============================================ */
+header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+header img,
+.floating-logo {
+  height: 80px;
+  filter: drop-shadow(0 0 6px #00bfff);
+  transform: translateY(-10px);
+}
+header::after {
+  content: '';
+  position: absolute; bottom: -60px; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+  pointer-events: none;
+}
 
-  <!-- Texte explicatif -->
-  <div class="page-text">
-    Vous trouverez ici <strong>divers retours clients</strong>. N’hésitez pas à nous laisser le vôtre ; cela aidera les nouveaux arrivants.
-  </div>
+/* ===========================================
+   3) BOUTONS FLOTANTS
+   ============================================ */
+.back-button-premium,
+.arrow,
+#avis-button {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00bfff;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  background: transparent;
+  text-shadow: 0 0 4px red;
+  filter: drop-shadow(0 0 6px rgba(0,191,255,0.6));
+  transition: transform .3s, background-color .3s;
+  cursor: pointer;
+  z-index: 1001;
+  box-sizing: border-box;
+}
+#avis-button {
+  position: absolute;
+  bottom: 10px;
+  right: 12vw;
+}
+.back-button-premium {
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  text-decoration: none;
+}
+.back-button-premium:hover,
+#avis-button:hover,
+.arrow:hover {
+  transform: scale(1.1);
+  background-color: rgba(0,191,255,0.08);
+}
+.back-button-premium:active,
+#avis-button:active,
+.arrow:active {
+  transform: scale(0.95);
+  background-color: rgba(0,191,255,0.25);
+}
 
-  <!-- Slider central -->
-  <main class="avis-slider">
-    <span class="arrow" id="prevBtn">&#10094;</span>
-    <div id="viewer">
-      <img src="img/1.jpg" id="sliderImage" alt="Avis client" />
-    </div>
-    <span class="arrow" id="nextBtn">&#10095;</span>
-  </main>
+/* ===========================================
+   4) LISTING PAGE (mini-app)
+   ============================================ */
+body:not(.avis-page) main {
+  margin-top: 160px;
+  margin-top: calc(135px + env(safe-area-inset-top, 0px));
+  z-index: 1;
+  max-width: 960px; margin-left: auto; margin-right: auto;
+  padding-left: 10px; padding-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  grid-gap: 20px;
+}
+.product-card {
+  position: relative;
+  background: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 10px #00bfff;
+  cursor: pointer;
+  transition: transform .3s;
+}
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff;
+}
+.product-card img {
+  width: 100%; height: 180px;
+  object-fit: cover; border-radius: 8px;
+  margin-bottom: 10px;
+}
+.product-info {
+  font-size: 14px; color: #cde9ff;
+}
+.product-info strong {
+  color: #00bfff;
+}
+.stock-badge {
+  position: absolute; top: 8px; right: 8px;
+  padding: 5px 10px; font-size: 12px; font-weight: bold;
+  border-radius: 8px; color: #fff; z-index: 2;
+}
+.stock-badge.in {
+  background-color: #00cc66;
+}
+.stock-badge.out {
+  background-color: #cc3333 !important;
+}
 
-  <script src="js/avis-slider.js"></script>
-</body>
-</html>
+/* ===========================================
+   5) FICHES PRODUIT
+   ============================================ */
+body.avis-page main:not(.avis-slider) {
+  margin-top: 140px;
+  z-index: 1;
+  padding: 150px 20px 40px;
+  max-width: 600px;
+  margin-left: auto; margin-right: auto;
+  display: flex; flex-direction: column; align-items: center;
+}
+.bloc-video {
+  width: 100%; display: flex; justify-content: center; margin-bottom: 20px;
+}
+.bloc-video video {
+  width: 100%; max-width: 100%; border-radius: 12px;
+}
+.bloc-description {
+  text-align: center; font-size: 17px; font-weight: bold;
+  line-height: 1.6; margin: 20px 0;
+}
+.bloc-tarifs {
+  width: 100%; margin-top: 30px;
+}
+.bloc-tarifs h3 {
+  color: #00bfff; font-size: 20px; text-align: center; margin-bottom: 20px;
+}
+.tarifs-grid {
+  display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;
+}
+.cell {
+  background-color: #000; border: 1px solid #00bfff; color: #fff;
+  padding: 15px 20px; border-radius: 12px; font-weight: bold;
+  min-width: 120px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ===========================================
+   6) PAGE “AVIS CLIENTS”
+   ============================================ */
+body.avis-page main.avis-slider {
+  margin: 20px auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding-bottom: 40px;
+}
+body.avis-page .page-text {
+  margin-top: 140px;
+  font-size: 15px;
+  color: #a0cfff;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 20px;
+}
+#viewer {
+  width: 280px;
+  height: 480px;
+  min-width: 220px;
+  min-height: 300px;
+  max-width: 90vw;
+  max-height: 70vh;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#viewer img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+/* ===========================================
+   7) STOCK (commun)
+   ============================================ */
+.stock {
+  text-align: center; font-size: 18px; font-weight: bold;
+  margin: 20px auto;
+}
+.stock.in {
+  color: #00cc66;
+}
+.stock.out {
+  color: #cc3333;
+}
+
+/* ===========================================
+   8) FOOTER
+   ============================================ */
+footer {
+  margin-top: 40px; text-align: center; color: #666; font-size: 12px;
+  padding-bottom: 20px; position: relative; z-index: 1;
+}
+
+/* ===========================================
+   9) RÉPONSIVE GÉNÉRAL
+   ============================================ */
+@media (max-width: 600px) {
+  body:not(.avis-page) main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 14px; padding-left: 8px; padding-right: 8px;
+  }
+  #avis-button {
+    right: 8vw; bottom: 8px;
+  }
+  .product-card img {
+    height: 160px;
+  }
+  body.avis-page .page-text {
+    margin-top: 120px; font-size: 14px;
+  }
+  body.avis-page main.avis-slider {
+    flex-direction: row;
+    gap: 12px;
+    padding: 0 10px;
+    margin-top: 20px;
+  }
+  .arrow {
+    position: relative;
+    top: 0;
+    flex-shrink: 0;
+  }
+  #viewer {
+    width: 250px;
+    height: 420px;
+  }
+}
