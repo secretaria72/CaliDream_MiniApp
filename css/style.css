@@ -280,16 +280,14 @@ footer {
   body.avis-page main.avis-slider {
     gap: 14px;
   }
-}
 /* ===========================================
    10) IMAGE DANS BOUTON VERIF - AJUSTEMENT PARFAIT
-   ============================================ */
+============================================ */
 #verif-button img {
-  width: 100%;
-  height: 100%;
-  padding: 4px;
-  box-sizing: border-box;
-  object-fit: contain;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   display: block;
+  margin: auto;
+  filter: drop-shadow(0 0 3px rgba(0,191,255,0.5));
+  object-fit: contain;
 }
