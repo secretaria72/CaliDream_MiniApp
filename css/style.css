@@ -1,5 +1,5 @@
 /* ===========================================
-   1) FONTS & GLOBAL BACKGROUND 
+   1) FONTS & GLOBAL BACKGROUND
    ============================================ */
 @font-face {
   font-family: 'CalidreamFont';
@@ -57,7 +57,7 @@ header::after {
 .back-button-premium,
 .arrow,
 #avis-button,
-#anonymous-button {
+#verif-button {
   width: 32px;
   height: 32px;
   font-size: 20px;
@@ -90,7 +90,7 @@ header::after {
   right: 12vw;
 }
 
-#anonymous-button {
+#verif-button {
   position: absolute;
   bottom: 50px;
   right: 12vw;
@@ -99,14 +99,14 @@ header::after {
 .back-button-premium:hover,
 #avis-button:hover,
 .arrow:hover,
-#anonymous-button:hover {
+#verif-button:hover {
   transform: scale(1.1);
   background-color: rgba(0,191,255,0.08);
 }
 .back-button-premium:active,
 #avis-button:active,
 .arrow:active,
-#anonymous-button:active {
+#verif-button:active {
   transform: scale(0.95);
   background-color: rgba(0,191,255,0.25);
 }
@@ -268,7 +268,7 @@ footer {
   #avis-button {
     right: 8vw; bottom: 8px;
   }
-  #anonymous-button {
+  #verif-button {
     right: 8vw; bottom: 48px;
   }
   .product-card img {
@@ -280,4 +280,16 @@ footer {
   body.avis-page main.avis-slider {
     gap: 14px;
   }
+   
+  }  
+/* ===========================================
+   10) IMAGE DANS BOUTON VERIF - AJUSTEMENT PARFAIT
+============================================ */
+#verif-button img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 0 3px rgba(0,191,255,0.5));
+  object-fit: contain;
 }
