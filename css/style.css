@@ -92,9 +92,7 @@ header::after {
    ============================================ */
 /* s’applique uniquement quand body n’a PAS la classe avis-page */
 body:not(.avis-page) main {
-  /* on décale tout le contenu juste sous le header/flou (120px)
-     + gradient (60px) + safe-area iOS (env/constant) */
-  margin-top: calc(180px + env(safe-area-inset-top, 0px) + constant(safe-area-inset-top)) !important;
+  margin-top: calc(120px + env(safe-area-inset-top, 0px) + constant(safe-area-inset-top));
   z-index: 1;
   max-width: 960px; margin-left: auto; margin-right: auto;
   padding-left: 10px; padding-right: 10px;
