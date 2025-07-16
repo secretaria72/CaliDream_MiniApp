@@ -282,11 +282,12 @@ footer {
   }
 }
 /* ===========================================
-   10) AJUSTEMENT DU BOUTON VERIF (IMAGE .PNG)
+   10) AJUSTEMENT IMAGE DANS BOUTON VERIF
    ============================================ */
 #verif-button img {
-  width: 20px;
-  height: 20px;
+  width: 60%;
+  height: 60%;
   object-fit: contain;
-  filter: drop-shadow(0 0 2px white);
+  display: block;
+  margin: auto;
 }
