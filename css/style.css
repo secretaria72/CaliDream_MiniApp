@@ -91,11 +91,11 @@ header::after {
 }
 
 /* ===========================================
-   4) LISTING PAGE (mini-app)
+   4) LISTING PAGE (mini‐app)
    ============================================ */
 /* S’applique uniquement quand body n’a PAS la classe avis-page */
 body:not(.avis-page) main {
-  margin-top: 200px;     /* ajusté pour que les 2 premières vidéos commencent bien sous le header */
+  margin-top: 240px;     /* ← ajusté : header (120px) + dégradé (60px) + espace de sécurité (60px) */
   z-index: 1;            /* au-dessus du fond */
   max-width: 960px; margin: 0 auto;
   padding: 10px;
@@ -141,7 +141,7 @@ body:not(.avis-page) main {
 /* ===========================================
    5) FICHES PRODUIT
    ============================================ */
-/* body.avis-page + main SANS .avis-slider (fiche produit) */
+/* body.avis-page + main SANS avis-slider (fiche produit) */
 body.avis-page main:not(.avis-slider) {
   margin-top: 140px;
   z-index: 1;
