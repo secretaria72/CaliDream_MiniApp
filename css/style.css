@@ -264,4 +264,9 @@ footer {
   body.avis-page main.avis-slider {
     gap: 14px;
   }
+   /* Harmonisation visuelle des boutons avec le bouton #avis-button */
+.arrow,
+.back-button-premium {
+  transform: scale(0.85);
+}
 }
