@@ -290,7 +290,6 @@ footer {
   height: 24px;
   display: block;
   margin: auto;
-  margin-top: 2px; /* ✅ AJOUTÉ POUR DÉCALER VERS LE BAS */
   filter: drop-shadow(0 0 3px rgba(0,191,255,0.5));
   object-fit: contain;
 }
