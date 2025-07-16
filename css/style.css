@@ -91,7 +91,7 @@ header::after {
    4) LISTING PAGE (mini-app)
    ============================================ */
 body:not(.avis-page) main {
-  margin-top: 160px; /* fallback iOS si env() échoue */
+  margin-top: 160px;
   margin-top: calc(135px + env(safe-area-inset-top, 0px));
   z-index: 1;
   max-width: 960px; margin-left: auto; margin-right: auto;
@@ -177,16 +177,17 @@ body.avis-page main:not(.avis-slider) {
    6) PAGE “AVIS CLIENTS”
    ============================================ */
 body.avis-page main.avis-slider {
-  margin: 20px auto; z-index: 1;
+  margin: 20px auto;
   display: flex; align-items: center; justify-content: center;
-  gap: 20px; padding-bottom: 40px;
+  gap: 20px;
+  padding-bottom: 40px;
 }
 body.avis-page .page-text {
   margin-top: 140px; font-size: 15px; color: #a0cfff;
   line-height: 1.4; text-align: center; padding: 0 20px;
 }
 #viewer {
-  width: 340px;
+  width: 300px;
   height: 460px;
   max-width: 94vw;
   max-height: 70vh;
