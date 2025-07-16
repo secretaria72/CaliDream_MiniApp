@@ -290,4 +290,15 @@ footer {
     font-size: 20px;
     padding: 5px;
   }
+   /* ===========================================
+   10) MASQUER LA SCROLLBAR (toutes pages)
+   =========================================== */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 }
