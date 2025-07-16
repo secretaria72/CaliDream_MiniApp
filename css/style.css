@@ -286,10 +286,10 @@ footer {
    10) IMAGE DANS BOUTON VERIF - AJUSTEMENT PARFAIT
 ============================================ */
 #verif-button img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  margin: auto;
-  filter: drop-shadow(0 0 3px rgba(0,191,255,0.5));
-  object-fit: contain;
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 0 3px rgba(0,191,255,0.5));
+  object-fit: contain;
 }
