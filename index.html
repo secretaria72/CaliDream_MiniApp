@@ -220,7 +220,7 @@
       return;
     }
 
-    fetch("https://vercel.com/secretaria72s-projects/cali-dream-report-api", {
+    fetch("https://cali-dream-report-api.vercel.app/api/send-report", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, message })
