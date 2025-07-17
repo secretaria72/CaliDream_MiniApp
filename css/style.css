@@ -297,3 +297,32 @@ footer {
   object-fit: contain;
   transform: translateY(1px); /* ✅ Décalage vers le bas */
 }
+
+/* Bloc Telegram premium */
+.telegram-box {
+  margin: 30px auto 60px;
+  width: 200px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 12px 20px;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.4), 0 0 6px rgba(255, 0, 0, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.telegram-box a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+}
+
+.telegram-box:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 16px rgba(0, 191, 255, 0.6), 0 0 8px rgba(255, 0, 0, 0.3);
+}
