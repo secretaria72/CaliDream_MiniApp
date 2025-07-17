@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vérification</title>
-  <link rel="stylesheet" href="./css/style.css?v=3" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vérification</title>
+  <link rel="stylesheet" href="./css/style.css?v=3" />
 </head>
-<body class="avis-page">
+<body class="verif-page">
 
-<header>
-  <!-- Bouton retour premium -->
-  <a href="./index.html" class="back-button-premium" title="Retour">←</a>
+  <!-- Header flottant comme la vitrine -->
+  <header>
+    <a href="./index.html" class="back-button-premium" title="Retour">←</a>
+    <img src="./img/logo.png" alt="Cali Dream Logo" />
+  </header>
 
-  <!-- Logo flottant -->
-  <img src="./img/logo.png" alt="Cali Dream Logo" />
-</header>
+  <!-- Zone viewer identique à avis mais sans flèches -->
+  <main class="avis-slider">
+    <div id="viewer">
+      <img src="./img/helder.png" alt="Exemple de vérification" />
+    </div>
+  </main>
 
-<main class="avis-slider">
+  <!-- Texte explicatif -->
+  <div class="page-text">
+    <strong>Pour valider votre accès</strong>, envoyez une courte vidéo montrant votre visage et votre pièce d’identité, comme dans l’exemple ci-dessus.<br />
+    Dites simplement : <strong>Cali Dream</strong>, suivi de la <strong>date et de l’heure du jour</strong>.<br />
+    Vous pouvez masquer les numéros confidentiels avec vos doigts.
+  </div>
 
-  <div id="viewer">
-    <img src="./img/anonymous.png" alt="Vérification" />
-  </div>
-
-</main>
-
-<div class="page-text">
-  Avant de passer commande, merci de passer par la vérification anonyme.  
-  Cela garantit un accès sécurisé à nos produits et un traitement rapide de votre demande.
-</div>
+  <!-- Bloc premium vers Telegram -->
+  <div class="telegram-box">
+    <a href="https://t.me/TON_CHAT_PRIVÉ" target="_blank">Chat Telegram</a>
+  </div>
 
 </body>
 </html>
