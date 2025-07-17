@@ -297,9 +297,33 @@ footer {
   object-fit: contain;
   transform: translateY(1px); /* ✅ Décalage vers le bas */
 }
+/* ===========================================
+   11) PAGE VERIF - ALIGNEMENT & BOUTON
+   ============================================ */
+body.verif-page .page-text {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 0 4px rgba(0, 191, 255, 0.4);
+  font-family: 'CaliDream', sans-serif;
+}
 
-/* Bloc Telegram premium */
-.telegram-box {
+body.verif-page main.avis-slider {
+  margin: 160px auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+body.verif-page .telegram-box {
   margin: 30px auto 60px;
   width: 200px;
   text-align: center;
@@ -315,13 +339,13 @@ footer {
   transition: all 0.2s ease;
 }
 
-.telegram-box a {
+body.verif-page .telegram-box a {
   text-decoration: none;
   color: #ffffff;
   display: block;
 }
 
-.telegram-box:hover {
+body.verif-page .telegram-box:hover {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 0 16px rgba(0, 191, 255, 0.6), 0 0 8px rgba(255, 0, 0, 0.3);
