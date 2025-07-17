@@ -350,3 +350,27 @@ body.verif-page .telegram-box:hover {
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 0 16px rgba(0, 191, 255, 0.6), 0 0 8px rgba(255, 0, 0, 0.3);
 }
+
+/* 12) BOUTON SIGNALER */
+#report-zone {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+#report-button {
+  background-color: rgba(0,0,0,0.6);
+  border: 1px solid #00ccff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00ccff;
+  transition: all 0.3s ease;
+}
+
+#report-button:hover {
+  background-color: #00ccff;
+  color: #000;
+}
