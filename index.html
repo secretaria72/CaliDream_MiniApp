@@ -152,6 +152,12 @@
   <p>Cali Dream Mini App © 2025</p>
 </footer>
 
+<!-- 12) BOUTON SIGNALER -->
+<div id="report-zone">
+  <button id="report-button" onclick="sendReport()">⚠️ Signaler un problème</button>
+</div>
+
+<!-- SCRIPT STOCK -->
 <script src="./config/config.js"></script>
 <script>
   fetch('./meta.json')
@@ -175,5 +181,30 @@
       console.error('Erreur lors du chargement de meta.json :', error);
     });
 </script>
+
+<!-- SCRIPT SIGNALER -->
+<script>
+  async function sendReport() {
+    const username = prompt("Quel est votre pseudo Telegram ?");
+    const message = prompt("Expliquez le problème (minimum 45 caractères)");
+
+    if (!username || !message || message.length < 45) {
+      alert("Merci d’écrire un message suffisamment long.");
+      return;
+    }
+
+    try {
+      await fetch("https://cali-report.vercel.app/api/send-report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, message })
+      });
+      alert("Signalement envoyé. Merci !");
+    } catch (err) {
+      alert("Erreur lors de l'envoi du signalement.");
+    }
+  }
+</script>
+
 </body>
 </html>
