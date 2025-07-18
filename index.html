@@ -220,11 +220,11 @@
       return;
     }
 
-    fetch("https://cali-dream-report-api-main-1x52qp19h-secretaria72s-projects.vercel.app/api/send-report", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, message })
-    })
+    fetch("https://cali-dream-report-api.vercel.app/api/send-report", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ username, message })
+})
     .then(res => {
       if (res.ok) {
         alert("Signalement envoyé avec succès.");
