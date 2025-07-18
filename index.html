@@ -162,23 +162,28 @@
   </article>
 
 </main>
-
-
+  
 <footer>
   <p>Cali Dream Mini App © 2025</p>
 </footer>
 
-<!-- 12) BOUTON SIGNALER -->
-<div id="report-module">
-  <button id="report-button" onclick="toggleReportForm()">⚠️ Signaler un problème</button>
-  <form id="report-form" onsubmit="sendReport(event)">
-    <input type="hidden" id="hidden-username" name="username" />
-    <textarea id="report-message" placeholder="Décrivez le problème..." minlength="45" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
+<!-- ⚠️ MODULE SIGNALER -->
+<div id="report-fab" onclick="toggleReportForm()">⚠️</div>
+
+<div id="report-overlay">
+  <div id="report-popup">
+    <h3>🚨 Signaler un problème</h3>
+    <p>Merci de signaler tout comportement qui nuit à notre politique.</p>
+    <form id="report-form" onsubmit="sendReport(event)">
+      <input type="hidden" id="hidden-username" name="username" />
+      <textarea id="report-message" placeholder="Décrivez précisément le problème..." minlength="45" required></textarea>
+      <button type="submit">Envoyer</button>
+      <button type="button" onclick="toggleReportForm()">Annuler</button>
+    </form>
+  </div>
 </div>
 
-<!-- 13) SCRIPT STOCK -->
+<!-- SCRIPT STOCK -->
 <script src="./config/config.js"></script>
 <script>
   fetch('./meta.json')
@@ -203,11 +208,11 @@
     });
 </script>
 
-<!-- 14) SCRIPT SIGNALER -->
+<!-- SCRIPT SIGNALER -->
 <script>
   function toggleReportForm() {
-    const form = document.getElementById('report-form');
-    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    const overlay = document.getElementById('report-overlay');
+    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
   }
 
   function sendReport(event) {
@@ -221,10 +226,10 @@
     }
 
     fetch("https://cali-dream-telegrambot.onrender.com/api/send-report", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ username, message })
-})
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, message })
+    })
     .then(res => {
       if (res.ok) {
         alert("Signalement envoyé avec succès.");
@@ -238,7 +243,7 @@
   }
 </script>
 
-<!-- 15) SCRIPT AUTO USERNAME TELEGRAM -->
+<!-- SCRIPT USERNAME -->
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     if (window.Telegram && Telegram.WebApp) {
